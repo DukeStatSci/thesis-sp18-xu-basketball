@@ -15,19 +15,28 @@ The {#rmd-basics} text after the chapter declaration will allow us to link throu
 In basketball, a boxscore provides the statistical summary of the game via defensive, offensive, and overall success metrics. Popular metrics include rebounds per game (RBG), player efficiency rating (PER), free throw attempts (FTA), and 3 field goals made (3FGM). However, these metrics cannot capture the entirety of the game because they do not take into account the opposing team's defense/offense, nor previous plays that significantly influenced the flow of the game.
 
 # Literature Review {#rmd-basics}
-Previous work conducted by Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk Goldsberry attempt to capture the game wholelistically via a new measure called Expected Possession Value (EPV) and Expected Possession Value -Adjusted (EPVA). This new metric uses three models--a microtransition model, macrotransition entrance model, and a macrotransition exit model--to capture the spatial biases of each player and the in-game effects of pressure. 
+Previous work conducted by Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk Goldsberry attempt to capture the game wholelistically via a new measure called Expected Possession Value (EPV). This new metric uses three models--a microtransition model, macrotransition entrance model, and a macrotransition exit model--to capture the spatial biases of each player and the in-game effects of pressure, so that it can measure the likelihood of a successful play (made shot) given the previous sequence of events. To compare players against the league-average scores, they also calculated Expected Possession Value -Adjusted as an application for teams. Below is a brief overview of each model. 
+
 
 ##Microtransition Model
-$equation$
-The microtransition model models the defensive conditions of the game . The macro model has two parts, depending on the the given transition states. The first part is a binomial .... the second a poisson... This model performs well, although the computation time prevents any real-time analyses of the game. 
+$x^{l}(t+\epsilon) = x^{l}(t) + \alpha^{l}_{x}[x^{l}(t) - x^{l}(t-\epsilon)] + \eta^{l}_{x}(t)$ where $\eta^{l}_{x}(t) \sim N(\mu^{l}_{x}(z^{l}(t)), (\sigma^{l}_{x})^{2})$
+
+The microtransition model models the defensive conditions of the game based on the $(x,y)$ coordinates of a player and their acceleration effects ($\alpha^{l}_{x}(t)$). It is also assumed that a player's spatial location is normally distributed. Since players play differently, each microtransition model is specifically fitted to the player.  
 
 #Macrotransition Entrance Model
 $equation$
 
+The macro model has two parts, depending on the the given transition states. The first part is a binomial .... the second a poisson... This model performs well, although the computation time prevents any real-time analyses of the game. 
+
 #Macrotransition Exit Model
 $equation$
 
-A simpler model may perform more quickly and potentially just as robustly.
+#Implementation of this Model
+
+
+
+##Next Steps
+Both metrics calculated via a semi-Markov process, EPV fails to capture the full nature of the possession because it only uses the last posession as a prior. The model would be more robust if it captured the entirety of the posession in its prior--however, the computational time of such an ordeal would prevent any real-time analyses. Thus, this paper proposes that a simpler model may perform more quickly and potentially just as robustly to allow for game-time analyses.
 
 
 Here is a brief introduction into using _R Markdown_. _Markdown_ is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. _R Markdown_ provides the flexibility of _Markdown_ with the implementation of **R** input and output.  For more details on using _R Markdown_ see <http://rmarkdown.rstudio.com>.  
