@@ -15,7 +15,17 @@ The {#rmd-basics} text after the chapter declaration will allow us to link throu
 In basketball, a boxscore provides the statistical summary of the game via defensive, offensive, and overall success metrics. Popular metrics include rebounds per game (RBG), player efficiency rating (PER), free throw attempts (FTA), and 3 field goals made (3FGM). However, these metrics cannot capture the entirety of the game because they do not take into account the opposing team's defense/offense, nor previous plays that significantly influenced the flow of the game.
 
 # Literature Review {#rmd-basics}
-Previous work conducted by Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk Goldsberry attempt to capture the game wholelistically via a new measure called Expected Possession Value (EPV) and Expected Possession Value -Adjusted (EPVA). This new metric uses three models--a microtransition model, macro model, and __---to capture the spatial and in-game pressure. The microtransition model models the defensive conditions of the game . The macro model has two parts, depending on the the given transition states. The first part is a binomial .... the second a poisson... This model performs well, although the computation time prevents any real-time analyses of the game. 
+Previous work conducted by Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk Goldsberry attempt to capture the game wholelistically via a new measure called Expected Possession Value (EPV) and Expected Possession Value -Adjusted (EPVA). This new metric uses three models--a microtransition model, macrotransition entrance model, and a macrotransition exit model--to capture the spatial biases of each player and the in-game effects of pressure. 
+
+##Microtransition Model
+$equation$
+The microtransition model models the defensive conditions of the game . The macro model has two parts, depending on the the given transition states. The first part is a binomial .... the second a poisson... This model performs well, although the computation time prevents any real-time analyses of the game. 
+
+#Macrotransition Entrance Model
+$equation$
+
+#Macrotransition Exit Model
+$equation$
 
 A simpler model may perform more quickly and potentially just as robustly.
 
