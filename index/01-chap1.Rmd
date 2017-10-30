@@ -25,7 +25,7 @@ Previous works have sought to capture the game more robustly. Below describes a 
 
 Joachim Gudmundsson and Michael Horton summarised a variety of methods that utilize object tracking data to analyze team and player performances in "Spatio-Temporal Analysis of Team Sports -- A Survey." Their research survey spanned modeling passing networks via graph theory to calculating rebound probability with spatial coordinates. In particular, work conducted by Daniel Cervone, Alex D'Amour, Luke Bornn, and Kirk Goldsberry attempted to capture the game wholelistically via a new measure called Expected Possession Value (EPV) in the paper "A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes." This new metric uses three models--a Microtransition Model, Macrotransition Entrance Model, and a Macrotransition Exit Model--to capture the spatial biases of each player and the in-game effects of pressure, so that it can measure the likelihood of a successful play (made shot) given the previous sequence of events. To compare players against the league-average scores, they also calculated Expected Possession Value -Adjusted as an application for teams. 
 
-#Motivation
+#Motivation Behind Model
 This paper is particularly interesting because EPV utilizes the spatio-temporal elements of the game, so it models the NBA game dynamically. Given Duke Basketball data, the motivation is to replicate "A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes," to better understand the Duke Men's team, as well as to compare professional basketball to collegiate basketball individual and team playing styles. Below is a brief overview of each model used in the paper to calculate EPV. 
 
 ##Microtransition Model
@@ -33,11 +33,11 @@ $x^{l}(t+\epsilon) = x^{l}(t) + \alpha^{l}_{x}[x^{l}(t) - x^{l}(t-\epsilon)] + \
 
 The microtransition model models the defensive conditions of the game based on the $(x,y)$ coordinates of a player and their acceleration effects ($\alpha^{l}_{x}(t)$). It is also assumed that a player's spatial location is normally distributed. Since players play differently, each microtransition model is specifically fitted to the player.  
 
-#Macrotransition Entrance Model
+##Macrotransition Entrance Model
 $P(M(t)|F_{t}^{(Z)}$
 The macrotransition entrance model predicts whether the next move will be a pass (4 options), shot attempt, or turnover. The model is disjoint.
 
-#Macrotransition Exit Model
+##Macrotransition Exit Model
 $P(C_{\delta_{t}}|M(t), F_{t}^{(Z)})$
 Given the Macrotransition Entrance Model predicts a shot attempt, it indexes to a logistic regression model to calculate player $l$'s successful shot probability. Given the Macrotransition Entrance Model predicts a pass,it indexes to a model that predicts where the pass will take place. Otherwise, a turnover is assumed. 
 

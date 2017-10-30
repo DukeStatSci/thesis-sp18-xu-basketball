@@ -1,18 +1,22 @@
 \contentsline {chapter}{Chapter 1: thesisdowndss::thesis\_word: default}{1}{chapter.1}
 \contentsline {chapter}{Chapter 2: Boxscore}{3}{chapter.2}
 \contentsline {chapter}{Chapter 3: Literature Review}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Microtransition Model}{5}{section.3.1}
-\contentsline {chapter}{Chapter 4: Macrotransition Entrance Model}{7}{chapter.4}
+\contentsline {chapter}{Chapter 4: Model Replication}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivation}{7}{section.4.1}
+\contentsline {section}{\numberline {4.2}Microtransition Model}{7}{section.4.2}
+\contentsline {section}{\numberline {4.3}Macrotransition Entrance Model}{7}{section.4.3}
+\contentsline {section}{\numberline {4.4}Macrotransition Exit Model}{7}{section.4.4}
 \contentsline {chapter}{Chapter 5: Macrotransition Exit Model}{9}{chapter.5}
 \contentsline {chapter}{Chapter 6: Implementation of this Model}{11}{chapter.6}
-\contentsline {section}{\numberline {6.1}Next Steps}{11}{section.6.1}
-\contentsline {section}{\numberline {6.2}Exploratory Data Analysis}{11}{section.6.2}
-\contentsline {section}{\numberline {6.3}Line breaks}{12}{section.6.3}
-\contentsline {section}{\numberline {6.4}R chunks}{12}{section.6.4}
-\contentsline {section}{\numberline {6.5}Inline code}{12}{section.6.5}
-\contentsline {section}{\numberline {6.6}Including plots}{13}{section.6.6}
-\contentsline {section}{\numberline {6.7}Loading and exploring data}{14}{section.6.7}
-\contentsline {section}{\numberline {6.8}Additional resources}{17}{section.6.8}
+\contentsline {section}{\numberline {6.1}in the works\ldots {}}{11}{section.6.1}
+\contentsline {section}{\numberline {6.2}Next Steps (have yet to get this far)}{11}{section.6.2}
+\contentsline {section}{\numberline {6.3}Exploratory Data Analysis}{11}{section.6.3}
+\contentsline {section}{\numberline {6.4}Line breaks}{12}{section.6.4}
+\contentsline {section}{\numberline {6.5}R chunks}{12}{section.6.5}
+\contentsline {section}{\numberline {6.6}Inline code}{12}{section.6.6}
+\contentsline {section}{\numberline {6.7}Including plots}{13}{section.6.7}
+\contentsline {section}{\numberline {6.8}Loading and exploring data}{14}{section.6.8}
+\contentsline {section}{\numberline {6.9}Additional resources}{17}{section.6.9}
 \contentsline {chapter}{Chapter 7: Math typesetting}{19}{chapter.7}
 \contentsline {section}{\numberline {7.1}Math}{19}{section.7.1}
 \contentsline {chapter}{Chapter 8: This chunk ensures that the thesisdowndss package is}{21}{chapter.8}
