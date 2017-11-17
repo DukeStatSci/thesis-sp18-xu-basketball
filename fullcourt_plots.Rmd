@@ -1,0 +1,115 @@
+---
+title: "fullcourt_plts"
+author: "Sonia Xu"
+date: "November 16, 2017"
+output: html_document
+---
+
+---
+title: "fullcourt_plots"
+author: "Sonia Xu"
+date: "November 16, 2017"
+output: html_document
+---
+<!-- # get Harden's movements
+harden = df[df.player_name=="James Harden"]
+# read in the court png file
+court = plt.imread("fullcourt.png")
+plt.figure(figsize=(15, 11.5))
+
+# Plot the movemnts as scatter plot
+# using a colormap to show change in game clock
+plt.scatter(harden.x_loc, harden.y_loc, c=harden.game_clock,
+            cmap=plt.cm.Blues, s=1000, zorder=1)
+# Darker colors represent moments earlier on in the game
+cbar = plt.colorbar(orientation="horizontal")
+cbar.ax.invert_xaxis()
+
+# This plots the court
+# zorder=0 sets the court lines underneath Harden's movements
+# extent sets the x and y axis values to plot the image within.
+# The original animation plots in the SVG coordinate space
+# which has x=0, and y=0 at the top left.
+# So, we set the axis values the same way in this plot.
+# In the list we pass to extent 0,94 representing the x-axis 
+# values and 50,0 representing the y-axis values
+plt.imshow(court, zorder=0, extent=[0,94,50,0])
+
+# extend the x-values beyond the court b/c Harden
+# goes out of bounds
+plt.xlim(0,101)
+
+
+plt.show()--->
+```{r}
+library(jpeg)
+library(png)
+library(matplotlib)
+library(ggplot2)
+```
+
+```{r}
+made_miss <- G1Q456 %>% filter(`event-descrip` %in% c('missed shot', 'made shot'))
+# simple plot using EVENT_TYPE to colour the dots
+ggplot(made_miss, aes(x=p1_y, y=p1_x)) +
+         geom_point(aes(colour = `event-descrip`))
+
+#x50 by y94
+fullcourt <- readJPEG("fc.jpeg")
+plot(50:95, type='n')
+rasterImage(fullcourt, 95, 50, 95, 50)
+
+```
+
+```{r}
+#Taken from : https://gist.github.com/edkupfer/6259635
+# NBA courts are 50ft sideline-to-sideline
+# and 94ft end to end. This will plot a court
+# with the sidelines on the y-axis, centered 
+# on the halfcourt circle. Measurement units
+# are in feet. The basket at the bottom is
+# centered on {x = 0, y = -41.75} and at the
+# top  on {x = 0, y = 41.75}
+ 
+library(lattice)
+ 
+xyplot(NA~NA,ylab='',xlab='',aspect='iso',xlim=c(-25,25),ylim=c(-47,47),
+### remove outside box and ticks, there must be a better way:
+par.settings = list(axis.line = list(col = "transparent")), par.box = c(col = "transparent"),
+scales=list(draw=F),
+panel=function(...){
+#outside box:
+panel.lines(x=c(-25,-25,25,25,-25),y=c(-47,47,47,-47,-47))
+#halfcourt line
+panel.lines(x=c(-25,25),y=c(0,0))
+#solid FT semicircle above FT line:
+panel.lines(x=c(-6000:(-1)/1000,1:6000/1000),y=c(-28+sqrt(6^2-c(-6000:(-1)/1000,1:6000/1000)^2)))
+panel.lines(x=c(-6000:(-1)/1000,1:6000/1000),y=c(28-sqrt(6^2-c(-6000:(-1)/1000,1:6000/1000)^2)))
+#dashed FT semicircle below FT line:
+panel.lines(x=c(-6000:(-1)/1000,1:6000/1000),y=c(-28-sqrt(6^2-c(-6000:(-1)/1000,1:6000/1000)^2)),lty=2)
+panel.lines(x=c(-6000:(-1)/1000,1:6000/1000),y=c(28+sqrt(6^2-c(-6000:(-1)/1000,1:6000/1000)^2)),lty=2)
+#key:
+panel.lines(x=c(-8,-8,8,8,-8),y=c(-47,-28,-28,-47,-47))
+panel.lines(x=c(-8,-8,8,8,-8),y=c(47,28,28,47,47))
+#box inside the key:
+panel.lines(x=c(-6,-6,6,6,-6),y=c(-47,-28,-28,-47,-47))
+panel.lines(x=c(-6,-6,6,6,-6),y=c(47,28,28,47,47))
+# restricted area semicircle:
+panel.lines(x=c(-47000:(-1)/1000,1:4000/1000),y=c(1.25+sqrt(4^2-c(-47000:(-1)/1000,1:4000/1000)^2))-43)
+panel.lines(x=c(-47000:(-1)/1000,1:4000/1000),y=c(1.25-sqrt(4^2-c(-47000:(-1)/1000,1:4000/1000)^2))+40.5)
+# halfcourt semicircle:
+panel.lines(x=c(-6000:(-1)/1000,1:6000/1000),y=c(-sqrt(6^2-c(-6000:(-1)/1000,1:6000/1000)^2)))
+panel.lines(x=c(-6000:(-1)/1000,1:6000/1000),y=c(sqrt(6^2-c(-6000:(-1)/1000,1:6000/1000)^2)))
+# rim:
+panel.rect(-5/24,-43,5/24,54/12-47)
+panel.rect(-5/24,43,5/24,47-54/12)
+panel.lines(x=c(-750:(-1)/1000,1:750/1000,750:1/1000,-1:-750/1000),y=c(c(1.25+sqrt(0.75^2-c(-750:(-1)/1000,1:750/1000)^2)),c(1.25-sqrt(0.75^2-c(750:1/1000,-1:-750/1000)^2)))-43)
+panel.lines(x=c(-750:(-1)/1000,1:750/1000,750:1/1000,-1:-750/1000),y=c(c(1.25-sqrt(0.75^2-c(-750:(-1)/1000,1:750/1000)^2)),c(1.25+sqrt(0.75^2-c(750:1/1000,-1:-750/1000)^2)))+40.5)
+#backboard:
+panel.lines(x=c(-3,3),y=c(-43,-43))
+panel.lines(x=c(-3,3),y=c(43,43))
+#three-point line:
+panel.lines(x=c(-22,-22,-22000:(-1)/1000,1:22000/1000,22,22),y=c(-43,169/12-43,1.25+sqrt(23.75^2-c(-22000:(-1)/1000,1:22000/1000)^2),169/12-43,-43)-43)
+panel.lines(x=c(-22,-22,-22000:(-1)/1000,1:22000/1000,22,22),y=c(43,169/12+43,1.25-sqrt(23.75^2-c(-22000:(-1)/1000,1:22000/1000)^2),169/12+43,43)+43)
+})
+```

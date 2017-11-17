@@ -1,0 +1,84 @@
+---
+title: "Preliminary Analysis of Data"
+author: "Sonia Xu"
+date: "November 9, 2017"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+#Checking the Data
+
+Checking the data against ESPN's play-by-play shows that the SPORTSVU data matches the boxscores in their online datset. In the game explored--St. John's vs. Duke, Tyus has 22 points according to the play-by-play. When comparing Jahlil's blocked shots, the values also match. Thus, it appears as though the boxscores were correctly recorded.
+
+Another problem was data completion, since not all the SportsVu keys were available publicly. Thus, via collaboration and discussion, below are the current keys that have been noted as the "truth." It is necessary to watch more film to confirm the validity of these event-id to event-description pairings.
+
+In terms of combining the data, the best way to combine all the datasets is via the $TIME$ feature. There is no missing data in the final game data when merging the different datasets with this feature.
+
+```{r echo = F, warning = F, message = F}
+#warnings
+library(dplyr)
+library(ggplot2)
+library(xml2)
+library(knitr)
+library(rgl)
+```
+
+```{r echo = F}
+svk <- read.csv("sportvukey.csv")
+colnames(svk) <- c("event-id", "event-descrip")
+kable(head(svk))
+```
+
+Initial exploratory analysis provides interesting insight onto the game. In terms of dribbling, defined by SportsVu as: 
+•	Player is closest to the ball.
+•	Player is within 3.5 feet of the ball.
+•	Player has been closest to ball for 5 or more frames.
+•	Ball drops lower than 1.5 feet.
+•	Ball is within the boundaries of the court.
+•	Dribbles rely exclusively on optical data
+
+We assume that the point guard will dribble the most. However, that is not the case for this specific game. As noted by the table, Tyus Jones is the 7th most frequent dribbler, whereas Rasheed Sulaimon, a post dribbles the most for Duke.
+
+```{r echo = F}
+G1Q456 <- read.csv("test.csv")
+drib_count <- G1Q456 %>% group_by(first.name, last.name) %>% filter(event.descrip == "dribble") %>% summarise(dribbles = mean(as.numeric(dribbles), na.rm = T), drib_calc = n())
+kable(head(drib_count[order(drib_count$dribbles, decreasing = T), ]))
+```
+
+Counting the number of dribles via $event-id$ vs. the boxscore, the numbers also add up overall, for the difference between the two counts are off by a maximum of one dribble.
+
+
+#Plotting the Location of the Ball
+Looking at the ball location in a 3-D graph, it is apparent that the ball spends less time in the air than close to the ground. 
+
+```{r echo = F}
+plot3d(G1Q456$ball_x[1:nrow(G1Q456)], G1Q456$ball_y[1:nrow(G1Q456)], G1Q456$ball_z[1:nrow(G1Q456)])
+```
+
+#Plotting the Average Location of Players
+Assuming that similar players (1-5) have similar average locations, we expect to see Grayson Allen in the same position as Matt Jones. However, since Grayson did not play a lot of minutes until after his freshman season, perhaps this skews the data. Jahlil, Amile, and Marshall appear to be the farthest away. Perhaps, Duke had greater spacing in their playstyle across the court compared to St. John's.
+```{r echo = F}
+xy <- G1Q456 %>% group_by(first.name, last.name) %>% summarise(x = mean(as.numeric(p1_x)), y = mean(as.numeric(p1_y)))
+ggplot(xy, aes(x, y)) + geom_text(aes(label = first.name)) + geom_point() + ggtitle("Average Location of Players")
+```
+
+#Other Interesting Things
+
+Most missed shots occured with a lot of time left in the shot clock:
+
+```{r echo = F}
+missedshot <- G1Q456 %>% group_by(first.name, last.name) %>% filter(event.descrip == "missed shot") %>% summarise(shot_time = mean(as.numeric(shot.clock.x)))
+
+kable(head(missedshot))
+```
+
+On the other hand, made shots occured around a similar time, but there is more variance with how long it takes for a player to take a good shot. 
+```{r echo = F}
+madeshot <- G1Q456 %>% group_by(first.name, last.name) %>% filter(event.descrip == "made shot") %>% summarise(shot_time = mean(as.numeric(shot.clock.x)))
+
+kable(head(madeshot))
+```
+```
+
+Next steps, I will attempt to plot the x,y coordinates of each player as a heatmap to see where most players prefer to shoot the ball on a game-level and on a season-level to see how players change their shooting positions throughout the years. Do they move farther from the basket or stay consistent with their range?

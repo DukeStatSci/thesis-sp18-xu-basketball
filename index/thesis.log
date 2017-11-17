@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.19)  29 OCT 2017 23:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.19)  17 NOV 2017 16:17
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1158,39 +1158,37 @@ Non-PDF special ignored!
 ] [13] [14
 
 
-]
-Chapter 1.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.186 \chapter
+l.234 \chapter
               {Boxscore}\label{boxscore} [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.186 \chapter
+l.234 \chapter
               {Boxscore}\label{boxscore} [2
 
 ]
-Chapter 2.
+Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.196 \chapter
+l.244 \chapter
               {Literature Review}\label{rmd-basics} [3]pdfTeX warning (ext4): d
 estination with the same identifier (name{page.4}) has been already used, dupli
 cate ignored
 <to be read again> 
                    \relax 
-l.196 \chapter
+l.244 \chapter
               {Literature Review}\label{rmd-basics} [4
 
 ]
-Chapter 3.
+Chapter 2.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1202,59 +1200,63 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6]
-Chapter 4.
+Chapter 3.
 [7
 
 ] [8
 
 ]
-Chapter 5.
+Chapter 4.
 [9] [10
 
 ]
+Chapter 5.
+[11] [12
+
+]
 Chapter 6.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 328.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 384.
 
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 345.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 401.
 
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [11]
+) [13]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 406.
-[12] <thesis_files/figure-latex/pressure-1.pdf, id=308, 469.755pt x 325.215pt>
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 462.
+[14] <thesis_files/figure-latex/pressure-1.pdf, id=337, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/pressure-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/pressure-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/pressure-1.pdf used on input
- line 450.
+ line 506.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (53.75868pt too wide) in paragraph at lines 450--451
+Overfull \hbox (53.75868pt too wide) in paragraph at lines 506--507
 [][] 
  []
 
-[13 <./thesis_files/figure-latex/pressure-1.pdf>] [14]
-LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 531
+[15 <./thesis_files/figure-latex/pressure-1.pdf>] [16]
+LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 588
 .
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ts1lmtt.fd"
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [15] [16
+) [17] [18
 
-] <thesis_files/figure-latex/march3plot-1.pdf, id=338, 433.62pt x 216.81pt>
+] <thesis_files/figure-latex/march3plot-1.pdf, id=367, 433.62pt x 216.81pt>
 File: thesis_files/figure-latex/march3plot-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/march3plot-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/march3plot-1.pdf used on inp
-ut line 625.
+ut line 682.
 (pdftex.def)             Requested size: 433.61894pt x 216.80946pt.
 
-Overfull \hbox (17.62376pt too wide) in paragraph at lines 625--626
+Overfull \hbox (17.62376pt too wide) in paragraph at lines 682--683
 [][] 
  []
 
-[17 <./thesis_files/figure-latex/march3plot-1.pdf>] [18
+[19 <./thesis_files/figure-latex/march3plot-1.pdf>] [20
 
 ]
 Chapter 7.
@@ -1262,67 +1264,121 @@ pdfTeX warning (ext4): destination with the same identifier (name{math}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.642 ...rtarget{math}{\section{Math}\label{math}}
-                                                   [19] [20
+l.699 ...rtarget{math}{\section{Math}\label{math}}
+                                                  
 
-]
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 709.
+
+[21] [22]
 Chapter 8.
-[21] [22
+[23
 
-]
+] <figure/duke.png, id=408, 163.61125pt x 73.27374pt>
+File: figure/duke.png Graphic file (type png)
+<use figure/duke.png>
+Package pdftex.def Info: figure/duke.png used on input line 868.
+(pdftex.def)             Requested size: 163.32979pt x 73.14832pt.
+[24
+
+ <./figure/duke.png>] <thesis_files/figure-latex/delaysboxplot-1.pdf, id=416, 4
+33.62pt x 325.215pt>
+File: thesis_files/figure-latex/delaysboxplot-1.pdf Graphic file (type pdf)
+<use thesis_files/figure-latex/delaysboxplot-1.pdf>
+Package pdftex.def Info: thesis_files/figure-latex/delaysboxplot-1.pdf used on 
+input line 895.
+(pdftex.def)             Requested size: 433.61894pt x 325.2142pt.
+[25
+
+ <./thesis_files/figure-latex/delaysboxplot-1.pdf>] <figure/subdivision.pdf, id
+=430, 220.825pt x 89.33376pt>
+File: figure/subdivision.pdf Graphic file (type pdf)
+<use figure/subdivision.pdf>
+Package pdftex.def Info: figure/subdivision.pdf used on input line 910.
+(pdftex.def)             Requested size: 165.61833pt x 67.00014pt.
+File: figure/subdivision.pdf Graphic file (type pdf)
+<use figure/subdivision.pdf>
+Package pdftex.def Info: figure/subdivision.pdf used on input line 922.
+(pdftex.def)             Requested size: 220.82445pt x 89.33353pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 928.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 928.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 928.
+[26
+
+ <./figure/subdivision.pdf>] [27] [28]
 Chapter 9.
-[23] [24
+[29
 
-] [25] [26
+] [30] [31
 
-]
-Chapter 10.
-[27] [28
+] [32
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 670.
-[29]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 670.
+Appendix A.
+[33] [34]
+Appendix B.
+[35
+
+] [36
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1167.
+[37
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1167.
 (thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 670.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 670.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1167.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1167.
+
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 391B7C8802B19B2A5DA6F457FBD6D0F6;2038.
+(rerunfilecheck)             Checksum: 6C0E13EE28ECFF445E6CA9EC0AE17755;2126.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 670.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1167.
  ) 
 Here is how much of TeX's memory you used:
- 11165 strings out of 493323
- 172622 string characters out of 3130015
- 289067 words of memory out of 3000000
- 14298 multiletter control sequences out of 15000+200000
- 52641 words of font info for 91 fonts, out of 3000000 for 9000
+ 11316 strings out of 493323
+ 174759 string characters out of 3130015
+ 290420 words of memory out of 3000000
+ 14371 multiletter control sequences out of 15000+200000
+ 75745 words of font info for 129 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,11n,49p,270b,391s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.e
-nc}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.e
-nc}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-math
-it.enc}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
-rm.enc}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
-mathsy.enc}<C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/lm/lmbx12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/lm/lmbxi10.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/lm/lmmi12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/lm/lmmi6.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/lm/lmmi8.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/lm/lmr12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/Sonia/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/lm/lmro12.pfb><C:/Users/Sonia/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Sonia/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Sonia/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Sonia/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtti10.pfb>
-Output written on thesis.pdf (47 pages, 323453 bytes).
+ 39i,11n,49p,270b,399s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
+c}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-maths
+y.enc}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
+athex.enc}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/
+lm-ts1.enc}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm
+/lm-mathit.enc}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
+s/lm/lm-rm.enc}<C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/lm/lmbx12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/lm/lmbxi10.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/lm/lmex10.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/lm/lmmi12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Sonia/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Sonia/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Sonia/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Users/Sonia/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Sonia/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/Sonia/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb><C:/Users/Sonia/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Sonia/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Sonia/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/So
+nia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb><C:/User
+s/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtti10.pfb><C:
+/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symb
+ols/msam10.pfb>
+Output written on thesis.pdf (55 pages, 461283 bytes).
 PDF statistics:
- 476 PDF objects out of 1000 (max. 8388607)
- 89 named destinations out of 1000 (max. 500000)
- 8451 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 631 PDF objects out of 1000 (max. 8388607)
+ 113 named destinations out of 1000 (max. 500000)
+ 12578 words of extra memory for PDF output out of 14400 (max. 10000000)
 

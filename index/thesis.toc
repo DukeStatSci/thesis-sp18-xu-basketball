@@ -1,31 +1,33 @@
-\contentsline {chapter}{Chapter 1: thesisdowndss::thesis\_word: default}{1}{chapter.1}
-\contentsline {chapter}{Chapter 2: Boxscore}{3}{chapter.2}
-\contentsline {chapter}{Chapter 3: Literature Review}{5}{chapter.3}
-\contentsline {chapter}{Chapter 4: Model Replication}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}Motivation}{7}{section.4.1}
-\contentsline {section}{\numberline {4.2}Microtransition Model}{7}{section.4.2}
-\contentsline {section}{\numberline {4.3}Macrotransition Entrance Model}{7}{section.4.3}
-\contentsline {section}{\numberline {4.4}Macrotransition Exit Model}{7}{section.4.4}
-\contentsline {chapter}{Chapter 5: Macrotransition Exit Model}{9}{chapter.5}
-\contentsline {chapter}{Chapter 6: Implementation of this Model}{11}{chapter.6}
-\contentsline {section}{\numberline {6.1}in the works\ldots {}}{11}{section.6.1}
-\contentsline {section}{\numberline {6.2}Next Steps (have yet to get this far)}{11}{section.6.2}
-\contentsline {section}{\numberline {6.3}Exploratory Data Analysis}{11}{section.6.3}
-\contentsline {section}{\numberline {6.4}Line breaks}{12}{section.6.4}
-\contentsline {section}{\numberline {6.5}R chunks}{12}{section.6.5}
-\contentsline {section}{\numberline {6.6}Inline code}{12}{section.6.6}
-\contentsline {section}{\numberline {6.7}Including plots}{13}{section.6.7}
-\contentsline {section}{\numberline {6.8}Loading and exploring data}{14}{section.6.8}
-\contentsline {section}{\numberline {6.9}Additional resources}{17}{section.6.9}
-\contentsline {chapter}{Chapter 7: Math typesetting}{19}{chapter.7}
-\contentsline {section}{\numberline {7.1}Math}{19}{section.7.1}
-\contentsline {chapter}{Chapter 8: This chunk ensures that the thesisdowndss package is}{21}{chapter.8}
-\contentsline {section}{\numberline {8.1}Tables}{21}{section.8.1}
-\contentsline {section}{\numberline {8.2}Figures}{21}{section.8.2}
-\contentsline {section}{\numberline {8.3}Footnotes and Endnotes}{21}{section.8.3}
-\contentsline {section}{\numberline {8.4}Bibliographies}{21}{section.8.4}
-\contentsline {section}{\numberline {8.5}Anything else?}{21}{section.8.5}
-\contentsline {chapter}{Chapter 9: Organization}{23}{chapter.9}
-\contentsline {chapter}{Conclusion}{25}{chapter*.8}
-\contentsline {chapter}{Chapter 10: The First Appendix}{27}{chapter.10}
-\contentsline {chapter}{References}{29}{chapter*.9}
+\contentsline {chapter}{Introduction}{1}{chapter*.8}
+\contentsline {chapter}{Chapter 1: Boxscore}{3}{chapter.1}
+\contentsline {chapter}{Chapter 2: Literature Review}{5}{chapter.2}
+\contentsline {chapter}{Chapter 3: Dataset}{7}{chapter.3}
+\contentsline {chapter}{Chapter 4: Model Replication}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivation}{9}{section.4.1}
+\contentsline {section}{\numberline {4.2}Microtransition Model}{9}{section.4.2}
+\contentsline {section}{\numberline {4.3}Macrotransition Entrance Model}{9}{section.4.3}
+\contentsline {section}{\numberline {4.4}Macrotransition Exit Model}{9}{section.4.4}
+\contentsline {chapter}{Chapter 5: Macrotransition Exit Model}{11}{chapter.5}
+\contentsline {chapter}{Chapter 6: Implementation of this Model}{13}{chapter.6}
+\contentsline {section}{\numberline {6.1}in the works\ldots {}}{13}{section.6.1}
+\contentsline {section}{\numberline {6.2}Next Steps (have yet to get this far)}{13}{section.6.2}
+\contentsline {section}{\numberline {6.3}Exploratory Data Analysis}{13}{section.6.3}
+\contentsline {section}{\numberline {6.4}Line breaks}{14}{section.6.4}
+\contentsline {section}{\numberline {6.5}R chunks}{14}{section.6.5}
+\contentsline {section}{\numberline {6.6}Inline code}{14}{section.6.6}
+\contentsline {section}{\numberline {6.7}Including plots}{15}{section.6.7}
+\contentsline {section}{\numberline {6.8}Loading and exploring data}{16}{section.6.8}
+\contentsline {section}{\numberline {6.9}Additional resources}{19}{section.6.9}
+\contentsline {chapter}{Chapter 7: Math typesetting}{21}{chapter.7}
+\contentsline {section}{\numberline {7.1}Math}{21}{section.7.1}
+\contentsline {chapter}{Chapter 8: Tables, Graphics, References, and Labels}{23}{chapter.8}
+\contentsline {section}{\numberline {8.1}Tables}{23}{section.8.1}
+\contentsline {section}{\numberline {8.2}Figures}{24}{section.8.2}
+\contentsline {section}{\numberline {8.3}Footnotes and Endnotes}{26}{section.8.3}
+\contentsline {section}{\numberline {8.4}Bibliographies}{26}{section.8.4}
+\contentsline {section}{\numberline {8.5}Anything else?}{27}{section.8.5}
+\contentsline {chapter}{Chapter 9: Organization}{29}{chapter.9}
+\contentsline {chapter}{Conclusion}{31}{chapter*.13}
+\contentsline {chapter}{Appendix A: The First Appendix}{33}{appendix.A}
+\contentsline {chapter}{Appendix B: The Second Appendix, for Fun}{35}{appendix.B}
+\contentsline {chapter}{References}{37}{appendix*.14}
