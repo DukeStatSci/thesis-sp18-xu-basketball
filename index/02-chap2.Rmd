@@ -55,31 +55,3 @@ $equation$
 Both metrics calculated via a semi-Markov process, EPV fails to capture the full nature of the possession because it only uses the last posession as a prior. The model would be more robust if it captured the entirety of the posession in its prior--however, the computational time of such an ordeal would prevent any real-time analyses. Thus, this paper proposes that a simpler model may perform more quickly and potentially just as robustly to allow for game-time analyses.
 
 
-Here is a brief introduction into using _R Markdown_. _Markdown_ is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. _R Markdown_ provides the flexibility of _Markdown_ with the implementation of **R** input and output.  For more details on using _R Markdown_ see <http://rmarkdown.rstudio.com>.  
-
-Be careful with your spacing in _Markdown_ documents.  While whitespace largely is ignored, it does at times give _Markdown_ signals as to how to proceed.  As a habit, try to keep everything left aligned whenever possible, especially as you type a new paragraph.  In other words, there is no need to indent basic text in the Rmd document (in fact, it might cause your text to do funny things if you do).
-
-##Exploratory Data Analysis
--eda, write up literature
-
-It's easy to create a list.  It can be unordered like
-
-* Item 1
-* Item 2
-
-or it can be ordered like
-
-1. Item 1
-4. Item 2
-
-Notice that I intentionally mislabeled Item 2 as number 4.  _Markdown_ automatically figures this out!  You can put any numbers in the list and it will create the list.  Check it out below.
-
-To create a sublist, just indent the values a bit (at least four spaces or a tab).  (Here's one case where indentation is key!)
-
-1. Item 1
-1. Item 2
-1. Item 3
-    - Item 3a
-    - Item 3b
-
-## Line breaks
