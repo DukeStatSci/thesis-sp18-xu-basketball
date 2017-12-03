@@ -46,19 +46,33 @@ library(jpeg)
 library(png)
 library(matplotlib)
 library(ggplot2)
+library(dplyr)
+library(grid)
 ```
 
 ```{r}
-made_miss <- G1Q456 %>% filter(`event-descrip` %in% c('missed shot', 'made shot'))
+made_miss <- G1Q456 %>% filter(`event-descrip` %in% c('missed shot', 'made shot')) %>% filter(`player-id`== "109412")
+#okafor = 126162
+#jabari: 121033
+#quinn cook: 109412
 # simple plot using EVENT_TYPE to colour the dots
-ggplot(made_miss, aes(x=p1_y, y=p1_x)) +
-         geom_point(aes(colour = `event-descrip`))
+
+g <- rasterGrob(fullcourt, interpolate = T, width =.92, height = .92)
+ggplot(made_miss, aes(x=ball_y, y=ball_x)) +  annotation_custom(g,  xmin=0, xmax=95, ymin=0, ymax=49) +
+         geom_point(aes(colour = `event-descrip`)) 
+  
 
 #x50 by y94
-fullcourt <- readJPEG("fc.jpeg")
+fullcourt <- readJPEG("fc.jpg")
 plot(50:95, type='n')
 rasterImage(fullcourt, 95, 50, 95, 50)
 
+#240
+#which side are the students sitting
+#write about biases
+--count/compare fractions of shots
+
+#courtoutline
 ```
 
 ```{r}

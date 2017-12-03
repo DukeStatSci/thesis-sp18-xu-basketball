@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Stochastic Process Model with Basketball Data</title>
+  <meta name="description" content="Stochastic Process Model with Basketball Data">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Stochastic Process Model with Basketball Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Stochastic Process Model with Basketball Data" />
+  
+  
+  
+
+<meta name="author" content="Sonia Xu">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="3-rmd-basics.html">
+<link rel="next" href="5-model-replication.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> thesisdowndss::thesis_pdf: default</a></li>
+<li class="chapter" data-level="2" data-path="2-list-of-packages-required-for-this-analysis.html"><a href="2-list-of-packages-required-for-this-analysis.html"><i class="fa fa-check"></i><b>2</b> List of packages required for this analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="2-list-of-packages-required-for-this-analysis.html"><a href="2-list-of-packages-required-for-this-analysis.html#r-chunks"><i class="fa fa-check"></i><b>2.1</b> R chunks</a></li>
+<li class="chapter" data-level="2.2" data-path="2-list-of-packages-required-for-this-analysis.html"><a href="2-list-of-packages-required-for-this-analysis.html#inline-code"><i class="fa fa-check"></i><b>2.2</b> Inline code</a></li>
+<li class="chapter" data-level="2.3" data-path="2-list-of-packages-required-for-this-analysis.html"><a href="2-list-of-packages-required-for-this-analysis.html#including-plots"><i class="fa fa-check"></i><b>2.3</b> Including plots</a></li>
+<li class="chapter" data-level="2.4" data-path="2-list-of-packages-required-for-this-analysis.html"><a href="2-list-of-packages-required-for-this-analysis.html#loading-and-exploring-data"><i class="fa fa-check"></i><b>2.4</b> Loading and exploring data</a></li>
+<li class="chapter" data-level="2.5" data-path="2-list-of-packages-required-for-this-analysis.html"><a href="2-list-of-packages-required-for-this-analysis.html#additional-resources"><i class="fa fa-check"></i><b>2.5</b> Additional resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-rmd-basics.html"><a href="3-rmd-basics.html"><i class="fa fa-check"></i><b>3</b> Literature Review</a></li>
+<li class="chapter" data-level="4" data-path="4-dataset.html"><a href="4-dataset.html"><i class="fa fa-check"></i><b>4</b> Dataset</a></li>
+<li class="chapter" data-level="5" data-path="5-model-replication.html"><a href="5-model-replication.html"><i class="fa fa-check"></i><b>5</b> Model Replication</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-model-replication.html"><a href="5-model-replication.html#motivation"><i class="fa fa-check"></i><b>5.1</b> Motivation</a></li>
+<li class="chapter" data-level="5.2" data-path="5-model-replication.html"><a href="5-model-replication.html#microtransition-model"><i class="fa fa-check"></i><b>5.2</b> Microtransition Model</a></li>
+<li class="chapter" data-level="5.3" data-path="5-model-replication.html"><a href="5-model-replication.html#macrotransition-entrance-model"><i class="fa fa-check"></i><b>5.3</b> Macrotransition Entrance Model</a></li>
+<li class="chapter" data-level="5.4" data-path="5-model-replication.html"><a href="5-model-replication.html#macrotransition-exit-model"><i class="fa fa-check"></i><b>5.4</b> Macrotransition Exit Model</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-macrotransition-exit-model-1.html"><a href="6-macrotransition-exit-model-1.html"><i class="fa fa-check"></i><b>6</b> Macrotransition Exit Model</a></li>
+<li class="chapter" data-level="7" data-path="7-implementation-of-this-model.html"><a href="7-implementation-of-this-model.html"><i class="fa fa-check"></i><b>7</b> Implementation of this Model</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-implementation-of-this-model.html"><a href="7-implementation-of-this-model.html#in-the-works"><i class="fa fa-check"></i><b>7.1</b> in the works…</a></li>
+<li class="chapter" data-level="7.2" data-path="7-implementation-of-this-model.html"><a href="7-implementation-of-this-model.html#next-steps-have-yet-to-get-this-far"><i class="fa fa-check"></i><b>7.2</b> Next Steps (have yet to get this far)</a></li>
+<li class="chapter" data-level="7.3" data-path="7-implementation-of-this-model.html"><a href="7-implementation-of-this-model.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>7.3</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="7.4" data-path="7-implementation-of-this-model.html"><a href="7-implementation-of-this-model.html#line-breaks"><i class="fa fa-check"></i><b>7.4</b> Line breaks</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html"><a href="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html"><i class="fa fa-check"></i><b>8</b> This chunk ensures that the thesisdowndss package is</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html"><a href="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html#tables"><i class="fa fa-check"></i><b>8.1</b> Tables</a></li>
+<li class="chapter" data-level="8.2" data-path="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html"><a href="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html#figures"><i class="fa fa-check"></i><b>8.2</b> Figures</a></li>
+<li class="chapter" data-level="8.3" data-path="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html"><a href="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html#footnotes-and-endnotes"><i class="fa fa-check"></i><b>8.3</b> Footnotes and Endnotes</a></li>
+<li class="chapter" data-level="8.4" data-path="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html"><a href="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html#bibliographies"><i class="fa fa-check"></i><b>8.4</b> Bibliographies</a></li>
+<li class="chapter" data-level="8.5" data-path="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html"><a href="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html#anything-else"><i class="fa fa-check"></i><b>8.5</b> Anything else?</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="9-organization.html"><a href="9-organization.html"><i class="fa fa-check"></i><b>9</b> Organization</a></li>
+<li class="chapter" data-level="" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i>Conclusion</a></li>
+<li class="chapter" data-level="10" data-path="10-the-first-appendix.html"><a href="10-the-first-appendix.html"><i class="fa fa-check"></i><b>10</b> The First Appendix</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Stochastic Process Model with Basketball Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dataset" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Dataset</h1>
+<p>The dataset is from the Duke University Men’s Basketball SportsVu tracking data. Features were created by taking snapshots of the game every 1/25th of a second and recording the player’s location, action, team, etc. Data was collected for each season from 2013-2016; the dataset totals about 2 million observations and 72 features.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="3-rmd-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="5-model-replication.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": [["thesis.pdf", "PDF"], ["thesis.epub", "EPUB"], ["thesis.docx", "Word"]],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
