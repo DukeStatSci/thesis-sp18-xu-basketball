@@ -1,8 +1,11 @@
-# Conclusion {-}
+#Bibliography
 
-If we don't want Conclusion to have a chapter number next to it, we can add the `{-}` attribute.
+Bekkers, J., & Dabadghao, S. (2017). "Flow Motifs in Soccer: What can passing behavior tell us? Sloan 
+Sports Analytics Conference. Retrieved from http://www.sloansportsconference.com/wp-content/uploads/2017/02/1563.pdf
 
-**More info**
+Fewell, J., Ambruster, D., Ingraham, J., Petersen, A., & Waters, J. (2012). Basketball Teams as Strategic 
 
-And here's some other random info: the first paragraph after a chapter title or section head _shouldn't be_ indented, because indents are to tell the reader that you're starting a new paragraph. Since that's obvious after a chapter or section title, proper typesetting doesn't add an indent there.
+Networks. PLOS. Retrieved from http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
 
+Goncalves, B., Coutinho, D., Santos, S., Lago-Penas, C., Jimenez, S., & Sampaio, J. (2017). “Exploring 
+Team Passing Networks and Player Movement Dynamics in Youth Association Football”. PLOS. Retrieved from https://doi.org/10.1371/journal.pone.0171156.

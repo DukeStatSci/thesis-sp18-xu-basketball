@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="6-exploratory-data-analysis.html">
-<link rel="next" href="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html">
+<link rel="next" href="8-network-modeling.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -81,11 +81,23 @@
 <li class="chapter" data-level="6.1" data-path="6-exploratory-data-analysis.html"><a href="6-exploratory-data-analysis.html#changes-in-shot-attempt-patterns"><i class="fa fa-check"></i><b>6.1</b> Changes in Shot Attempt Patterns</a></li>
 <li class="chapter" data-level="6.2" data-path="6-exploratory-data-analysis.html"><a href="6-exploratory-data-analysis.html#biases-in-shot-location"><i class="fa fa-check"></i><b>6.2</b> Biases in Shot Location</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-passing-networks.html"><a href="7-passing-networks.html"><i class="fa fa-check"></i><b>7</b> Passing Networks</a></li>
-<li class="chapter" data-level="8" data-path="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html"><a href="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html"><i class="fa fa-check"></i><b>8</b> This chunk ensures that the thesisdowndss package is</a></li>
-<li class="chapter" data-level="9" data-path="9-organization.html"><a href="9-organization.html"><i class="fa fa-check"></i><b>9</b> Organization</a></li>
-<li class="chapter" data-level="" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i>Conclusion</a></li>
-<li class="chapter" data-level="10" data-path="10-the-first-appendix.html"><a href="10-the-first-appendix.html"><i class="fa fa-check"></i><b>10</b> The First Appendix</a></li>
+<li class="chapter" data-level="7" data-path="7-passing-networks.html"><a href="7-passing-networks.html"><i class="fa fa-check"></i><b>7</b> Passing Networks</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-passing-networks.html"><a href="7-passing-networks.html#a-breakdown-of-a-passing-network"><i class="fa fa-check"></i><b>7.1</b> A Breakdown of a Passing Network</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="7-passing-networks.html"><a href="7-passing-networks.html#game-network"><i class="fa fa-check"></i><b>7.1.1</b> Game Network</a></li>
+<li class="chapter" data-level="7.1.2" data-path="7-passing-networks.html"><a href="7-passing-networks.html#possession-network"><i class="fa fa-check"></i><b>7.1.2</b> Possession Network</a></li>
+<li class="chapter" data-level="7.1.3" data-path="7-passing-networks.html"><a href="7-passing-networks.html#a-vertex-and-an-edge"><i class="fa fa-check"></i><b>7.1.3</b> A Vertex and an Edge</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="7-passing-networks.html"><a href="7-passing-networks.html#initial-analysis-of-passing-networks"><i class="fa fa-check"></i><b>7.2</b> Initial Analysis of Passing Networks</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-network-modeling.html"><a href="8-network-modeling.html"><i class="fa fa-check"></i><b>8</b> Network Modeling</a></li>
+<li class="chapter" data-level="9" data-path="9-conclusion.html"><a href="9-conclusion.html"><i class="fa fa-check"></i><b>9</b> Conclusion</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-conclusion.html"><a href="9-conclusion.html#future-steps"><i class="fa fa-check"></i><b>9.1</b> Future Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="10-bibliography.html"><a href="10-bibliography.html"><i class="fa fa-check"></i><b>10</b> Bibliography</a></li>
+<li class="chapter" data-level="11" data-path="11-placeholder-1.html"><a href="11-placeholder-1.html"><i class="fa fa-check"></i><b>11</b> Placeholder</a></li>
+<li class="chapter" data-level="12" data-path="12-placeholder-2.html"><a href="12-placeholder-2.html"><i class="fa fa-check"></i><b>12</b> Placeholder</a></li>
+<li class="chapter" data-level="13" data-path="13-placeholder-3.html"><a href="13-placeholder-3.html"><i class="fa fa-check"></i><b>13</b> Placeholder</a></li>
+<li class="chapter" data-level="14" data-path="14-the-first-appendix.html"><a href="14-the-first-appendix.html"><i class="fa fa-check"></i><b>14</b> The First Appendix</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -109,12 +121,69 @@
 <div id="passing-networks" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Passing Networks</h1>
 <p>The main motivation behind this project is to understand the passing structure of Duke players in a game to create a better metric to evaluate players in the game of basketball. For this, each game was decomposed into individual possessions. Players who are in possession of the ball during each of the possessions are identified as vertices, and their passes to other players are edges in a pass network. Each vertex contains attributes about the player (ie. fouls in the game), and each edge contains attributes about the pass (ie. distance passed).</p>
+<div id="a-breakdown-of-a-passing-network" class="section level2">
+<h2><span class="header-section-number">7.1</span> A Breakdown of a Passing Network</h2>
+<div id="game-network" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Game Network</h3>
 <p>Below is an example of a passing network for an entire game, where each number represents the unique id of a player.</p>
 <div class="figure">
 <img src="img/gamenetwork_ex.png" />
 
 </div>
+</div>
+<div id="possession-network" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> Possession Network</h3>
+<p>Breaking it down into a single game possession, the network becomes reduced to a smaller network. One challenge in identifying a posession was the inconsistency of the dataset’s shot clock. For this, a new <em>possession</em> for this paper is defined as the moment when a team turns over the ball to the other team. For this, a possession may contain more than five players if players sub in/out within a possession.</p>
+<div class="figure">
+<img src="img/possessionnetwork_ex.png" />
 
+</div>
+</div>
+<div id="a-vertex-and-an-edge" class="section level3">
+<h3><span class="header-section-number">7.1.3</span> A Vertex and an Edge</h3>
+<p>A single pass between player <span class="math inline">\(109412\)</span> and <span class="math inline">\(109413\)</span> has a thin line because it only occurred once during this game. The arrow indicates the direction of the pass, and when checking the edge attribute between these two vertices, the distance of the pass between <span class="math inline">\(109412\)</span> and <span class="math inline">\(109413\)</span> is 22.83 units. Looking at vertex attributes, player <span class="math inline">\(109412\)</span>’s position is a guard. <!-- sqrt((28.4457-37.30983)^2 + (74.49898-95.54174)^2)--></p>
+<div class="figure">
+<img src="img/passnetwork_ex.png" />
+
+</div>
+</div>
+</div>
+<div id="initial-analysis-of-passing-networks" class="section level2">
+<h2><span class="header-section-number">7.2</span> Initial Analysis of Passing Networks</h2>
+<p>Simply looking at a graph can reveal important characteristics about a player’s role within a team. On a possession level, if a player receives many passes (as noted by a thicker edge), then he has a more central role on the team, and his teammates clearly rely on him to make good passs.</p>
+<p>Other interesting network calculations are betweeness centrality; this metric can be visualized by the passing network, and noted as the popularity of a player based on how connected/central he is to the play. For this, returning to the Duke vs. Davidson game, we can note that Player <span class="math inline">\(109415\)</span> is an important and valuable player for Duke because his betweenness centrality score is the highest score as denoted by the table below:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">109412</th>
+<th align="right">109781</th>
+<th align="right">121033</th>
+<th align="right">116519</th>
+<th align="right">116520</th>
+<th align="right">109413</th>
+<th align="right">97330</th>
+<th align="right">97328</th>
+<th align="right">121034</th>
+<th align="right">109415</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">21.7</td>
+<td align="right">21.5</td>
+<td align="right">14.5</td>
+<td align="right">12.5</td>
+<td align="right">7.5</td>
+<td align="right">5.5</td>
+<td align="right">2</td>
+<td align="right">1.8</td>
+<td align="right">0.5</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p>Furthermore, we can presume that players who are most connected to the ball should be able to best handle the ball. For this, we expect the players with the highest betweeness score to be the starters for Duke’s 2013-2014 Men’s Basketball team. Checking the starting line-up from Duke Men’s Basketball for the 2013-2014 season, the betweenness score correctly matches Coach K’s starting line-up.</p>
+</div>
 </div>
             </section>
 
@@ -122,7 +191,7 @@
         </div>
       </div>
 <a href="6-exploratory-data-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="8-network-modeling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
