@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="2-placeholder.html">
-<link rel="next" href="4-dataset.html">
+<link rel="prev" href="5-model-replication.html">
+<link rel="next" href="7-passing-networks.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -106,21 +106,43 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rmd-basics" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Literature Review</h1>
-<p>Passing forms the backbone of all team contact sports. To advance a ball to the goal successfully, players must work together to dribble/kick/throw the ball to its destination. Each pass to another player can be considered a connection. These connections can be grouped together to form a network of passes. Previous works have captured these passing networks in soccer and basketball both statically and dynamically–this literature review will explore the different methods used to understand the value of a player and team.</p>
-<p>“Flow Motifs in Soccer: What can passing behavior tell us?” by Joris Bekkers and Shaunak Dabadghao was released in the 2017 MIT Sloan Sports Analytics Conference, and focused on the static passing networks of “the last 4 seasons of 6 big European leagues with 8219 matches, 3532 unique players and 155 unique teams.” Passing sequences were denoted as a sequence of all players involved five seconds before an attempted score. This paper created radar graphs that illustrated the most popular passing sequences by player, and compared radar graphs to identify similar players. Passing sequences within teams were also compared between teams by clustering the different passing styles of the different teams. Key players were determined by the frequency that they were included in the passing sequences.</p>
-<p>“Exploring Team Passing Networks and Player Movement Dynamics in Youth Association Football (Soccer)” by Bruno Goncalves, Diogo Coutinho, Sara Santos, Carlos Lago-Penas, Sergio Jimenez, and Jamie Sampaio compared the passing sequences of two games played by two groups that differ in age range, which showed that regardless of age, network centrality was distinctive in both groups, and affirmed the long-held belief that more passes lead to better game outcomes. Similar to the first paper, key players were the ones most frequently involved in the passing sequences. This paper created weighted graphs of the passing sequences, which better visualized the passing structure of the team, and made it easier to identify important players.</p>
-<p>“Basketball Teams as Strategic Networks” by Jennifer H. Fewell, Dieter Armbruster, John Ingraham, Alexander Petersen, and James S. Waters provided measurements to assess team entropy. First recording the complete 30 seconds of a possession as a passing sequence, they discovered that recording the last three nodes (players) before a shot attempt was a better way to record passing sequences to avoid “noisy” passing data. Although they were able to recognize various aspects of team dynamics through weighted graphs like the second paper, they did not find a consistent predictor of positive game outcomes. This paper also identified that in general, teams typically range between two playing styles: always passing to the best player or having no distinct patterns in passing. These patterns can be noted by distinct betweenness scores and uniform betweenness scores, respectively. Weighted graphs clearly illustrated the two different playing styles. Also, the paper found that the positions most involved with successful shots were: 1. PG 2. SG 3. SF 4. PF 5. CN.</p>
-<p>Joachim Gudmundsson and Michael Horton summarised a variety of methods that utilize object tracking data to analyze team and player performances in “Spatio-Temporal Analysis of Team Sports – A Survey.” Their research survey spanned modeling passing networks via graph theory to calculating rebound probability with spatial coordinates. In particular, work conducted by Daniel Cervone, Alex D’Amour, Luke Bornn, and Kirk Goldsberry attempted to capture the game wholelistically via a new measure called Expected Possession Value (EPV) in the paper “A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes.” This new metric uses three models–a Microtransition Model, Macrotransition Entrance Model, and a Macrotransition Exit Model–to capture the spatial biases of each player and the in-game effects of pressure, so that it can measure the likelihood of a successful play (made shot) given the previous sequence of events. To compare players against the league-average scores, they also calculated Expected Possession Value -Adjusted as an application for teams.</p>
+<div id="exploratory-data-analysis" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Exploratory Data Analysis</h1>
+<div id="changes-in-shot-attempt-patterns" class="section level2">
+<h2><span class="header-section-number">6.1</span> Changes in Shot Attempt Patterns</h2>
+<p>As one of the best basketball programs in the nation, Duke University Men’s Basketball draws in a number of highly desirable and NBA-ready recruits each year. For this, most players stay for only a year before signing and playing for the National Basketball Association. A popular trend for many skilled basketball players, this transition to professional basketball has been coined by players as being “one-and-done.” Duke had two players (Rodney Hood, Jabari Parker) drafted in the 2014 draft, three players (Jahlil Okafor, Justise Winslow, and Tyus Jones) drafted in the 2015 draft, and one player (Brandon Ingram) drafted in the 2016 draft. With so many players playing the minimum in college, this paper concentrates on the analysis of players who played more than one season with the Duke Men’s Basketball team, and had significant minutes with their time at Duke. With these requirements, it is difficult to find the perfect player for analysis because players like Marshall Plumlee, only had significant playing time his senior year because it took time to fully develop him as a competitive player.</p>
+<p>Quinn Cook, on the other hand, serves as an interesting example because he had consistent minutes for the 2013-2015 seasons. Quinn Cook’s shot attempts were thus divided into each year to understand how his shooting style has changed during his time at Duke.</p>
+<div class="figure">
+<img src="img/shotchart_quinncook2013.png" />
+
+</div>
+<p>Looking at the Quinn Cook’s shot attempts for his junior season, he was fairly even with his shooting, missing most of his 3 point shots, and hitting most of his 2 point shots in the paint. It appears as though he prefers to shoot from the right wing slightly more than he shoots from the left wing.</p>
+<div class="figure">
+<img src="img/shotchart_quinncook2014.png" />
+
+</div>
+<p>In 2014, however, it can be noted that Quinn Cook has transitioned to shots that are closer to the basket and minimized the amount of 3 point shot attempts. He brought his shot attempts closer inwards, which aligns with the trend that he is better at shooting when he is closer to the basket. Compared to 2013, he attacks more along the nail, which could be attributed to Quinn Cook’s growing strength as an off-the-jump shooter.</p>
+<div class="figure">
+<img src="img/shotchart_quinncook2015.png" />
+
+</div>
+<p>In the 2015 season, Quinn Cook moves further out from the basketball, attempting more 3s. His preference for shooting in the right wing is more pronounced. A new trend apparent from the graph, however, shows that Quinn Cook shoots more corner 3s than the previous two years. While his shot attempts in the paint have slightly changed from 2013, Quinn Cook definitely has a unique playing style that has overall been consistent in that he avoids shooting in the extended elbows and short corners.</p>
+</div>
+<div id="biases-in-shot-location" class="section level2">
+<h2><span class="header-section-number">6.2</span> Biases in Shot Location</h2>
+<p>While looking at the shot chart of each player shows their shooting preferences, putting their shot chart in the context of Cameron is another important aspect to note when analyzing a player’s shot preferences. Cameron Indoor Stadium’s student section, known as the Cameron Crazies, has been ranked as one of the best student sections in the country by Bleacher Report, For The Win, and FOX Sports (to name a few). Furthermore, during the first half, a team’s offense is on the opponent’s side and a team’s defense is on their home side. Thus, by acknowledging where a player shoots in context to the location of the fans and Coach K may reveal some biases to their shot location. Are players showboating for the Cameron Crazies or are they showboating for Coach K? To assess this trend, multiple Duke players were screened to note any possible trends in shooting habits.</p>
+<p>Intuitively, a player’s shot chart distributon should be an even reflection of the other half of the court (ie. if half court was inflected onto the other half court, the shot distributions should be similar). From Quinn Cook’s Shot Charts, this intuition is true; it is clear that he prefers shooting from the left side on both sides–indicating that there does not exist an obvious bias in his shot location based on exterior factors. However, when looking at a player like Justise Winslow, his shot attempts are more prevalent on Duke’s side of the bench, and less present on its complementary side. Perhaps, Justise is showboating for his teammates or Coach K, and plays off of the exterior factors in a game. Further analysis will be conducted in later iterations of this paper to better understand this bias.</p>
+<p><img src="img/shotchart_justisewinslow.png" /> <!---<div style="width:300px; height=200px">
+</div>---></p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="2-placeholder.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="4-dataset.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="5-model-replication.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="7-passing-networks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,11 +1,4 @@
 ---
-title: "fullcourt_plts"
-author: "Sonia Xu"
-date: "November 16, 2017"
-output: html_document
----
-
----
 title: "fullcourt_plots"
 author: "Sonia Xu"
 date: "November 16, 2017"
@@ -41,89 +34,81 @@ plt.xlim(0,101)
 
 
 plt.show()--->
-```{r}
+```{r include = F}
 library(jpeg)
-library(png)
-library(matplotlib)
+library(grid)
 library(ggplot2)
 library(dplyr)
-library(grid)
 ```
 
 ```{r}
-made_miss <- G1Q456 %>% filter(`event-descrip` %in% c('missed shot', 'made shot')) %>% filter(`player-id`== "109412")
-#okafor = 126162
-#jabari: 121033
-#quinn cook: 109412
-# simple plot using EVENT_TYPE to colour the dots
-
-g <- rasterGrob(fullcourt, interpolate = T, width =.92, height = .92)
-ggplot(made_miss, aes(x=ball_y, y=ball_x)) +  annotation_custom(g,  xmin=0, xmax=95, ymin=0, ymax=49) +
-         geom_point(aes(colour = `event-descrip`)) 
-  
-
-#x50 by y94
 fullcourt <- readJPEG("fc.jpg")
-plot(50:95, type='n')
-rasterImage(fullcourt, 95, 50, 95, 50)
+plot(fullcourt)
 
-#240
-#which side are the students sitting
-#write about biases
---count/compare fractions of shots
-
-#courtoutline
+lim <- par()
+plot(50:95, type = 'n')
+rasterImage(fullcourt, 50, 95, 50, 95)
 ```
 
 ```{r}
-#Taken from : https://gist.github.com/edkupfer/6259635
-# NBA courts are 50ft sideline-to-sideline
-# and 94ft end to end. This will plot a court
-# with the sidelines on the y-axis, centered 
-# on the halfcourt circle. Measurement units
-# are in feet. The basket at the bottom is
-# centered on {x = 0, y = -41.75} and at the
-# top  on {x = 0, y = 41.75}
- 
-library(lattice)
- 
-xyplot(NA~NA,ylab='',xlab='',aspect='iso',xlim=c(-25,25),ylim=c(-47,47),
-### remove outside box and ticks, there must be a better way:
-par.settings = list(axis.line = list(col = "transparent")), par.box = c(col = "transparent"),
-scales=list(draw=F),
-panel=function(...){
-#outside box:
-panel.lines(x=c(-25,-25,25,25,-25),y=c(-47,47,47,-47,-47))
-#halfcourt line
-panel.lines(x=c(-25,25),y=c(0,0))
-#solid FT semicircle above FT line:
-panel.lines(x=c(-6000:(-1)/1000,1:6000/1000),y=c(-28+sqrt(6^2-c(-6000:(-1)/1000,1:6000/1000)^2)))
-panel.lines(x=c(-6000:(-1)/1000,1:6000/1000),y=c(28-sqrt(6^2-c(-6000:(-1)/1000,1:6000/1000)^2)))
-#dashed FT semicircle below FT line:
-panel.lines(x=c(-6000:(-1)/1000,1:6000/1000),y=c(-28-sqrt(6^2-c(-6000:(-1)/1000,1:6000/1000)^2)),lty=2)
-panel.lines(x=c(-6000:(-1)/1000,1:6000/1000),y=c(28+sqrt(6^2-c(-6000:(-1)/1000,1:6000/1000)^2)),lty=2)
-#key:
-panel.lines(x=c(-8,-8,8,8,-8),y=c(-47,-28,-28,-47,-47))
-panel.lines(x=c(-8,-8,8,8,-8),y=c(47,28,28,47,47))
-#box inside the key:
-panel.lines(x=c(-6,-6,6,6,-6),y=c(-47,-28,-28,-47,-47))
-panel.lines(x=c(-6,-6,6,6,-6),y=c(47,28,28,47,47))
-# restricted area semicircle:
-panel.lines(x=c(-47000:(-1)/1000,1:4000/1000),y=c(1.25+sqrt(4^2-c(-47000:(-1)/1000,1:4000/1000)^2))-43)
-panel.lines(x=c(-47000:(-1)/1000,1:4000/1000),y=c(1.25-sqrt(4^2-c(-47000:(-1)/1000,1:4000/1000)^2))+40.5)
-# halfcourt semicircle:
-panel.lines(x=c(-6000:(-1)/1000,1:6000/1000),y=c(-sqrt(6^2-c(-6000:(-1)/1000,1:6000/1000)^2)))
-panel.lines(x=c(-6000:(-1)/1000,1:6000/1000),y=c(sqrt(6^2-c(-6000:(-1)/1000,1:6000/1000)^2)))
-# rim:
-panel.rect(-5/24,-43,5/24,54/12-47)
-panel.rect(-5/24,43,5/24,47-54/12)
-panel.lines(x=c(-750:(-1)/1000,1:750/1000,750:1/1000,-1:-750/1000),y=c(c(1.25+sqrt(0.75^2-c(-750:(-1)/1000,1:750/1000)^2)),c(1.25-sqrt(0.75^2-c(750:1/1000,-1:-750/1000)^2)))-43)
-panel.lines(x=c(-750:(-1)/1000,1:750/1000,750:1/1000,-1:-750/1000),y=c(c(1.25-sqrt(0.75^2-c(-750:(-1)/1000,1:750/1000)^2)),c(1.25+sqrt(0.75^2-c(750:1/1000,-1:-750/1000)^2)))+40.5)
-#backboard:
-panel.lines(x=c(-3,3),y=c(-43,-43))
-panel.lines(x=c(-3,3),y=c(43,43))
-#three-point line:
-panel.lines(x=c(-22,-22,-22000:(-1)/1000,1:22000/1000,22,22),y=c(-43,169/12-43,1.25+sqrt(23.75^2-c(-22000:(-1)/1000,1:22000/1000)^2),169/12-43,-43)-43)
-panel.lines(x=c(-22,-22,-22000:(-1)/1000,1:22000/1000,22,22),y=c(43,169/12+43,1.25-sqrt(23.75^2-c(-22000:(-1)/1000,1:22000/1000)^2),169/12+43,43)+43)
-})
+#img <- readPNG(system.file("img", "Rlogo.png", package="png"))
+court <- rasterGrob(fullcourt, width = 1, height = 1, interpolate=TRUE)
+
+#left is home, right is away
+
+made_miss <- dat %>% filter(`event.descrip` %in% c("made shot", "missed shot")) %>% filter(`global.player.id` == '601140') #%>% group_by(p5_x, p5_y) %>% summarise(weight = n())  #duke vs syracuse
+
+mp_2013_ind <- grep("2013", made_miss$game_id) 
+mp_2014_ind <- grep("2014", made_miss$game_id) 
+mp_2015_ind <- grep("2015", made_miss$game_id)
+#marshall plumlee: 601143
+#quinn cook: 601140
+#grayson: 842296
+#justise: 842298
+
+#flip coordinates
+made_miss <- made_miss %>% mutate(y = 94-y)
+
+#this plots the location of the player at the shot
+ggplot(made_miss_2015, aes(y, x, col = `event.descrip`))+ labs(col = "Shot Outcome") + annotation_custom(court, xmin=0, xmax=94, ymin=0, ymax=50) + geom_point(shape = 9, size = 3) + scale_colour_manual(values=c("missed shot"="firebrick1", "made shot"="royalblue4")) + labs(title ="Quinn Cook's Shot Chart in 2015",
+       subtitle = "Fan Side",
+       caption = "Coach K") + theme_classic() + theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(), axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        plot.caption= element_text(hjust = 0.3), 
+        plot.subtitle = element_text(hjust = 0.5, vjust = -1)) +xlim(0,94) +ylim(0,50)
+```
+
+
+#to clarify:
+Ball x, y are where the shots were made/missed?
+
+```{r functions}
+match_p2loc <- function(globalid, dataset) {
+  ind <- which(apply(dataset, 2, function(x) any(grepl(globalid, x))))
+  return(ind)
+}
+
+#out of 32 games, marshall only has 46 unique locations..
+
+#this for loop gets the location of marshall by matching the player with the ball with player locations
+C <- NULL
+for(i in 1:dim(made_miss)[1]) {
+  player_of_interest <- '601140'
+  col_ind <- rbind(match_p2loc(player_of_interest, made_miss[i,]), match_p2loc(player_of_interest, made_miss[i,])) 
+  key <- colnames(col_ind)[2]
+  key_ind <- which(colnames(made_miss) == key)
+  x = made_miss[i,key_ind+2]
+  y = made_miss[i, key_ind+3]
+  coord <- cbind(x,y)
+  C <- rbind(C, coord)
+}
+
+C <- data.frame(C)
+
+#gets weights for shot
+made_miss <- made_miss %>% mutate(x = C$x, y = C$y) 
+made_miss_2015 <- made_miss[286:469,] %>% group_by(x,y, `event.descrip`) %>% summarise(weight= n())
 ```

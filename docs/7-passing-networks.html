@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="2-placeholder.html">
-<link rel="next" href="4-dataset.html">
+<link rel="prev" href="6-exploratory-data-analysis.html">
+<link rel="next" href="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -106,21 +106,23 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rmd-basics" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Literature Review</h1>
-<p>Passing forms the backbone of all team contact sports. To advance a ball to the goal successfully, players must work together to dribble/kick/throw the ball to its destination. Each pass to another player can be considered a connection. These connections can be grouped together to form a network of passes. Previous works have captured these passing networks in soccer and basketball both statically and dynamically–this literature review will explore the different methods used to understand the value of a player and team.</p>
-<p>“Flow Motifs in Soccer: What can passing behavior tell us?” by Joris Bekkers and Shaunak Dabadghao was released in the 2017 MIT Sloan Sports Analytics Conference, and focused on the static passing networks of “the last 4 seasons of 6 big European leagues with 8219 matches, 3532 unique players and 155 unique teams.” Passing sequences were denoted as a sequence of all players involved five seconds before an attempted score. This paper created radar graphs that illustrated the most popular passing sequences by player, and compared radar graphs to identify similar players. Passing sequences within teams were also compared between teams by clustering the different passing styles of the different teams. Key players were determined by the frequency that they were included in the passing sequences.</p>
-<p>“Exploring Team Passing Networks and Player Movement Dynamics in Youth Association Football (Soccer)” by Bruno Goncalves, Diogo Coutinho, Sara Santos, Carlos Lago-Penas, Sergio Jimenez, and Jamie Sampaio compared the passing sequences of two games played by two groups that differ in age range, which showed that regardless of age, network centrality was distinctive in both groups, and affirmed the long-held belief that more passes lead to better game outcomes. Similar to the first paper, key players were the ones most frequently involved in the passing sequences. This paper created weighted graphs of the passing sequences, which better visualized the passing structure of the team, and made it easier to identify important players.</p>
-<p>“Basketball Teams as Strategic Networks” by Jennifer H. Fewell, Dieter Armbruster, John Ingraham, Alexander Petersen, and James S. Waters provided measurements to assess team entropy. First recording the complete 30 seconds of a possession as a passing sequence, they discovered that recording the last three nodes (players) before a shot attempt was a better way to record passing sequences to avoid “noisy” passing data. Although they were able to recognize various aspects of team dynamics through weighted graphs like the second paper, they did not find a consistent predictor of positive game outcomes. This paper also identified that in general, teams typically range between two playing styles: always passing to the best player or having no distinct patterns in passing. These patterns can be noted by distinct betweenness scores and uniform betweenness scores, respectively. Weighted graphs clearly illustrated the two different playing styles. Also, the paper found that the positions most involved with successful shots were: 1. PG 2. SG 3. SF 4. PF 5. CN.</p>
-<p>Joachim Gudmundsson and Michael Horton summarised a variety of methods that utilize object tracking data to analyze team and player performances in “Spatio-Temporal Analysis of Team Sports – A Survey.” Their research survey spanned modeling passing networks via graph theory to calculating rebound probability with spatial coordinates. In particular, work conducted by Daniel Cervone, Alex D’Amour, Luke Bornn, and Kirk Goldsberry attempted to capture the game wholelistically via a new measure called Expected Possession Value (EPV) in the paper “A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes.” This new metric uses three models–a Microtransition Model, Macrotransition Entrance Model, and a Macrotransition Exit Model–to capture the spatial biases of each player and the in-game effects of pressure, so that it can measure the likelihood of a successful play (made shot) given the previous sequence of events. To compare players against the league-average scores, they also calculated Expected Possession Value -Adjusted as an application for teams.</p>
+<div id="passing-networks" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Passing Networks</h1>
+<p>The main motivation behind this project is to understand the passing structure of Duke players in a game to create a better metric to evaluate players in the game of basketball. For this, each game was decomposed into individual possessions. Players who are in possession of the ball during each of the possessions are identified as vertices, and their passes to other players are edges in a pass network. Each vertex contains attributes about the player (ie. fouls in the game), and each edge contains attributes about the pass (ie. distance passed).</p>
+<p>Below is an example of a passing network for an entire game, where each number represents the unique id of a player.</p>
+<div class="figure">
+<img src="img/gamenetwork_ex.png" />
+
+</div>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="2-placeholder.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="4-dataset.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="6-exploratory-data-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="8-this-chunk-ensures-that-the-thesisdowndss-package-is.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

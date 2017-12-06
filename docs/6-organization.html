@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="conclusion.html">
-<link rel="next" href="B-the-second-appendix-for-fun.html">
+<link rel="prev" href="5-exploratory-data-analysis.html">
+<link rel="next" href="conclusion.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -142,45 +142,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-first-appendix" class="section level1">
-<h1><span class="header-section-number">A</span> The First Appendix</h1>
-<p>This first appendix includes all of the R chunks of code that were hidden throughout the document (using the <code>include = FALSE</code> chunk tag) to help with readibility and/or setup.</p>
-<p><strong>In the main Rmd file</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This chunk ensures that the thesisdowndss package is</span>
-<span class="co"># installed and loaded. This thesisdowndss package includes</span>
-<span class="co"># the template files for the thesis.</span>
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(devtools))
-  <span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;http://cran.rstudio.com&quot;</span>)
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(thesisdowndss))
-  devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;mine-cetinkaya-rundel/thesisdowndss&quot;</span>)
-<span class="kw">library</span>(thesisdowndss)</code></pre></div>
-<p><strong>In Chapter <a href="#ref-labels"><strong>??</strong></a>:</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This chunk ensures that the thesisdowndss package is</span>
-<span class="co"># installed and loaded. This thesisdowndss package includes</span>
-<span class="co"># the template files for the thesis and also two functions</span>
-<span class="co"># used for labeling and referencing</span>
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(devtools))
-  <span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;http://cran.rstudio.com&quot;</span>)
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(dplyr))
-    <span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;http://cran.rstudio.com&quot;</span>)
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(ggplot2))
-    <span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;http://cran.rstudio.com&quot;</span>)
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(ggplot2))
-    <span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;http://cran.rstudio.com&quot;</span>)
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(thesisdowndss)){
-  <span class="kw">library</span>(devtools)
-  devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;mine-cetinkaya-rundel/thesisdowndss&quot;</span>)
-  }
-<span class="kw">library</span>(thesisdowndss)
-flights &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/flights.csv&quot;</span>)</code></pre></div>
+<div id="organization" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Organization</h1>
+<p>Your paper should be an evolving report on the project in all aspects developed so far, in the form of a draft scientific paper. It must be written in RMarkdown or LaTeX with figures included.</p>
+<p>Make sure all figures have font sizes and line widths set so that the final pdf versions are properly legible. Presentation (including correctness of mathematical equations, graphics, tables, citations and bibligraphy, as well as prose) should be pristine.</p>
+<p>All details of developments of models, code and examples/analyses must be clearly described – sufficient to that a knowledgeable reader will be able to follow the logic and replicate the analysis.</p>
+<p>By the end of the first (Fall) semester, you need to develop a readable interim report. In the second (Spring) semester your task is to evolve this paper into a complete write-up of your work, as if intending to consider submitting to a scientific journal.</p>
+<p>However primitive the content may seem to be at the start, start writing.</p>
+<p>A fairly standard outline is as follows:</p>
+<ul>
+<li><strong>Title</strong></li>
+<li><strong>Abstract</strong></li>
+<li><strong>Chapter 1. Introduction</strong> (setting, problem description, citations, etc.)</li>
+<li><strong>Chapter 2. Literature review</strong></li>
+<li><strong>A Next Chapter:</strong> Some papers have one or two chapters, some papers have several. Keep chapters relatively short: Each section should have one focus. For example,
+<ul>
+<li><strong>Chapter 3. New Statistical Models</strong> (theory, ideas)</li>
+<li><strong>Chapter 4. Some Computational Issues</strong></li>
+<li><strong>Chapter 5. Simulated Data</strong> (evaluation of models)</li>
+<li><strong>Chapter 6. Application</strong> (real motivating problem and data)</li>
+<li>…</li>
+</ul></li>
+<li><strong>Chapter X. Conclusion</strong> (what was done, what was learned, what was good/bad, where research might or could go next)</li>
+<li><strong>Appendix</strong> (maybe some extra math, details of code)</li>
+<li><strong>Bibliography</strong> (use bibtex, per the example bib files)</li>
+</ul>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="conclusion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="B-the-second-appendix-for-fun.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="5-exploratory-data-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

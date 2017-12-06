@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="conclusion.html">
-<link rel="next" href="B-the-second-appendix-for-fun.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="2-rmd-basics.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -142,45 +142,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-first-appendix" class="section level1">
-<h1><span class="header-section-number">A</span> The First Appendix</h1>
-<p>This first appendix includes all of the R chunks of code that were hidden throughout the document (using the <code>include = FALSE</code> chunk tag) to help with readibility and/or setup.</p>
-<p><strong>In the main Rmd file</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This chunk ensures that the thesisdowndss package is</span>
-<span class="co"># installed and loaded. This thesisdowndss package includes</span>
-<span class="co"># the template files for the thesis.</span>
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(devtools))
-  <span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;http://cran.rstudio.com&quot;</span>)
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(thesisdowndss))
-  devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;mine-cetinkaya-rundel/thesisdowndss&quot;</span>)
-<span class="kw">library</span>(thesisdowndss)</code></pre></div>
-<p><strong>In Chapter <a href="#ref-labels"><strong>??</strong></a>:</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This chunk ensures that the thesisdowndss package is</span>
-<span class="co"># installed and loaded. This thesisdowndss package includes</span>
-<span class="co"># the template files for the thesis and also two functions</span>
-<span class="co"># used for labeling and referencing</span>
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(devtools))
-  <span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;http://cran.rstudio.com&quot;</span>)
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(dplyr))
-    <span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;http://cran.rstudio.com&quot;</span>)
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(ggplot2))
-    <span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;http://cran.rstudio.com&quot;</span>)
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(ggplot2))
-    <span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;http://cran.rstudio.com&quot;</span>)
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(thesisdowndss)){
-  <span class="kw">library</span>(devtools)
-  devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;mine-cetinkaya-rundel/thesisdowndss&quot;</span>)
-  }
-<span class="kw">library</span>(thesisdowndss)
-flights &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/flights.csv&quot;</span>)</code></pre></div>
+<div id="introduction-1" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<p>In basketball, a boxscore provides the statistical summary of the game via defensive, offensive, and overall success metrics. The National Basketball Association’s records show that the first boxscore was produced by the Boston Celtics in the 1946-1947 season. Initial records kept track of basic basketball statistics for each player through measures like minutes played (MP), field goals made (FGM), and free throws made(FTM). Seventy-one years later, these metrics are still popular today. While the National Basketball Association has boosted its number of metrics to better summarize the game to include metrics like rebounds per game (RBG), player efficiency rating (PER), free throw attempts (FTA), and 3 field goals made (3FGM), these metrics still cannot capture the entirety of the game because they do not take into account the opposing team’s defense/offense, nor previous plays that significantly influenced the flow of the game.</p>
+<p>Basketball is not the only sport that has encountered this modeling problem. Soccer, a sport similar to basketball in that it requires a team-oriented approach and it dynamically changes from moment to moment, has also experienced a similar need by academia and major soccer teams to better utilize the data to more fully understand the game. One popular metric that has yet to be uniformly adopted is evaluating a player’s passing capabilities and team-value. Although a consensus has yet to be adopted for the best metric, scholars from academia and the League have sought to capture the game of basketball more robustly in a similar fashion–via passing networks.</p>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="conclusion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="B-the-second-appendix-for-fun.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="2-rmd-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
