@@ -130,12 +130,13 @@ Future steps include continuing to explore the biases in shot location, to repli
 Bekkers, J., & Dabadghao, S. (2017). "Flow Motifs in Soccer: What can passing behavior tell us? Sloan 
 Sports Analytics Conference. Retrieved from http://www.sloansportsconference.com/wp-content/uploads/2017/02/1563.pdf
 
-Fewell, J., Ambruster, D., Ingraham, J., Petersen, A., & Waters, J. (2012). Basketball Teams as Strategic 
+Cervone, D., D'Amour, A., Bornn, L., Goldsberry, K. (2016). "A Multiresolution Stochastic Process Model for Predicting Basketball Possession outcomes." Retrieved from https://arxiv.org/pdf/1408.0777.pdf
 
-Networks. PLOS. Retrieved from http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
+Fewell, J., Ambruster, D., Ingraham, J., Petersen, A., & Waters, J. (2012). "Basketball Teams as Strategic Networks." PLOS. Retrieved from http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
 
 Goncalves, B., Coutinho, D., Santos, S., Lago-Penas, C., Jimenez, S., & Sampaio, J. (2017). “Exploring 
-Team Passing Networks and Player Movement Dynamics in Youth Association Football”. PLOS. Retrieved from https://doi.org/10.1371/journal.pone.0171156.
+Team Passing Networks and Player Movement Dynamics in Youth Association Football.” PLOS. Retrieved from https://doi.org/10.1371/journal.pone.0171156.
 
+Gudmundsson, J., & Horton, M. (). "Spatio-Temporal Analysis of Team Sports -- A Survey." Retrieved from https://arxiv.org/abs/1602.06994 
                                                                                                                         
                                                                                                                     
