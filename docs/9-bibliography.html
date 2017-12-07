@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="2-rmd-basics.html">
+<link rel="prev" href="8-conclusion.html">
+<link rel="next" href="references.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -112,32 +112,86 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Assessing the Value of a Player</h1>
-<h3 class="subtitle"><em>Duke Basketball Data</em></h3>
-<h4 class="author"><em>Sonia Xu</em></h4>
-<h4 class="date"><em>December 2017</em></h4>
-</div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>In basketball, a boxscore provides the statistical summary of the game via defensive, offensive, and overall success metrics. The National Basketball Association’s records show that the first boxscore was produced by the Boston Celtics in the 1946-1947 season. Initial records kept track of basic basketball statistics for each player through measures like minutes played (MP), field goals made (FGM), and free throws made(FTM). Seventy-one years later, these metrics are still popular today. While the National Basketball Association has boosted its number of metrics to better summarize the game to include metrics like rebounds per game (RBG), player efficiency rating (PER), free throw attempts (FTA), and 3 field goals made (3FGM), these metrics still cannot capture the entirety of the game because they do not take into account the opposing team’s defense/offense, nor previous plays that significantly influenced the flow of the game.</p>
-<p>Basketball is not the only sport that has encountered this modeling problem. Soccer, a sport similar to basketball in that it requires a team-oriented approach and it dynamically changes from moment to moment, has also experienced a similar need by academia and major soccer teams to better utilize the data to more fully understand the game. One popular metric that has yet to be uniformly adopted is evaluating a player’s passing capabilities and team-value. Although a consensus has yet to be adopted for the best metric, scholars from academia and the League have sought to capture the game of basketball more robustly in a similar fashion–via passing networks.</p>
+<div id="bibliography" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Bibliography</h1>
+<p>Bekkers, J., &amp; Dabadghao, S. (2017). “Flow Motifs in Soccer: What can passing behavior tell us? Sloan Sports Analytics Conference. Retrieved from <a href="http://www.sloansportsconference.com/wp-content/uploads/2017/02/1563.pdf" class="uri">http://www.sloansportsconference.com/wp-content/uploads/2017/02/1563.pdf</a></p>
+<p>Cervone, D., D’Amour, A., Bornn, L., Goldsberry, K. (2016). “A Multiresolution Stochastic Process Model for Predicting Basketball Possession outcomes.” Retrieved from <a href="https://arxiv.org/pdf/1408.0777.pdf" class="uri">https://arxiv.org/pdf/1408.0777.pdf</a></p>
+<p>Fewell, J., Ambruster, D., Ingraham, J., Petersen, A., &amp; Waters, J. (2012). “Basketball Teams as Strategic Networks.” PLOS. Retrieved from <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445" class="uri">http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445</a></p>
+<p>Goncalves, B., Coutinho, D., Santos, S., Lago-Penas, C., Jimenez, S., &amp; Sampaio, J. (2017). “Exploring Team Passing Networks and Player Movement Dynamics in Youth Association Football.” PLOS. Retrieved from <a href="https://doi.org/10.1371/journal.pone.0171156" class="uri">https://doi.org/10.1371/journal.pone.0171156</a>.</p>
+<p>Gudmundsson, J., &amp; Horton, M. (). “Spatio-Temporal Analysis of Team Sports – A Survey.” Retrieved from <a href="https://arxiv.org/abs/1602.06994" class="uri">https://arxiv.org/abs/1602.06994</a></p>
+
+
+<!---#Conclusion
+Duke Men's Basketball has a vast and rich dataset that has much to be explored. Of particular interest is how a player interacts against his teammates and defenders. This paper focuses on modeling player interactions via passing networks--network centrality and betweenness scores identify key players within a team. By evaluating passing networks, not only can a player's value within a team be deduced, but also how a player's value within a team has changed over time.
+
+##Future Steps 
+Future steps include continuing to explore the biases in shot location, to replicate Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk Goldsberry's paper,"A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes," and to develop a more simple model that can capture the results of the replicated paper. 
+                                                                                                                        -sx-->
+
+<!---#Bibliography
+
+Bekkers, J., & Dabadghao, S. (2017). "Flow Motifs in Soccer: What can passing behavior tell us? Sloan 
+Sports Analytics Conference. Retrieved from http://www.sloansportsconference.com/wp-content/uploads/2017/02/1563.pdf
+
+Fewell, J., Ambruster, D., Ingraham, J., Petersen, A., & Waters, J. (2012). Basketball Teams as Strategic 
+
+Networks. PLOS. Retrieved from http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
+
+Goncalves, B., Coutinho, D., Santos, S., Lago-Penas, C., Jimenez, S., & Sampaio, J. (2017). “Exploring 
+Team Passing Networks and Player Movement Dynamics in Youth Association Football”. PLOS. Retrieved from https://doi.org/10.1371/journal.pone.0171156.
+--->
+
+<!---
+
+
+
+# (APPENDIX) Appendix {-} 
 
 <!--
-This is for including Chapter 1.  Notice that it's also good practice to name your chunk.  This will help you debug potential issues as you knit.  The chunk above is called intro and the one below is called chapter1.  Feel free to change the name of the Rmd file as you wish, but don't forget to change it here from chap1.Rmd.
+If you feel it necessary to include an appendix, it goes here.
 -->
+<!---
+# The First Appendix
+
+This first appendix includes all of the R chunks of code that were hidden throughout the document (using the `include = FALSE` chunk tag) to help with readibility and/or setup.
+
+**In the main Rmd file**
+
+
+```r
+# This chunk ensures that the thesisdowndss package is
+# installed and loaded. This thesisdowndss package includes
+# the template files for the thesis.
+if(!require(devtools))
+  install.packages("devtools", repos = "http://cran.rstudio.com")
+if(!require(thesisdowndss))
+  devtools::install_github("mine-cetinkaya-rundel/thesisdowndss")
+library(thesisdowndss)
+```
+
+**In Chapter \@ref(ref-labels):**
+
+
+
+# The Second Appendix, for Fun
+--->
+
 <!--
-The {#rmd-basics} text after the chapter declaration will allow us to link throughout the document back to the beginning of Chapter 1.  These labels will automatically be generated (if not specified) by changing the spaces to hyphens and capital letters to lowercase.  Look for the reference to this label at the beginning of Chapter 2.
+The bib chunk below must go last in this document according to how R Markdown renders.  More info is at http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
 -->
 
+<!-- 
+If you'd like to change the name of the bibliography to something else,
+delete "References" and replace it.
+-->
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="2-rmd-basics.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="8-conclusion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

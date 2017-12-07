@@ -180,10 +180,33 @@ Second paragraph of abstract starts here.
 \mainmatter % here the regular arabic numbering starts
 \pagestyle{fancyplain} % turns page numbering back on
 
-\chapter{thesisdowndss::thesis\_gitbook:
-default}\label{thesisdowndssthesis_gitbook-default}
+\chapter{Introduction}\label{introduction}
 
-\chapter{Placeholder}\label{placeholder}
+In basketball, a boxscore provides the statistical summary of the game
+via defensive, offensive, and overall success metrics. The National
+Basketball Association's records show that the first boxscore was
+produced by the Boston Celtics in the 1946-1947 season. Initial records
+kept track of basic basketball statistics for each player through
+measures like minutes played (MP), field goals made (FGM), and free
+throws made(FTM). Seventy-one years later, these metrics are still
+popular today. While the National Basketball Association has boosted its
+number of metrics to better summarize the game to include metrics like
+rebounds per game (RBG), player efficiency rating (PER), free throw
+attempts (FTA), and 3 field goals made (3FGM), these metrics still
+cannot capture the entirety of the game because they do not take into
+account the opposing team's defense/offense, nor previous plays that
+significantly influenced the flow of the game.
+
+Basketball is not the only sport that has encountered this modeling
+problem. Soccer, a sport similar to basketball in that it requires a
+team-oriented approach and it dynamically changes from moment to moment,
+has also experienced a similar need by academia and major soccer teams
+to better utilize the data to more fully understand the game. One
+popular metric that has yet to be uniformly adopted is evaluating a
+player's passing capabilities and team-value. Although a consensus has
+yet to be adopted for the best metric, scholars from academia and the
+League have sought to capture the game of basketball more robustly in a
+similar fashion--via passing networks.
 
 \chapter{Literature Review}\label{rmd-basics}
 
@@ -262,7 +285,15 @@ The dataset is from the Duke University Men's Basketball SportsVu
 tracking data. Features were created by taking snapshots of the game
 every 1/25th of a second and recording the player's location, action,
 team, etc. Data was collected for each season from 2013-2016; the
-dataset totals about 2 million observations and 72 features.
+dataset totals about 132,000 observations and 98 features. Since the
+data is owned by the Dke Men's Basketball team, the data is private and
+cannot be shared.
+
+\section{Changes in Shot Clock Time}\label{changes-in-shot-clock-time}
+
+As college basketball is a consistently changing sport, the NCAA changed
+the play rules for the 2013-2014 college basketball season. Instead of a
+35 second shot clock, the NCAA established a 30 second shot clock.
 
 \chapter{Model Replication}\label{model-replication}
 
@@ -321,20 +352,27 @@ Otherwise, a turnover is assumed.
 \section{Fall Backs on the Implementation of this
 Model}\label{fall-backs-on-the-implementation-of-this-model}
 
-\section{in the works\ldots{}}\label{in-the-works}
+Currently, the implementation of the model has yet to be completed due
+to setbacks of incompatible R code. The implementation of this paper
+will be continued to attempt and understand by the end of next semester.
 
-\section{Next Steps (have yet to get this
-far)}\label{next-steps-have-yet-to-get-this-far}
+\section{Proposal}\label{proposal}
 
-Both metrics calculated via a semi-Markov process, EPV fails to capture
-the full nature of the possession because it only uses the last
-posession as a prior. The model would be more robust if it captured the
-entirety of the posession in its prior--however, the computational time
-of such an ordeal would prevent any real-time analyses. Thus, this paper
-proposes that a simpler model may perform more quickly and potentially
-just as robustly to allow for game-time analyses.
+Regardless, we hypothesize that since both metrics calculated via a
+semi-Markov process, EPV fails to capture the full nature of the
+possession because it only uses the last posession as a prior. The model
+would be more robust if it captured the entirety of the posession in its
+prior--however, the computational time of such an ordeal would prevent
+any real-time analyses. Thus, this paper proposes that a simpler model
+may perform more quickly and potentially just as robustly to allow for
+game-time analyses.
 
 \chapter{Exploratory Data Analysis}\label{exploratory-data-analysis}
+
+Initial analysis of the data focused on understanding the many features
+available in the Duke Men's Basketball dataset. This exploratory data
+analysis explores shot attempt patterns through the years, as well as
+potential biases with shot location.
 
 \section{Changes in Shot Attempt
 Patterns}\label{changes-in-shot-attempt-patterns}
@@ -369,8 +407,8 @@ style has changed during his time at Duke.
 Looking at the Quinn Cook's shot attempts for his junior season, he was
 fairly even with his shooting, missing most of his 3 point shots, and
 hitting most of his 2 point shots in the paint. It appears as though he
-prefers to shoot from the left wing slightly more than he shoots from
-the right wing.
+prefers to shoot from the right wing slightly more than he shoots from
+the left wing.
 \begin{figure}
 \centering
 \includegraphics{img/shotchart_quinncook2014.png}
@@ -388,35 +426,258 @@ attributed to Quinn Cook's growing strength as an off-the-jump shooter.
 \caption{}
 \end{figure}
 In the 2015 season, Quinn Cook moves further out from the basketball,
-attempting more 3s. His preference for shooting in the left wing is more
-pronounced. A new trend apparent from the graph, however, shows that
-Quinn Cook shoots more corner 3s than the previous two years. While his
-shot attempts in the paint have slightly changed from 2013, Quinn Cook
-definitely has a unique playing style that has overall been consistent
-in that he avoids shooting in the extended elbows and short corners.
+attempting more 3s. His preference for shooting in the right wing is
+more pronounced. A new trend apparent from the graph, however, shows
+that Quinn Cook shoots more corner 3s than the previous two years. While
+his shot attempts in the paint have slightly changed from 2013, Quinn
+Cook definitely has a unique playing style that has overall been
+consistent in that he avoids shooting in the extended elbows and short
+corners.
 
 \section{Biases in Shot Location}\label{biases-in-shot-location}
 
-Based off of the
+While looking at the shot chart of each player shows their shooting
+preferences, putting their shot chart in the context of Cameron is
+another important aspect to note when analyzing a player's shot
+preferences. Cameron Indoor Stadium's student section, known as the
+Cameron Crazies, has been ranked as one of the best student sections in
+the country by Bleacher Report, For The Win, and FOX Sports (to name a
+few). Furthermore, during the first half, a team's offense is on the
+opponent's side and a team's defense is on their home side. Thus, by
+acknowledging where a player shoots in context to the location of the
+fans and Coach K may reveal some biases to their shot location. Are
+players showboating for the Cameron Crazies or are they showboating for
+Coach K? To assess this trend, multiple Duke players were screened to
+note any possible trends in shooting habits.
 
-\section{Networks}\label{networks}
+Intuitively, a player's shot chart distributon should be an even
+reflection of the other half of the court (ie. if half court was
+inflected onto the other half court, the shot distributions should be
+similar). From Quinn Cook's Shot Charts, this intuition is true; it is
+clear that he prefers shooting from the left side on both
+sides--indicating that there does not exist an obvious bias in his shot
+location based on exterior factors. However, when looking at a player
+like Justise Winslow, his shot attempts are more prevalent on Duke's
+side of the bench, and less present on its complementary side. Perhaps,
+Justise is showboating for his teammates or Coach K, and plays off of
+the exterior factors in a game. Further analysis will be conducted in
+later iterations of this paper to better understand this bias.
+
+\includegraphics{img/shotchart_justisewinslow.png}
+
+\chapter{Passing Networks}\label{passing-networks}
+
+The main motivation behind this project is to understand the passing
+structure of Duke players in a game to create a better metric to
+evaluate players in the game of basketball. For this, each game was
+decomposed into individual possessions. Players who are in possession of
+the ball during each of the possessions are identified as vertices, and
+their passes to other players are edges in a pass network. Each vertex
+contains attributes about the player (ie. fouls in the game), and each
+edge contains attributes about the pass (ie. distance passed).
+
+\section{A Breakdown of a Passing
+Network}\label{a-breakdown-of-a-passing-network}
+
+\subsection{Game Network}\label{game-network}
+
+Below is an example of a passing network for an entire game, where each
+number represents the unique id of a player.
 \begin{figure}
 \centering
 \includegraphics{img/gamenetwork_ex.png}
 \caption{}
 \end{figure}
-\chapter{This chunk ensures that the thesisdowndss package
-is}\label{this-chunk-ensures-that-the-thesisdowndss-package-is}
+\subsection{Possession Network}\label{possession-network}
 
-\chapter{Organization}\label{organization}
+Breaking it down into a single game possession, the network becomes
+reduced to a smaller network. One challenge in identifying a posession
+was the inconsistency of the dataset's shot clock. For this, a new
+\emph{possession} for this paper is defined as the moment when a team
+turns over the ball to the other team. For this, a possession may
+contain more than five players if players sub in/out within a
+possession.
+\begin{figure}
+\centering
+\includegraphics{img/possessionnetwork_ex.png}
+\caption{}
+\end{figure}
+\subsection{A Vertex and an Edge}\label{a-vertex-and-an-edge}
 
-\chapter*{Conclusion}\label{conclusion}
-\addcontentsline{toc}{chapter}{Conclusion}
+A single pass between player \(109412\) and \(109413\) has a thin line
+because it only occurred once during this game. The arrow indicates the
+direction of the pass, and when checking the edge attribute between
+these two vertices, the distance of the pass between \(109412\) and
+\(109413\) is 22.83 units. Looking at vertex attributes, player
+\(109412\)'s position is a guard.
+\begin{figure}
+\centering
+\includegraphics{img/passnetwork_ex.png}
+\caption{}
+\end{figure}
+\section{Initial Analysis of Passing
+Networks}\label{initial-analysis-of-passing-networks}
+
+Simply looking at a graph can reveal important characteristics about a
+player's role within a team. On a possession level, if a player receives
+many passes (as noted by a thicker edge), then he has a more central
+role on the team, and his teammates clearly rely on him to make good
+passs.
+
+Other interesting network calculations are betweeness centrality; this
+metric can be visualized by the passing network, and noted as the
+popularity of a player based on how connected/central he is to the play.
+For this, returning to the Duke vs.~Davidson game, we can note that
+Player \(109415\) is an important and valuable player for Duke because
+his betweenness centrality score is the highest score as denoted by the
+table below:
+\begin{tabular}{r|r|r|r|r|r|r|r|r|r}
+\hline
+109412 & 109781 & 121033 & 116519 & 116520 & 109413 & 97330 & 97328 & 121034 & 109415\\
+\hline
+21.7 & 21.5 & 14.5 & 12.5 & 7.5 & 5.5 & 2 & 1.8 & 0.5 & 0\\
+\hline
+\end{tabular}
+Furthermore, we can presume that players who are most connected to the
+ball should be able to best handle the ball. For this, we expect the
+players with the highest betweeness score to be the starters for Duke's
+2013-2014 Men's Basketball team. Checking the starting line-up from Duke
+Men's Basketball for the 2013-2014 season, the betweenness score
+correctly matches Coach K's starting line-up.
+
+\chapter{Network Modeling}\label{network-modeling}
+
+This portion has yet to be implemented.
+
+\chapter{Conclusion}\label{conclusion}
+
+Duke Men's Basketball has a vast and rich dataset that has much to be
+explored. Of particular interest is how a player interacts against his
+teammates and defenders. This paper focuses on modeling player
+interactions via passing networks--network centrality and betweenness
+scores identify key players within a team. By evaluating passing
+networks, not only can a player's value within a team be deduced, but
+also how a player's value within a team has changed over time.
+
+\section{Future Steps}\label{future-steps}
+
+Future steps include continuing to explore the biases in shot location,
+to replicate Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk
+Goldsberry's paper,``A Multiresolution Stochastic Process Model for
+Predicting Basketball Possession Outcomes,'' and to develop a more
+simple model that can capture the results of the replicated paper.
+
+\chapter{Bibliography}\label{bibliography}
+
+Bekkers, J., \& Dabadghao, S. (2017). ``Flow Motifs in Soccer: What can
+passing behavior tell us? Sloan Sports Analytics Conference. Retrieved
+from
+\url{http://www.sloansportsconference.com/wp-content/uploads/2017/02/1563.pdf}
+
+Cervone, D., D'Amour, A., Bornn, L., Goldsberry, K. (2016). ``A
+Multiresolution Stochastic Process Model for Predicting Basketball
+Possession outcomes.'' Retrieved from
+\url{https://arxiv.org/pdf/1408.0777.pdf}
+
+Fewell, J., Ambruster, D., Ingraham, J., Petersen, A., \& Waters, J.
+(2012). ``Basketball Teams as Strategic Networks.'' PLOS. Retrieved from
+\url{http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445}
+
+Goncalves, B., Coutinho, D., Santos, S., Lago-Penas, C., Jimenez, S., \&
+Sampaio, J. (2017). ``Exploring Team Passing Networks and Player
+Movement Dynamics in Youth Association Football.'' PLOS. Retrieved from
+\url{https://doi.org/10.1371/journal.pone.0171156}.
+
+Gudmundsson, J., \& Horton, M. (). ``Spatio-Temporal Analysis of Team
+Sports -- A Survey.'' Retrieved from
+\url{https://arxiv.org/abs/1602.06994}
+
+\chapter{Conclusion}\label{conclusion-1}
+
+Duke Men's Basketball has a vast and rich dataset that has much to be
+explored. Of particular interest is how a player interacts against his
+teammates and defenders. This paper focuses on modeling player
+interactions via passing networks--network centrality and betweenness
+scores identify key players within a team. By evaluating passing
+networks, not only can a player's value within a team be deduced, but
+also how a player's value within a team has changed over time.
+
+\section{Future Steps}\label{future-steps-1}
+
+Future steps include continuing to explore the biases in shot location,
+to replicate Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk
+Goldsberry's paper,``A Multiresolution Stochastic Process Model for
+Predicting Basketball Possession Outcomes,'' and to develop a more
+simple model that can capture the results of the replicated paper. -sx
+
+\chapter{Bibliography}\label{bibliography-1}
+
+Bekkers, J., \& Dabadghao, S. (2017). ``Flow Motifs in Soccer: What can
+passing behavior tell us? Sloan Sports Analytics Conference. Retrieved
+from
+\url{http://www.sloansportsconference.com/wp-content/uploads/2017/02/1563.pdf}
+
+Fewell, J., Ambruster, D., Ingraham, J., Petersen, A., \& Waters, J.
+(2012). Basketball Teams as Strategic
+
+Networks. PLOS. Retrieved from
+\url{http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445}
+
+Goncalves, B., Coutinho, D., Santos, S., Lago-Penas, C., Jimenez, S., \&
+Sampaio, J. (2017). ``Exploring Team Passing Networks and Player
+Movement Dynamics in Youth Association Football''. PLOS. Retrieved from
+\url{https://doi.org/10.1371/journal.pone.0171156}.
+
+\appendix
 
 \chapter{The First Appendix}\label{the-first-appendix}
 
+This first appendix includes all of the R chunks of code that were
+hidden throughout the document (using the \texttt{include\ =\ FALSE}
+chunk tag) to help with readibility and/or setup.
+
+\textbf{In the main Rmd file}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# This chunk ensures that the thesisdowndss package is}
+\CommentTok{# installed and loaded. This thesisdowndss package includes}
+\CommentTok{# the template files for the thesis.}
+\ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(devtools))}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"devtools"}\NormalTok{, }\DataTypeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(thesisdowndss))}
+\NormalTok{  devtools}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"mine-cetinkaya-rundel/thesisdowndss"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(thesisdowndss)}
+\end{Highlighting}
+\end{Shaded}
+\textbf{In Chapter \ref{ref-labels}:}
+
+\chapter{The Second Appendix, for
+Fun}\label{the-second-appendix-for-fun}
+
+\backmatter
+
 \chapter*{References}\label{references}
 \addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\noindent
+
+\setlength{\parindent}{-0.20in} \setlength{\leftskip}{0.20in}
+\setlength{\parskip}{8pt}
+
+\hypertarget{refs}{}
+\hypertarget{ref-angel2000}{}
+Angel, E. (2000). \emph{Interactive computer graphics : A top-down
+approach with opengl}. Boston, MA: Addison Wesley Longman.
+
+\hypertarget{ref-angel2001}{}
+Angel, E. (2001a). \emph{Batch-file computer graphics : A bottom-up
+approach with quicktime}. Boston, MA: Wesley Addison Longman.
+
+\hypertarget{ref-angel2002a}{}
+Angel, E. (2001b). \emph{Test second book by angel}. Boston, MA: Wesley
+Addison Longman.
 
 
 % Index?

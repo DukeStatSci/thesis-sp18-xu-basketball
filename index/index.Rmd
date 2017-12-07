@@ -1,6 +1,6 @@
 ---
 author: 'Sonia Xu'
-date: 'October 2017'
+date: 'December 2017'
 institution: 'Duke University'
 division: 'Trinity College of Arts and Sciences'
 advisor: 'Dr. Alexander Volfovsky'
@@ -10,7 +10,8 @@ committeemembertwo: 'Committeemember T. Name'
 dus: 'Dus X. Name'
 department: 'Department of Statistical Science'
 degree: 'Bachelor of Science in Statistical Science'
-title: 'Stochastic Process Model with Basketball Data'
+title: 'Assessing the Value of a Player'
+subtitle: 'Duke Basketball Data'
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
 output: 
@@ -78,3 +79,7 @@ and 00-abstract.Rmd since they are handled in the YAML above differently for the
 on chapters.
 -->
 
+#Introduction
+In basketball, a boxscore provides the statistical summary of the game via defensive, offensive, and overall success metrics. The National Basketball Association's records show that the first boxscore was produced by the Boston Celtics in the 1946-1947 season. Initial records kept track of basic basketball statistics for each player through measures like minutes played (MP), field goals made (FGM), and free throws made(FTM). Seventy-one years later, these metrics are still popular today. While the National Basketball Association has boosted its number of metrics to better summarize the game to include metrics like rebounds per game (RBG), player efficiency rating (PER), free throw attempts (FTA), and 3 field goals made (3FGM), these metrics still cannot capture the entirety of the game because they do not take into account the opposing team's defense/offense, nor previous plays that significantly influenced the flow of the game.
+
+Basketball is not the only sport that has encountered this modeling problem. Soccer, a sport similar to basketball in that it requires a team-oriented approach and it dynamically changes from moment to moment, has also experienced a similar need by academia and major soccer teams to better utilize the data to more fully understand the game. One popular metric that has yet to be uniformly adopted is evaluating a player's passing capabilities and team-value. Although a consensus has yet to be adopted for the best metric, scholars from academia and the League have sought to capture the game of basketball more robustly in a similar fashion--via passing networks.

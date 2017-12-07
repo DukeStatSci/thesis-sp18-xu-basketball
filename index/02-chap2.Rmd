@@ -1,7 +1,7 @@
 ---
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 # Literature Review {#rmd-basics}
 Passing forms the backbone of all team contact sports. To advance a ball to the goal successfully, players must work together to dribble/kick/throw the ball to its destination. Each pass to another player can be considered a connection. These connections can be grouped together to form a network of passes. Previous works have captured these passing networks in soccer and basketball both statically and dynamically--this literature review will explore the different methods used to understand the value of a player and team.
@@ -41,14 +41,14 @@ Given the Macrotransition Entrance Model predicts a shot attempt, it indexes to 
 
 <!--The macro model has two parts, depending on the the given transition states. The first part is a binomial .... the second a poisson... This model performs well, although the computation time prevents any real-time analyses of the game. --->
 ##Fall Backs on the Implementation of this Model
+Currently, the implementation of the model has yet to be completed due to setbacks of incompatible R code. The implementation of this paper will be continued to attempt and understand by the end of next semester.
 
-##in the works...
-
-##Next Steps (have yet to get this far)
-Both metrics calculated via a semi-Markov process, EPV fails to capture the full nature of the possession because it only uses the last posession as a prior. The model would be more robust if it captured the entirety of the posession in its prior--however, the computational time of such an ordeal would prevent any real-time analyses. Thus, this paper proposes that a simpler model may perform more quickly and potentially just as robustly to allow for game-time analyses.
+##Proposal
+Regardless, we hypothesize that since both metrics calculated via a semi-Markov process, EPV fails to capture the full nature of the possession because it only uses the last posession as a prior. The model would be more robust if it captured the entirety of the posession in its prior--however, the computational time of such an ordeal would prevent any real-time analyses. Thus, this paper proposes that a simpler model may perform more quickly and potentially just as robustly to allow for game-time analyses.
 
 
 #Exploratory Data Analysis
+Initial analysis of the data focused on understanding the many features available in the Duke Men's Basketball dataset. This exploratory data analysis explores shot attempt patterns through the years, as well as potential biases with shot location. 
 
 ##Changes in Shot Attempt Patterns
 

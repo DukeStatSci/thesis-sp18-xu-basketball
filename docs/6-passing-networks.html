@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="2-rmd-basics.html">
+<link rel="prev" href="5-exploratory-data-analysis.html">
+<link rel="next" href="7-network-modeling.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -112,32 +112,80 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Assessing the Value of a Player</h1>
-<h3 class="subtitle"><em>Duke Basketball Data</em></h3>
-<h4 class="author"><em>Sonia Xu</em></h4>
-<h4 class="date"><em>December 2017</em></h4>
+<div id="passing-networks" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Passing Networks</h1>
+<p>The main motivation behind this project is to understand the passing structure of Duke players in a game to create a better metric to evaluate players in the game of basketball. For this, each game was decomposed into individual possessions. Players who are in possession of the ball during each of the possessions are identified as vertices, and their passes to other players are edges in a pass network. Each vertex contains attributes about the player (ie. fouls in the game), and each edge contains attributes about the pass (ie. distance passed).</p>
+<div id="a-breakdown-of-a-passing-network" class="section level2">
+<h2><span class="header-section-number">6.1</span> A Breakdown of a Passing Network</h2>
+<div id="game-network" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Game Network</h3>
+<p>Below is an example of a passing network for an entire game, where each number represents the unique id of a player.</p>
+<div class="figure">
+<img src="img/gamenetwork_ex.png" />
+
 </div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>In basketball, a boxscore provides the statistical summary of the game via defensive, offensive, and overall success metrics. The National Basketball Association’s records show that the first boxscore was produced by the Boston Celtics in the 1946-1947 season. Initial records kept track of basic basketball statistics for each player through measures like minutes played (MP), field goals made (FGM), and free throws made(FTM). Seventy-one years later, these metrics are still popular today. While the National Basketball Association has boosted its number of metrics to better summarize the game to include metrics like rebounds per game (RBG), player efficiency rating (PER), free throw attempts (FTA), and 3 field goals made (3FGM), these metrics still cannot capture the entirety of the game because they do not take into account the opposing team’s defense/offense, nor previous plays that significantly influenced the flow of the game.</p>
-<p>Basketball is not the only sport that has encountered this modeling problem. Soccer, a sport similar to basketball in that it requires a team-oriented approach and it dynamically changes from moment to moment, has also experienced a similar need by academia and major soccer teams to better utilize the data to more fully understand the game. One popular metric that has yet to be uniformly adopted is evaluating a player’s passing capabilities and team-value. Although a consensus has yet to be adopted for the best metric, scholars from academia and the League have sought to capture the game of basketball more robustly in a similar fashion–via passing networks.</p>
+</div>
+<div id="possession-network" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> Possession Network</h3>
+<p>Breaking it down into a single game possession, the network becomes reduced to a smaller network. One challenge in identifying a posession was the inconsistency of the dataset’s shot clock. For this, a new <em>possession</em> for this paper is defined as the moment when a team turns over the ball to the other team. For this, a possession may contain more than five players if players sub in/out within a possession.</p>
+<div class="figure">
+<img src="img/possessionnetwork_ex.png" />
 
-<!--
-This is for including Chapter 1.  Notice that it's also good practice to name your chunk.  This will help you debug potential issues as you knit.  The chunk above is called intro and the one below is called chapter1.  Feel free to change the name of the Rmd file as you wish, but don't forget to change it here from chap1.Rmd.
--->
-<!--
-The {#rmd-basics} text after the chapter declaration will allow us to link throughout the document back to the beginning of Chapter 1.  These labels will automatically be generated (if not specified) by changing the spaces to hyphens and capital letters to lowercase.  Look for the reference to this label at the beginning of Chapter 2.
--->
+</div>
+</div>
+<div id="a-vertex-and-an-edge" class="section level3">
+<h3><span class="header-section-number">6.1.3</span> A Vertex and an Edge</h3>
+<p>A single pass between player <span class="math inline">\(109412\)</span> and <span class="math inline">\(109413\)</span> has a thin line because it only occurred once during this game. The arrow indicates the direction of the pass, and when checking the edge attribute between these two vertices, the distance of the pass between <span class="math inline">\(109412\)</span> and <span class="math inline">\(109413\)</span> is 22.83 units. Looking at vertex attributes, player <span class="math inline">\(109412\)</span>’s position is a guard. <!-- sqrt((28.4457-37.30983)^2 + (74.49898-95.54174)^2)--></p>
+<div class="figure">
+<img src="img/passnetwork_ex.png" />
 
+</div>
+</div>
+</div>
+<div id="initial-analysis-of-passing-networks" class="section level2">
+<h2><span class="header-section-number">6.2</span> Initial Analysis of Passing Networks</h2>
+<p>Simply looking at a graph can reveal important characteristics about a player’s role within a team. On a possession level, if a player receives many passes (as noted by a thicker edge), then he has a more central role on the team, and his teammates clearly rely on him to make good passs.</p>
+<p>Other interesting network calculations are betweeness centrality; this metric can be visualized by the passing network, and noted as the popularity of a player based on how connected/central he is to the play. For this, returning to the Duke vs. Davidson game, we can note that Player <span class="math inline">\(109415\)</span> is an important and valuable player for Duke because his betweenness centrality score is the highest score as denoted by the table below:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">109412</th>
+<th align="right">109781</th>
+<th align="right">121033</th>
+<th align="right">116519</th>
+<th align="right">116520</th>
+<th align="right">109413</th>
+<th align="right">97330</th>
+<th align="right">97328</th>
+<th align="right">121034</th>
+<th align="right">109415</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">21.7</td>
+<td align="right">21.5</td>
+<td align="right">14.5</td>
+<td align="right">12.5</td>
+<td align="right">7.5</td>
+<td align="right">5.5</td>
+<td align="right">2</td>
+<td align="right">1.8</td>
+<td align="right">0.5</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p>Furthermore, we can presume that players who are most connected to the ball should be able to best handle the ball. For this, we expect the players with the highest betweeness score to be the starters for Duke’s 2013-2014 Men’s Basketball team. Checking the starting line-up from Duke Men’s Basketball for the 2013-2014 season, the betweenness score correctly matches Coach K’s starting line-up.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="2-rmd-basics.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="5-exploratory-data-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="7-network-modeling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

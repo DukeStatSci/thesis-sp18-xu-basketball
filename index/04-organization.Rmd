@@ -1,6 +1,6 @@
-#Conclusion
+<!---#Conclusion
 Duke Men's Basketball has a vast and rich dataset that has much to be explored. Of particular interest is how a player interacts against his teammates and defenders. This paper focuses on modeling player interactions via passing networks--network centrality and betweenness scores identify key players within a team. By evaluating passing networks, not only can a player's value within a team be deduced, but also how a player's value within a team has changed over time.
 
 ##Future Steps 
 Future steps include continuing to explore the biases in shot location, to replicate Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk Goldsberry's paper,"A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes," and to develop a more simple model that can capture the results of the replicated paper. 
-                                                                                                                        -sx
+                                                                                                                        -sx-->
