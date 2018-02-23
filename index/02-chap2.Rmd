@@ -130,7 +130,7 @@ A binomial logistic regression was fit to determine what features were important
 $y_{made} \sim \beta_{tri}x_{tri} + \beta_{recip}x_{recip} + ...$
 
 ###Results
-Network characteristics, although informative in summarizing possessions, were not significant predictors of 
+Network characteristics, although informative in summarizing possessions, were not significant predictors of  
 
 
 #Conclusion

@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Stochastic Process Model with Basketball Data</title>
-  <meta name="description" content="Stochastic Process Model with Basketball Data">
+  <title>Assessing the Value of a Player</title>
+  <meta name="description" content="Assessing the Value of a Player">
   <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Stochastic Process Model with Basketball Data" />
+  <meta property="og:title" content="Assessing the Value of a Player" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Stochastic Process Model with Basketball Data" />
+  <meta name="twitter:title" content="Assessing the Value of a Player" />
   
   
   
@@ -74,8 +74,7 @@
 <li class="chapter" data-level="5.2" data-path="5-model-replication.html"><a href="5-model-replication.html#macrotransition-entrance-model"><i class="fa fa-check"></i><b>5.2</b> Macrotransition Entrance Model</a></li>
 <li class="chapter" data-level="5.3" data-path="5-model-replication.html"><a href="5-model-replication.html#macrotransition-exit-model"><i class="fa fa-check"></i><b>5.3</b> Macrotransition Exit Model</a></li>
 <li class="chapter" data-level="5.4" data-path="5-model-replication.html"><a href="5-model-replication.html#fall-backs-on-the-implementation-of-this-model"><i class="fa fa-check"></i><b>5.4</b> Fall Backs on the Implementation of this Model</a></li>
-<li class="chapter" data-level="5.5" data-path="5-model-replication.html"><a href="5-model-replication.html#in-the-works"><i class="fa fa-check"></i><b>5.5</b> in the works…</a></li>
-<li class="chapter" data-level="5.6" data-path="5-model-replication.html"><a href="5-model-replication.html#next-steps-have-yet-to-get-this-far"><i class="fa fa-check"></i><b>5.6</b> Next Steps (have yet to get this far)</a></li>
+<li class="chapter" data-level="5.5" data-path="5-model-replication.html"><a href="5-model-replication.html#proposal"><i class="fa fa-check"></i><b>5.5</b> Proposal</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-exploratory-data-analysis.html"><a href="6-exploratory-data-analysis.html"><i class="fa fa-check"></i><b>6</b> Exploratory Data Analysis</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-exploratory-data-analysis.html"><a href="6-exploratory-data-analysis.html#changes-in-shot-attempt-patterns"><i class="fa fa-check"></i><b>6.1</b> Changes in Shot Attempt Patterns</a></li>
@@ -89,7 +88,12 @@
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="7-passing-networks.html"><a href="7-passing-networks.html#initial-analysis-of-passing-networks"><i class="fa fa-check"></i><b>7.2</b> Initial Analysis of Passing Networks</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-network-modeling.html"><a href="8-network-modeling.html"><i class="fa fa-check"></i><b>8</b> Network Modeling</a></li>
+<li class="chapter" data-level="8" data-path="8-network-modeling.html"><a href="8-network-modeling.html"><i class="fa fa-check"></i><b>8</b> Network Modeling</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-network-modeling.html"><a href="8-network-modeling.html#posession-analysis"><i class="fa fa-check"></i><b>8.1</b> Posession Analysis</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="8-network-modeling.html"><a href="8-network-modeling.html#model"><i class="fa fa-check"></i><b>8.1.1</b> Model</a></li>
+<li class="chapter" data-level="8.1.2" data-path="8-network-modeling.html"><a href="8-network-modeling.html#results"><i class="fa fa-check"></i><b>8.1.2</b> Results</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="9-conclusion.html"><a href="9-conclusion.html"><i class="fa fa-check"></i><b>9</b> Conclusion</a><ul>
 <li class="chapter" data-level="9.1" data-path="9-conclusion.html"><a href="9-conclusion.html#future-steps"><i class="fa fa-check"></i><b>9.1</b> Future Steps</a></li>
 </ul></li>
@@ -110,7 +114,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Stochastic Process Model with Basketball Data</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Assessing the Value of a Player</a>
           </h1>
         </div>
 
@@ -120,6 +124,7 @@
             <section class="normal" id="section-">
 <div id="exploratory-data-analysis" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Exploratory Data Analysis</h1>
+<p>Initial analysis of the data focused on understanding the many features available in the Duke Men’s Basketball dataset. This exploratory data analysis explores shot attempt patterns through the years, as well as potential biases with shot location.</p>
 <div id="changes-in-shot-attempt-patterns" class="section level2">
 <h2><span class="header-section-number">6.1</span> Changes in Shot Attempt Patterns</h2>
 <p>As one of the best basketball programs in the nation, Duke University Men’s Basketball draws in a number of highly desirable and NBA-ready recruits each year. For this, most players stay for only a year before signing and playing for the National Basketball Association. A popular trend for many skilled basketball players, this transition to professional basketball has been coined by players as being “one-and-done.” Duke had two players (Rodney Hood, Jabari Parker) drafted in the 2014 draft, three players (Jahlil Okafor, Justise Winslow, and Tyus Jones) drafted in the 2015 draft, and one player (Brandon Ingram) drafted in the 2016 draft. With so many players playing the minimum in college, this paper concentrates on the analysis of players who played more than one season with the Duke Men’s Basketball team, and had significant minutes with their time at Duke. With these requirements, it is difficult to find the perfect player for analysis because players like Marshall Plumlee, only had significant playing time his senior year because it took time to fully develop him as a competitive player.</p>
