@@ -118,6 +118,20 @@ Furthermore, we can presume that players who are most connected to the ball shou
 #Network Modeling
 
 This portion has yet to be implemented.
+Network modeling of the Duke Men's Basketball dataset 
+
+##Posession Analysis
+
+Each possession in basketball typically ends in a made or missed shot, turnover, offensive or defensive rebound, or foul. Each possession has network characteristics unique to the play--number of triangles, passing reciprocity, betweenness centrality, etc. Using possession-level network characteristics to predict the outcome of a play can shed light on the utility value of certain team characteristics. If high centrality is a significant predictor of successful shots, then having a superstar player is the better playing style for basketball. 
+
+###Model
+A binomial logistic regression was fit to determine what features were important to predicting a made shot. Below is the formula:
+
+$y_{made} \sim \beta_{tri}x_{tri} + \beta_{recip}x_{recip} + ...$
+
+###Results
+Network characteristics, although informative in summarizing possessions, were not significant predictors of 
+
 
 #Conclusion
 Duke Men's Basketball has a vast and rich dataset that has much to be explored. Of particular interest is how a player interacts against his teammates and defenders. This paper focuses on modeling player interactions via passing networks--network centrality and betweenness scores identify key players within a team. By evaluating passing networks, not only can a player's value within a team be deduced, but also how a player's value within a team has changed over time.
