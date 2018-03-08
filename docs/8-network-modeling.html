@@ -93,6 +93,10 @@
 <li class="chapter" data-level="8.1.1" data-path="8-network-modeling.html"><a href="8-network-modeling.html#model"><i class="fa fa-check"></i><b>8.1.1</b> Model</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-network-modeling.html"><a href="8-network-modeling.html#results"><i class="fa fa-check"></i><b>8.1.2</b> Results</a></li>
 </ul></li>
+<li class="chapter" data-level="8.2" data-path="8-network-modeling.html"><a href="8-network-modeling.html#amen-analysis"><i class="fa fa-check"></i><b>8.2</b> AMEN Analysis</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="8-network-modeling.html"><a href="8-network-modeling.html#model-1"><i class="fa fa-check"></i><b>8.2.1</b> Model</a></li>
+<li class="chapter" data-level="8.2.2" data-path="8-network-modeling.html"><a href="8-network-modeling.html#results-1"><i class="fa fa-check"></i><b>8.2.2</b> Results</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="9-conclusion.html"><a href="9-conclusion.html"><i class="fa fa-check"></i><b>9</b> Conclusion</a><ul>
 <li class="chapter" data-level="9.1" data-path="9-conclusion.html"><a href="9-conclusion.html#future-steps"><i class="fa fa-check"></i><b>9.1</b> Future Steps</a></li>
@@ -130,12 +134,23 @@
 <p>Each possession in basketball typically ends in a made or missed shot, turnover, offensive or defensive rebound, or foul. Each possession has network characteristics unique to the play–number of triangles, passing reciprocity, betweenness centrality, etc. Using possession-level network characteristics to predict the outcome of a play can shed light on the utility value of certain team characteristics. If high centrality is a significant predictor of successful shots, then having a superstar player is the better playing style for basketball.</p>
 <div id="model" class="section level3">
 <h3><span class="header-section-number">8.1.1</span> Model</h3>
-<p>A binomial logistic regression was fit to determine what features were important to predicting a made shot. Below is the formula:</p>
+<p>A binomial logistic regression was initially fit to determine what features were important to predicting a made shot. Predictors included variables like number of triangles, passing reciprocity, betweenness centrality,.. Below is the formula:</p>
 <p><span class="math inline">\(y_{made} \sim \beta_{tri}x_{tri} + \beta_{recip}x_{recip} + ...\)</span></p>
+<p>A multinomial model was used to explain the data more robustly by binning the outcome of possessions more broadly. Three categories were created: good outcomes (made shot, offensive rebound), bad outcomes (missed shot, turnover), and neutral outcomes (inbound ball).</p>
 </div>
 <div id="results" class="section level3">
 <h3><span class="header-section-number">8.1.2</span> Results</h3>
-<p>Network characteristics, although informative in summarizing possessions, were not significant predictors of</p>
+<p>Network characteristics, although informative in summarizing possessions, were not significant predictors of the outcome of a basketball possession. However, the coefficients for betweenness centrality showed that less centralized possessions resulted in more positive outcomes.</p>
+</div>
+</div>
+<div id="amen-analysis" class="section level2">
+<h2><span class="header-section-number">8.2</span> AMEN Analysis</h2>
+<p>latent space stuff</p>
+<div id="model-1" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Model</h3>
+</div>
+<div id="results-1" class="section level3">
+<h3><span class="header-section-number">8.2.2</span> Results</h3>
 </div>
 </div>
 </div>
