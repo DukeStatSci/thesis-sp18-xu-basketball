@@ -10,6 +10,26 @@ delete "References" and replace it.
 -->
 
 # References {-}
+
+
+Bekkers, J., & Dabadghao, S. (2017). "Flow Motifs in Soccer: What can passing behavior tell us? Sloan 
+Sports Analytics Conference. Retrieved from http://www.sloansportsconference.com/wp-content/uploads/2017/02/1563.pdf
+
+Cervone, D., D'Amour, A., Bornn, L., Goldsberry, K. (2016). "A Multiresolution Stochastic Process Model for Predicting Basketball Possession outcomes." Retrieved from https://arxiv.org/pdf/1408.0777.pdf
+
+Fewell, J., Ambruster, D., Ingraham, J., Petersen, A., & Waters, J. (2012). "Basketball Teams as Strategic Networks." PLOS. Retrieved from http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
+
+Fosdick, B.K., Hoff, P.D. (2013). "Testing and Modeling Dependencies Between a Network and Nodal Attributes." Retrieved from https://arxiv.org/abs/1306.4708
+
+Goncalves, B., Coutinho, D., Santos, S., Lago-Penas, C., Jimenez, S., & Sampaio, J. (2017). “Exploring 
+Team Passing Networks and Player Movement Dynamics in Youth Association Football.” PLOS. Retrieved from https://doi.org/10.1371/journal.pone.0171156.
+
+Gudmundsson, J., & Horton, M. (2016). "Spatio-Temporal Analysis of Team Sports -- A Survey." Retrieved from https://arxiv.org/abs/1602.06994 
+                                                                                                            
+Hoff, P.D. (2007). "Modeling Homophily and Stochastic Equivalence in Symmetric Relational Data." Retrieved from https://arxiv.org/abs/0711.1146.
+
+Hoff, P.D. (2003). "Bilinear Mixed Effects Models for Dyadic Data." Retrieved from https://www.stat.washington.edu/~pdhoff/Preprints/dyadic.pdf.        
+                                                                              
 <!--
 This manually sets the header for this unnumbered chapter.
 -->

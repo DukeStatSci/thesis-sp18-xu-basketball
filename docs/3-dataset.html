@@ -87,11 +87,18 @@
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="6-passing-networks.html"><a href="6-passing-networks.html#initial-analysis-of-passing-networks"><i class="fa fa-check"></i><b>6.2</b> Initial Analysis of Passing Networks</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-network-modeling.html"><a href="7-network-modeling.html"><i class="fa fa-check"></i><b>7</b> Network Modeling</a></li>
+<li class="chapter" data-level="7" data-path="7-network-modeling.html"><a href="7-network-modeling.html"><i class="fa fa-check"></i><b>7</b> Network Modeling</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-network-modeling.html"><a href="7-network-modeling.html#posession-analysis"><i class="fa fa-check"></i><b>7.1</b> Posession Analysis</a></li>
+<li class="chapter" data-level="7.2" data-path="7-network-modeling.html"><a href="7-network-modeling.html#multinomial-model"><i class="fa fa-check"></i><b>7.2</b> Multinomial Model</a></li>
+<li class="chapter" data-level="7.3" data-path="7-network-modeling.html"><a href="7-network-modeling.html#results-check-this-one"><i class="fa fa-check"></i><b>7.3</b> Results: CHECK THIS ONE!!!</a></li>
+<li class="chapter" data-level="7.4" data-path="7-network-modeling.html"><a href="7-network-modeling.html#amen-analysis"><i class="fa fa-check"></i><b>7.4</b> AMEN Analysis</a></li>
+<li class="chapter" data-level="7.5" data-path="7-network-modeling.html"><a href="7-network-modeling.html#latent-eigenvalue-model-poisson-regression"><i class="fa fa-check"></i><b>7.5</b> Latent Eigenvalue Model &amp; Poisson Regression</a></li>
+<li class="chapter" data-level="7.6" data-path="7-network-modeling.html"><a href="7-network-modeling.html#structural-zeros"><i class="fa fa-check"></i><b>7.6</b> Structural Zeros</a></li>
+<li class="chapter" data-level="7.7" data-path="7-network-modeling.html"><a href="7-network-modeling.html#results"><i class="fa fa-check"></i><b>7.7</b> Results</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="8-conclusion.html"><a href="8-conclusion.html"><i class="fa fa-check"></i><b>8</b> Conclusion</a><ul>
 <li class="chapter" data-level="8.1" data-path="8-conclusion.html"><a href="8-conclusion.html#future-steps"><i class="fa fa-check"></i><b>8.1</b> Future Steps</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-bibliography.html"><a href="9-bibliography.html"><i class="fa fa-check"></i><b>9</b> Bibliography</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -114,7 +121,10 @@
             <section class="normal" id="section-">
 <div id="dataset" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Dataset</h1>
-<p>The dataset is from the Duke University Men’s Basketball SportsVu tracking data. Features were created by taking snapshots of the game every 1/25th of a second and recording the player’s location, action, team, etc. Data was collected for each season from 2013-2016; the dataset totals about 132,000 observations and 98 features. Since the data is owned by the Dke Men’s Basketball team, the data is private and cannot be shared.</p>
+<p>The dataset is from the Duke University Men’s Basketball SportsVu tracking data. Features were created by taking snapshots of the game every 1/25th of a second and recording the player’s location, action, team, etc. Data was collected for each season from 2013-2016; the dataset totals about 132,000 observations and 98 features. Since the data is owned by the Duke Men’s Basketball team, the data is private and cannot be shared.</p>
+<p>The dataset was presented in 3 different XML files:</p>
+<p>Boxscore: overall player statistics (assists, points, rebounds) for the game<br />
+Play by Play: moment summary at time x (dribble, foul, pass) for the game Sequence Optical: locational summary of each player for the game</p>
 <div id="changes-in-shot-clock-time" class="section level2">
 <h2><span class="header-section-number">3.1</span> Changes in Shot Clock Time</h2>
 <p>As college basketball is a consistently changing sport, the NCAA changed the play rules for the 2013-2014 college basketball season. Instead of a 35 second shot clock, the NCAA established a 30 second shot clock.</p>

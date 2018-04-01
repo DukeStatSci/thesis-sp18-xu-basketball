@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="7-network-modeling.html">
-<link rel="next" href="9-bibliography.html">
+<link rel="next" href="references.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -87,11 +87,18 @@
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="6-passing-networks.html"><a href="6-passing-networks.html#initial-analysis-of-passing-networks"><i class="fa fa-check"></i><b>6.2</b> Initial Analysis of Passing Networks</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-network-modeling.html"><a href="7-network-modeling.html"><i class="fa fa-check"></i><b>7</b> Network Modeling</a></li>
+<li class="chapter" data-level="7" data-path="7-network-modeling.html"><a href="7-network-modeling.html"><i class="fa fa-check"></i><b>7</b> Network Modeling</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-network-modeling.html"><a href="7-network-modeling.html#posession-analysis"><i class="fa fa-check"></i><b>7.1</b> Posession Analysis</a></li>
+<li class="chapter" data-level="7.2" data-path="7-network-modeling.html"><a href="7-network-modeling.html#multinomial-model"><i class="fa fa-check"></i><b>7.2</b> Multinomial Model</a></li>
+<li class="chapter" data-level="7.3" data-path="7-network-modeling.html"><a href="7-network-modeling.html#results-check-this-one"><i class="fa fa-check"></i><b>7.3</b> Results: CHECK THIS ONE!!!</a></li>
+<li class="chapter" data-level="7.4" data-path="7-network-modeling.html"><a href="7-network-modeling.html#amen-analysis"><i class="fa fa-check"></i><b>7.4</b> AMEN Analysis</a></li>
+<li class="chapter" data-level="7.5" data-path="7-network-modeling.html"><a href="7-network-modeling.html#latent-eigenvalue-model-poisson-regression"><i class="fa fa-check"></i><b>7.5</b> Latent Eigenvalue Model &amp; Poisson Regression</a></li>
+<li class="chapter" data-level="7.6" data-path="7-network-modeling.html"><a href="7-network-modeling.html#structural-zeros"><i class="fa fa-check"></i><b>7.6</b> Structural Zeros</a></li>
+<li class="chapter" data-level="7.7" data-path="7-network-modeling.html"><a href="7-network-modeling.html#results"><i class="fa fa-check"></i><b>7.7</b> Results</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="8-conclusion.html"><a href="8-conclusion.html"><i class="fa fa-check"></i><b>8</b> Conclusion</a><ul>
 <li class="chapter" data-level="8.1" data-path="8-conclusion.html"><a href="8-conclusion.html#future-steps"><i class="fa fa-check"></i><b>8.1</b> Future Steps</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-bibliography.html"><a href="9-bibliography.html"><i class="fa fa-check"></i><b>9</b> Bibliography</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -114,10 +121,75 @@
             <section class="normal" id="section-">
 <div id="conclusion" class="section level1">
 <h1><span class="header-section-number">Chapter 8</span> Conclusion</h1>
-<p>Duke Men’s Basketball has a vast and rich dataset that has much to be explored. Of particular interest is how a player interacts against his teammates and defenders. This paper focuses on modeling player interactions via passing networks–network centrality and betweenness scores identify key players within a team. By evaluating passing networks, not only can a player’s value within a team be deduced, but also how a player’s value within a team has changed over time.</p>
+<p>Duke Men’s Basketball has a vast and rich dataset that has much to be explored. Of particular interest is how a player interacts against his teammates and defenders. This paper focuses on modeling player interactions via passing networks–network centrality and betweenness scores identify key players within a team. By evaluating passing networks, not only can a player’s value within a team be deduced, but also how a player’s value within a team has changed over time. Modelling each posession in a game with network characteristics as features can be directionally useful. A more robust approach utilizes Peter Hoff’s AMEN package, which models both nodal and network characteristics. The results through this approach similarly show the significance of passing and receiving the ball. Teamwork and high collaboration leads to successful plays.</p>
 <div id="future-steps" class="section level2">
 <h2><span class="header-section-number">8.1</span> Future Steps</h2>
 <p>Future steps include continuing to explore the biases in shot location, to replicate Daniel Cervone, Alex, D’Amour, Luke Bornn, and Kirk Goldsberry’s paper,“A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes,” and to develop a more simple model that can capture the results of the replicated paper.</p>
+
+
+<!---#Conclusion
+Duke Men's Basketball has a vast and rich dataset that has much to be explored. Of particular interest is how a player interacts against his teammates and defenders. This paper focuses on modeling player interactions via passing networks--network centrality and betweenness scores identify key players within a team. By evaluating passing networks, not only can a player's value within a team be deduced, but also how a player's value within a team has changed over time.
+
+##Future Steps 
+Future steps include continuing to explore the biases in shot location, to replicate Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk Goldsberry's paper,"A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes," and to develop a more simple model that can capture the results of the replicated paper. 
+                                                                                                                        -sx-->
+
+<!---#Bibliography
+
+Bekkers, J., & Dabadghao, S. (2017). "Flow Motifs in Soccer: What can passing behavior tell us? Sloan 
+Sports Analytics Conference. Retrieved from http://www.sloansportsconference.com/wp-content/uploads/2017/02/1563.pdf
+
+Fewell, J., Ambruster, D., Ingraham, J., Petersen, A., & Waters, J. (2012). Basketball Teams as Strategic 
+
+Networks. PLOS. Retrieved from http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
+
+Goncalves, B., Coutinho, D., Santos, S., Lago-Penas, C., Jimenez, S., & Sampaio, J. (2017). “Exploring 
+Team Passing Networks and Player Movement Dynamics in Youth Association Football”. PLOS. Retrieved from https://doi.org/10.1371/journal.pone.0171156.
+--->
+
+<!---
+
+
+
+# (APPENDIX) Appendix {-} 
+
+<!--
+If you feel it necessary to include an appendix, it goes here.
+-->
+<!---
+# The First Appendix
+
+This first appendix includes all of the R chunks of code that were hidden throughout the document (using the `include = FALSE` chunk tag) to help with readibility and/or setup.
+
+**In the main Rmd file**
+
+
+```r
+# This chunk ensures that the thesisdowndss package is
+# installed and loaded. This thesisdowndss package includes
+# the template files for the thesis.
+if(!require(devtools))
+  install.packages("devtools", repos = "http://cran.rstudio.com")
+if(!require(thesisdowndss))
+  devtools::install_github("mine-cetinkaya-rundel/thesisdowndss")
+library(thesisdowndss)
+```
+
+**In Chapter \@ref(ref-labels):**
+
+
+
+# The Second Appendix, for Fun
+--->
+
+<!--
+The bib chunk below must go last in this document according to how R Markdown renders.  More info is at http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+-->
+
+<!-- 
+If you'd like to change the name of the bibliography to something else,
+delete "References" and replace it.
+-->
 </div>
 </div>
             </section>
@@ -126,7 +198,7 @@
         </div>
       </div>
 <a href="7-network-modeling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="9-bibliography.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

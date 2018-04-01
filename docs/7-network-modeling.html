@@ -87,11 +87,18 @@
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="6-passing-networks.html"><a href="6-passing-networks.html#initial-analysis-of-passing-networks"><i class="fa fa-check"></i><b>6.2</b> Initial Analysis of Passing Networks</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-network-modeling.html"><a href="7-network-modeling.html"><i class="fa fa-check"></i><b>7</b> Network Modeling</a></li>
+<li class="chapter" data-level="7" data-path="7-network-modeling.html"><a href="7-network-modeling.html"><i class="fa fa-check"></i><b>7</b> Network Modeling</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-network-modeling.html"><a href="7-network-modeling.html#posession-analysis"><i class="fa fa-check"></i><b>7.1</b> Posession Analysis</a></li>
+<li class="chapter" data-level="7.2" data-path="7-network-modeling.html"><a href="7-network-modeling.html#multinomial-model"><i class="fa fa-check"></i><b>7.2</b> Multinomial Model</a></li>
+<li class="chapter" data-level="7.3" data-path="7-network-modeling.html"><a href="7-network-modeling.html#results-check-this-one"><i class="fa fa-check"></i><b>7.3</b> Results: CHECK THIS ONE!!!</a></li>
+<li class="chapter" data-level="7.4" data-path="7-network-modeling.html"><a href="7-network-modeling.html#amen-analysis"><i class="fa fa-check"></i><b>7.4</b> AMEN Analysis</a></li>
+<li class="chapter" data-level="7.5" data-path="7-network-modeling.html"><a href="7-network-modeling.html#latent-eigenvalue-model-poisson-regression"><i class="fa fa-check"></i><b>7.5</b> Latent Eigenvalue Model &amp; Poisson Regression</a></li>
+<li class="chapter" data-level="7.6" data-path="7-network-modeling.html"><a href="7-network-modeling.html#structural-zeros"><i class="fa fa-check"></i><b>7.6</b> Structural Zeros</a></li>
+<li class="chapter" data-level="7.7" data-path="7-network-modeling.html"><a href="7-network-modeling.html#results"><i class="fa fa-check"></i><b>7.7</b> Results</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="8-conclusion.html"><a href="8-conclusion.html"><i class="fa fa-check"></i><b>8</b> Conclusion</a><ul>
 <li class="chapter" data-level="8.1" data-path="8-conclusion.html"><a href="8-conclusion.html#future-steps"><i class="fa fa-check"></i><b>8.1</b> Future Steps</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-bibliography.html"><a href="9-bibliography.html"><i class="fa fa-check"></i><b>9</b> Bibliography</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -114,7 +121,38 @@
             <section class="normal" id="section-">
 <div id="network-modeling" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Network Modeling</h1>
-<p>This portion has yet to be implemented.</p>
+<div id="posession-analysis" class="section level2">
+<h2><span class="header-section-number">7.1</span> Posession Analysis</h2>
+<p>Each possession in basketball typically ends in a made or missed shot, turnover, offensive or defensive rebound, or foul. Each possession has network characteristics unique to the play–number of triangles, passing reciprocity, betweenness centrality, etc. Using possession-level network characteristics to predict the outcome of a play can shed light on the utility value of certain team characteristics. If high centrality is a significant predictor of successful shots, then having a superstar player is the better playing style for basketball.</p>
+</div>
+<div id="multinomial-model" class="section level2">
+<h2><span class="header-section-number">7.2</span> Multinomial Model</h2>
+<p>A binomial logistic regression was initially fit to determine what features were important to predicting a made shot. Predictors included variables like number of triangles, passing reciprocity, betweenness centrality,.. Below is the formula:</p>
+<p><span class="math display">\[y_{made} \sim \beta_{tri}x_{tri} + \beta_{recip}x_{recip} + ... + \epsilon_{i}\]</span></p>
+<p>A multinomial model was used to explain the data more robustly by binning the outcome of possessions more broadly. Three categories were created: good outcomes (made shot, offensive rebound), bad outcomes (missed shot, turnover), and neutral outcomes (inbound ball).</p>
+</div>
+<div id="results-check-this-one" class="section level2">
+<h2><span class="header-section-number">7.3</span> Results: CHECK THIS ONE!!!</h2>
+<p>Network characteristics, although informative in summarizing possessions, were not significant predictors of the outcome of a basketball possession. However, the coefficients for betweenness centrality showed that less centralized possessions resulted in more positive outcomes.</p>
+</div>
+<div id="amen-analysis" class="section level2">
+<h2><span class="header-section-number">7.4</span> AMEN Analysis</h2>
+<p>The AMEN package implements a latent eigenvalue model through a Monte Carlo Markov Chain. This model captures the game of basketball more robustly than a multinomial model because it doubly captures network and nodal attributes. The output of this model provides posterior means of the row and column effects, as well as higher order dependence covariates for each player. Overall game performance for each player can be used as a response against the output of the latent eigenvalue model in order to check if a player’s network and nodal attributes are significant influencers; points per game for each player was used as a response for a Poisson regression that used the posterior mean of the latent eigenvalue model as its features.</p>
+</div>
+<div id="latent-eigenvalue-model-poisson-regression" class="section level2">
+<h2><span class="header-section-number">7.5</span> Latent Eigenvalue Model &amp; Poisson Regression</h2>
+<p><span class="math display">\[y_{ij} =  \beta_{i}x_{i} + r_{i} + s_{i} + u^{T}v + \epsilon_{i}\]</span> where <span class="math display">\[r_{i} = \beta_{i}x_{i} + a_{i}\]</span> and <span class="math display">\[s_{i} = \beta_{i}x_{i} + b_{i}\]</span></p>
+<p>Nodal Attributes: Points per game for each player Nodal Features: Was in previous player (0/1), currently in possession (0/1) Dyadic Features: Shared position, shared height, shared weight, shared class Network Attributes: Passing network matrix</p>
+</div>
+<div id="structural-zeros" class="section level2">
+<h2><span class="header-section-number">7.6</span> Structural Zeros</h2>
+<p>Currently, the AMEN package takes on a pxp matrix of players to model the passing relationship between players. Currently, the model uses data from the 2014-2015 season, so p = 10. These 10 players represent the five players on the court, and the five players on the bench. For the five players on the court, if there does not exist a pass between two players, then a zero populates the matrix to account for the nonevent. However, if a player is on the bench, he similarly cannot receive a pass, so all bench players will always have a zero populated in the 10x10 matrix. This creates a challenge in modeling the data because the zeros in the matrix represent two different events–players who had the possibility to receive the ball but did not and players who never had the chance to receive the ball.</p>
+<p>The model includes a binary column feature that signals a player’s status (on court or on bench). While it does not solve the structural zero problem entirely, this feature accounts for the differences between active and nonactive players.</p>
+</div>
+<div id="results" class="section level2">
+<h2><span class="header-section-number">7.7</span> Results</h2>
+<p>The latent eigenvalue model with less dyadic features (only shared position) performed comparably to the full model based on the posterior predictive checks (Appendix A). The output of the latent eigenvalue model was used to predict a player’s points per game via a Poisson Regression. While both the row and column posterior means were significant influencers of a player’s points per game, row effects had a larger coefficient estimate (). These results confirm the importance of passing and teamwork for successful plays.</p>
+</div>
 </div>
             </section>
 

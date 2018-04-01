@@ -16,12 +16,18 @@ Joachim Gudmundsson and Michael Horton summarised a variety of methods that util
 
 Peter Hoff explains in “Bilinear Mixed Effects Models for Dyadic Data” the structure of the AMEN package by describing the different components of the model, which reinforces AMEN’s suitability to model network data. A Monte Carlo Markov algorithm, the model encompasses modelling linear, bilinear, and dyadic covariates with multivariate normal distributions. A dataset of international relations in Asia was used to demonstrate the robustness of this model in revealing the transitivity and clusterability of the observation.    
 
-Bailey Fosdick and Peter Hoff use AddHealth data in “Testing and Modelling Dependencies Between a Network and Nodal Attributes” to introduce a joint model that accounts for network factors and attributes. The AddHealth dataset captures samesex friendship between high school students, where students were asked to rank their top five friends. Applying the model to this dataset via the AMEN package, network features include rank information between students and nodal attributes like exercise frequency of each student. Hoff and Fosdick compare the performance of their joint model against a model that only captures the effect of nodal attributes and show that the joint model has a lower mean squared error in predicting missing values over a 20-fold cross validation. While the paper mainly focuses on demonstrating the robustness of this model, there still exist challenges in determining the level of dimensionality. 
+Bailey Fosdick and Peter Hoff use AddHealth data in “Testing and Modeling Dependencies Between a Network and Nodal Attributes” to introduce a joint model that accounts for network factors and attributes. The AddHealth dataset captures samesex friendship between high school students, where students were asked to rank their top five friends. Applying the model to this dataset via the AMEN package, network features include rank information between students and nodal attributes like exercise frequency of each student. Hoff and Fosdick compare the performance of their joint model against a model that only captures the effect of nodal attributes and show that the joint model has a lower mean squared error in predicting missing values over a 20-fold cross validation. While the paper mainly focuses on demonstrating the robustness of this model, there still exist challenges in determining the level of dimensionality. 
 
-Peter Hoff in “Modelling Homophily and Stochastic Equivalence in Symmetric Relational Data” proposes the benefits of modelling data in a latent space. Models that transform datasets that contain network features into latent space can capture two characteristics: homophily and stochastic equivalence. Stochastic equivalence is when nodes can be grouped based on similar characteristics, and homophily is when nodes with similar characteristic nodes are more likely to have a relationship than with different characteristic nodes. Models that measure these relationships through latent eigenvalues perform better than models measured through latent distance or latent class. This result constructs the impetus for the AMEN package to utilize a latent eigenvalue model to capture network and attribute data.  
+Peter Hoff in “Modeling Homophily and Stochastic Equivalence in Symmetric Relational Data” proposes the benefits of modelling data in a latent space. Models that transform datasets that contain network features into latent space can capture two characteristics: homophily and stochastic equivalence. Stochastic equivalence is when nodes can be grouped based on similar characteristics, and homophily is when nodes with similar characteristic nodes are more likely to have a relationship than with different characteristic nodes. Models that measure these relationships through latent eigenvalues perform better than models measured through latent distance or latent class. This result constructs the impetus for the AMEN package to utilize a latent eigenvalue model to capture network and attribute data.  
 
 #Dataset
 The dataset is from the Duke University Men's Basketball SportsVu tracking data. Features were created by taking snapshots of the game every 1/25th of a second and recording the player's location, action, team, etc. Data was collected for each season from 2013-2016; the dataset totals about 132,000 observations and 98 features. Since the data is owned by the Duke Men's Basketball team, the data is private and cannot be shared.
+
+The dataset was presented in 3 different XML files: 
+
+Boxscore: overall player statistics (assists, points, rebounds) for the game  
+Play by Play: moment summary at time x (dribble, foul, pass) for the game
+Sequence Optical: locational summary of each player for the game
 
 ##Changes in Shot Clock Time
 As college basketball is a consistently changing sport, the NCAA changed the play rules for the 2013-2014 college basketball season. Instead of a 35 second shot clock, the NCAA established a 30 second shot clock. 
@@ -47,10 +53,10 @@ Given the Macrotransition Entrance Model predicts a shot attempt, it indexes to 
 
 <!--The macro model has two parts, depending on the the given transition states. The first part is a binomial .... the second a poisson... This model performs well, although the computation time prevents any real-time analyses of the game. --->
 ##Fall Backs on the Implementation of this Model
-Currently, the implementation of the model has yet to be completed due to setbacks of incompatible R code. The implementation of this paper will be continued to attempt and understand by the end of next semester.
+Currently, the implementation of the model has yet to be completed due to setbacks of incompatible R code. The implementation of this paper is currently still in progress.
 
 ##Proposal
-Regardless, we hypothesize that since both metrics calculated via a semi-Markov process, EPV fails to capture the full nature of the possession because it only uses the last posession as a prior. The model would be more robust if it captured the entirety of the posession in its prior--however, the computational time of such an ordeal would prevent any real-time analyses. Thus, this paper proposes that a simpler model may perform more quickly and potentially just as robustly to allow for game-time analyses.
+Regardless, we hypothesize that since both metrics are calculated via a semi-Markov process, EPV fails to capture the full nature of the possession because it only uses the last posession as a prior. The model would be more robust if it captured the entirety of the posession in its prior--however, the computational time of such an ordeal would prevent any real-time analyses. Thus, this paper proposes that a simpler model may perform more quickly and potentially just as robustly to allow for game-time analyses.
 
 
 #Exploratory Data Analysis
@@ -123,59 +129,45 @@ Furthermore, we can presume that players who are most connected to the ball shou
 
 #Network Modeling
 
-This portion has yet to be implemented.
-Network modeling of the Duke Men's Basketball dataset 
-
 ##Posession Analysis
 
 Each possession in basketball typically ends in a made or missed shot, turnover, offensive or defensive rebound, or foul. Each possession has network characteristics unique to the play--number of triangles, passing reciprocity, betweenness centrality, etc. Using possession-level network characteristics to predict the outcome of a play can shed light on the utility value of certain team characteristics. If high centrality is a significant predictor of successful shots, then having a superstar player is the better playing style for basketball. 
 
-###Model
+##Multinomial Model
 A binomial logistic regression was initially fit to determine what features were important to predicting a made shot. Predictors included variables like number of triangles, passing reciprocity, betweenness centrality,.. Below is the formula:
 
-$y_{made} \sim \beta_{tri}x_{tri} + \beta_{recip}x_{recip} + ...$
+$$y_{made} \sim \beta_{tri}x_{tri} + \beta_{recip}x_{recip} + ... + \epsilon_{i}$$
 
 A multinomial model was used to explain the data more robustly by binning the outcome of possessions more broadly. Three categories were created: good outcomes (made shot, offensive rebound), bad outcomes (missed shot, turnover), and neutral outcomes (inbound ball). 
 
-###Results
+##Results: CHECK THIS ONE!!!
 Network characteristics, although informative in summarizing possessions, were not significant predictors of the outcome of a basketball possession. However, the coefficients for betweenness centrality showed that less centralized possessions resulted in more positive outcomes.   
 
 
 ##AMEN Analysis
-The AMEN package implements a latent eigenvalue model through a Monte Carlo Markov Chain. This model captures the game of basketball more robustly than a multinomial model because it doubly captures network and nodal attributes. The output of this model provides posterior means of the row and column effects, as well as higher order dependence covariates for each player. Overall game performance for each player can be used as a response against the output of the latent eigenvalue model in order to check if a player's network and nodal attributes are significant influencers.
+The AMEN package implements a latent eigenvalue model through a Monte Carlo Markov Chain. This model captures the game of basketball more robustly than a multinomial model because it doubly captures network and nodal attributes. The output of this model provides posterior means of the row and column effects, as well as higher order dependence covariates for each player. Overall game performance for each player can be used as a response against the output of the latent eigenvalue model in order to check if a player's network and nodal attributes are significant influencers; points per game for each player was used as a response for a Poisson regression that used the posterior mean of the latent eigenvalue model as its features.
 
 
-###Latent Eigenvalue Model
-$y_{ij} =  \beta_{i}x_{i} + r_{i} + s_{i} + u^{T}v + \epsilon_{i}$ where $r_{i} = \beta_{i}x_{i} + a_{i}$ and $s_{i} = \beta_{i}x_{i} + b_{i}$
+##Latent Eigenvalue Model & Poisson Regression
+$$y_{ij} =  \beta_{i}x_{i} + r_{i} + s_{i} + u^{T}v + \epsilon_{i}$$ where $$r_{i} = \beta_{i}x_{i} + a_{i}$$ and $$s_{i} = \beta_{i}x_{i} + b_{i}$$
 
-###Results
+Nodal Attributes: Points per game for each player
+Nodal Features: Was in previous player (0/1), currently in possession (0/1)
+Dyadic Features: Shared position, shared height, shared weight, shared class
+Network Attributes: Passing network matrix
 
 ##Structural Zeros
-Currently, the AMEN package takes on a 10x10 matrix of players to model the passing relationship between players. These 10 players represent the five players on the court, and the five players on the bench. For the five players on the court, if there does not exist a pass between two players, then a zero populates the matrix to account for the nonevent. However, if a player is on the bench, he similarly cannot receive a pass, so all bench players will always have a zero populated in the 10x10 matrix. This creates a challenge in modeling the data because the zeros in the matrix represent two different events--players who had the possibility to receive the ball but did not and players who never had the chance to receive the ball. 
+Currently, the AMEN package takes on a pxp matrix of players to model the passing relationship between players. Currently, the model uses data from the 2014-2015 season, so p = 10. These 10 players represent the five players on the court, and the five players on the bench. For the five players on the court, if there does not exist a pass between two players, then a zero populates the matrix to account for the nonevent. However, if a player is on the bench, he similarly cannot receive a pass, so all bench players will always have a zero populated in the 10x10 matrix. This creates a challenge in modeling the data because the zeros in the matrix represent two different events--players who had the possibility to receive the ball but did not and players who never had the chance to receive the ball. 
 
-#add things to the dyads -infinity to the nonplayers
+The model includes a binary column feature that signals a player's status (on court or on bench). While it does not solve the structural zero problem entirely, this feature accounts for the differences between active and nonactive players. 
 
-To account for the structural zeros, the model includes a binary column feature that signals a player's status (on court or on bench).
+##Results
+The latent eigenvalue model with less dyadic features (only shared position) performed comparably to the full model based on the posterior predictive checks (Appendix A). The output of the latent eigenvalue model was used to predict a player's points per game via a Poisson Regression. While both the row and column posterior means were significant influencers of a player's points per game, row effects had a larger coefficient estimate (). These results confirm the importance of passing and teamwork for successful plays.      
+
 
 #Conclusion
-Duke Men's Basketball has a vast and rich dataset that has much to be explored. Of particular interest is how a player interacts against his teammates and defenders. This paper focuses on modeling player interactions via passing networks--network centrality and betweenness scores identify key players within a team. By evaluating passing networks, not only can a player's value within a team be deduced, but also how a player's value within a team has changed over time.
+Duke Men's Basketball has a vast and rich dataset that has much to be explored. Of particular interest is how a player interacts against his teammates and defenders. This paper focuses on modeling player interactions via passing networks--network centrality and betweenness scores identify key players within a team. By evaluating passing networks, not only can a player's value within a team be deduced, but also how a player's value within a team has changed over time. Modelling each posession in a game with network characteristics as features can be directionally useful. A more robust approach utilizes Peter Hoff's AMEN package, which models both nodal and network characteristics. The results through this approach similarly show the significance of passing and receiving the ball. Teamwork and high collaboration leads to successful plays.  
 
 ##Future Steps 
 Future steps include continuing to explore the biases in shot location, to replicate Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk Goldsberry's paper,"A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes," and to develop a more simple model that can capture the results of the replicated paper. 
 
-#Bibliography
-
-Bekkers, J., & Dabadghao, S. (2017). "Flow Motifs in Soccer: What can passing behavior tell us? Sloan 
-Sports Analytics Conference. Retrieved from http://www.sloansportsconference.com/wp-content/uploads/2017/02/1563.pdf
-
-Cervone, D., D'Amour, A., Bornn, L., Goldsberry, K. (2016). "A Multiresolution Stochastic Process Model for Predicting Basketball Possession outcomes." Retrieved from https://arxiv.org/pdf/1408.0777.pdf
-
-Fewell, J., Ambruster, D., Ingraham, J., Petersen, A., & Waters, J. (2012). "Basketball Teams as Strategic Networks." PLOS. Retrieved from http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
-
-Goncalves, B., Coutinho, D., Santos, S., Lago-Penas, C., Jimenez, S., & Sampaio, J. (2017). “Exploring 
-Team Passing Networks and Player Movement Dynamics in Youth Association Football.” PLOS. Retrieved from https://doi.org/10.1371/journal.pone.0171156.
-
-Gudmundsson, J., & Horton, M. (). "Spatio-Temporal Analysis of Team Sports -- A Survey." Retrieved from https://arxiv.org/abs/1602.06994 
-                                                                                                                        
-                                   
-#missing three citations                                                                                 
