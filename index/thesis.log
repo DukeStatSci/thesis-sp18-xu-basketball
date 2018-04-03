@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.19)  7 DEC 2017 08:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.19)  2 APR 2018 23:15
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -974,32 +974,32 @@ Package caption Info: rotating package is loaded.
 (thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 151.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 151.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 166.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 166.
 
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 151.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 166.
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 151.
+LaTeX Info: Redefining \microtypecontext on input line 166.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -1046,7 +1046,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box37
-Package hyperref Info: Link coloring OFF on input line 151.
+Package hyperref Info: Link coloring OFF on input line 166.
 
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
 ty"
@@ -1058,46 +1058,46 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count141
 )
-LaTeX Info: Redefining \ref on input line 151.
-LaTeX Info: Redefining \pageref on input line 151.
-LaTeX Info: Redefining \nameref on input line 151.
+LaTeX Info: Redefining \ref on input line 166.
+LaTeX Info: Redefining \pageref on input line 166.
+LaTeX Info: Redefining \nameref on input line 166.
 (thesis.out) (thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 155.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 170.
 
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 155.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 170.
 
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 155
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 170
 .
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 155
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 170
 .
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 155.
+(Font)              <12> on input line 170.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 155.
+(Font)              <8> on input line 170.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 155.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 155.
+(Font)              <6> on input line 170.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 170.
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 155.
+LaTeX Font Info:    Try loading font information for U+msa on input line 170.
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -1105,7 +1105,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 fg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 155.
+LaTeX Font Info:    Try loading font information for U+msb on input line 170.
 ("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -1130,17 +1130,17 @@ Non-PDF special ignored!
 ] [3] [4
 
 
-] (thesis.toc [5])
+] (thesis.toc)
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
-[6] (thesis.lot)
+[5] [6
+
+] (thesis.lot)
 \tf@lot=\write6
 \openout6 = `thesis.lot'.
 
-[7
-
-] [8
+[7] [8
 
 ] (thesis.lof)
 \tf@lof=\write7
@@ -1148,259 +1148,17 @@ Non-PDF special ignored!
 
 [9] [10
 
-] [11] [12
-
-
-] [13] [14
-
-
 ]
-Chapter 1.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.211 \chapter
-              {Literature Review}\label{rmd-basics} [1
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.211 \chapter
-              {Literature Review}\label{rmd-basics} [2
-
-]
-Chapter 2.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.263 
-       [3]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.282 \chapter
-              {Dataset}\label{dataset} [4]
-Chapter 3.
-[5
-
-] [6
-
-]
-Chapter 4.
-[7] [8]
-Chapter 5.
-<img/shotchart_quinncook2013.png, id=281, 654.19406pt x 422.32782pt>
-File: img/shotchart_quinncook2013.png Graphic file (type png)
-<use img/shotchart_quinncook2013.png>
-Package pdftex.def Info: img/shotchart_quinncook2013.png used on input line 404
-.
-(pdftex.def)             Requested size: 654.19246pt x 422.32678pt.
-
-Overfull \hbox (220.57246pt too wide) in paragraph at lines 404--405
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[9
-
-] <img/shotchart_quinncook2014.png, id=286, 654.19406pt x 422.32782pt>
-File: img/shotchart_quinncook2014.png Graphic file (type png)
-<use img/shotchart_quinncook2014.png>
-Package pdftex.def Info: img/shotchart_quinncook2014.png used on input line 414
-.
-(pdftex.def)             Requested size: 654.19246pt x 422.32678pt.
-
-Overfull \hbox (220.57246pt too wide) in paragraph at lines 414--415
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[10 <./img/shotchart_quinncook2013.png (PNG copy)>] <img/shotchart_quinncook201
-5.png, id=291, 654.19406pt x 422.32782pt>
-File: img/shotchart_quinncook2015.png Graphic file (type png)
-<use img/shotchart_quinncook2015.png>
-Package pdftex.def Info: img/shotchart_quinncook2015.png used on input line 425
-.
-(pdftex.def)             Requested size: 654.19246pt x 422.32678pt.
-
-Overfull \hbox (220.57246pt too wide) in paragraph at lines 425--426
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[11 <./img/shotchart_quinncook2014.png (PNG copy)>] [12 <./img/shotchart_quinnc
-ook2015.png (PNG copy)>] <img/shotchart_justisewinslow.png, id=300, 654.19406pt
- x 422.32782pt>
-File: img/shotchart_justisewinslow.png Graphic file (type png)
-<use img/shotchart_justisewinslow.png>
-Package pdftex.def Info: img/shotchart_justisewinslow.png used on input line 46
-6.
-(pdftex.def)             Requested size: 654.19246pt x 422.32678pt.
-
-Overfull \hbox (238.19728pt too wide) in paragraph at lines 466--467
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[13] [14 <./img/shotchart_justisewinslow.png (PNG copy)>]
-Chapter 6.
-<img/gamenetwork_ex.png, id=310, 654.19406pt x 422.32782pt>
-File: img/gamenetwork_ex.png Graphic file (type png)
-<use img/gamenetwork_ex.png>
-Package pdftex.def Info: img/gamenetwork_ex.png used on input line 488.
-(pdftex.def)             Requested size: 654.19246pt x 422.32678pt.
-
-Overfull \hbox (220.57246pt too wide) in paragraph at lines 488--489
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[15
-
-] <img/possessionnetwork_ex.png, id=315, 654.19406pt x 399.74344pt>
-File: img/possessionnetwork_ex.png Graphic file (type png)
-<use img/possessionnetwork_ex.png>
-Package pdftex.def Info: img/possessionnetwork_ex.png used on input line 502.
-(pdftex.def)             Requested size: 654.19246pt x 399.74245pt.
-
-Overfull \hbox (220.57246pt too wide) in paragraph at lines 502--503
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[16 <./img/gamenetwork_ex.png>] <img/passnetwork_ex.png, id=322, 654.19406pt x 
-399.74344pt>
-File: img/passnetwork_ex.png Graphic file (type png)
-<use img/passnetwork_ex.png>
-Package pdftex.def Info: img/passnetwork_ex.png used on input line 515.
-(pdftex.def)             Requested size: 654.19246pt x 399.74245pt.
-
-Overfull \hbox (220.57246pt too wide) in paragraph at lines 515--516
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[17 <./img/possessionnetwork_ex.png>]
-Overfull \hbox (27.12927pt too wide) in paragraph at lines 527--547
-[]
- []
-
-[18 <./img/passnetwork_ex.png>] [19] [20
-
-]
-Chapter 7.
-[21] [22
-
-]
-Chapter 8.
-[23] [24
-
-]
-Chapter 9.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 575.
-
-("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [25] [26
-
-]
-Chapter 10.
-[27] [28
-
-]
-Chapter 11.
-
-Underfull \hbox (badness 2393) in paragraph at lines 623--625
-[]\T1/lmr/m/n/12 (+20) Networks. PLOS. Re-trieved from []$\T1/lmtt/m/n/12 http 
-: / / journals . plos . org / plosone /
- []
-
-[29] [30
-
-]
-Appendix A.
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 645.
-
-LaTeX Warning: Reference `ref-labels' on page 31 undefined on input line 652.
-
-[31] [32
-
-]
-Appendix B.
-[33] [34
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 685.
-[35
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 685.
-(thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 685.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 685.
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: C1B4D5D130607FD835CD3BF419F4038C;1970.
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 685.
- ) 
+! Undefined control sequence.
+l.203 ...n be applied to most team settingsâ\euro
+                                                  {}''uniform 
 Here is how much of TeX's memory you used:
- 11140 strings out of 493323
- 172050 string characters out of 3130015
- 287933 words of memory out of 3000000
- 14255 multiletter control sequences out of 15000+200000
- 54166 words of font info for 97 fonts, out of 3000000 for 9000
+ 10804 strings out of 493323
+ 167038 string characters out of 3130015
+ 282570 words of memory out of 3000000
+ 14105 multiletter control sequences out of 15000+200000
+ 26648 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,12n,45p,254b,391s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
-c}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
-t.enc}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-r
-m.enc}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
-athsy.enc}<C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-lm/lmbx12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/lm/lmmi12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/lm/lmmi6.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmmi8.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/lm/lmr12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/lm/lmr8.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/lm/lmri12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/lm/lmro12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Sonia/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Sonia/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Sonia/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtti10.pfb>
-Output written on thesis.pdf (53 pages, 652151 bytes).
-PDF statistics:
- 492 PDF objects out of 1000 (max. 8388607)
- 96 named destinations out of 1000 (max. 500000)
- 10508 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 39i,6n,45p,254b,391s stack positions out of 5000i,500n,10000p,200000b,50000s
 
+!  ==> Fatal error occurred, no output PDF file produced!

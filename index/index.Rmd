@@ -1,17 +1,17 @@
 ---
 author: 'Sonia Xu'
-date: 'December 2017'
+date: 'April 2018'
 institution: 'Duke University'
 division: 'Trinity College of Arts and Sciences'
 advisor: 'Dr. Alexander Volfovsky'
 
-committeememberone: 'Committeemember O. Name'
-committeemembertwo: 'Committeemember T. Name'
+committeememberone: 'Dr. Katherine Heller'
+committeemembertwo: 'Dr. Scott Schmidler'
 dus: 'Dus X. Name'
 department: 'Department of Statistical Science'
 degree: 'Bachelor of Science in Statistical Science'
-title: 'Assessing the Value of a Player'
-subtitle: 'Duke Basketball Data'
+title: 'Duke Basketball Passing Networks'
+subtitle: 'An Analysis of Player and Team Dynamics in the Context of Basketball'
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
 output: 

@@ -29,7 +29,7 @@ Gudmundsson, J., & Horton, M. (2016). "Spatio-Temporal Analysis of Team Sports -
 Hoff, P.D. (2007). "Modeling Homophily and Stochastic Equivalence in Symmetric Relational Data." Retrieved from https://arxiv.org/abs/0711.1146.
 
 Hoff, P.D. (2003). "Bilinear Mixed Effects Models for Dyadic Data." Retrieved from https://www.stat.washington.edu/~pdhoff/Preprints/dyadic.pdf.        
-                                                                              
+                                                                            
 <!--
 This manually sets the header for this unnumbered chapter.
 -->

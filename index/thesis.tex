@@ -125,7 +125,22 @@ class (for LaTeX) and the R bookdown package, in general.
 \Abstract{
 The preface pretty much says it all. \par
 
-Second paragraph of abstract starts here.
+Basketball has traditionally been viewed as a team sport, requiring the
+collaboration of the entire team to successfully bring a ball to the
+basket. The scope of this work attempts to model basketball possessions
+for each game to explain team characteristics that can lead to
+successful plays. Duke Basketball data from the 2014-2016 seasons was
+converted into passing networks, with each node representing a unique
+player and each edge containing information about a pass. These passing
+networks not only represent the temporal qualities of basketball, but
+also capture how interactions among players can lead to positive
+outcomes during a game. Network characteristics, such as measures of
+centrality, cohesiveness and latent position of the players, were
+considered as predictors for play outcomes. This approach suggests that
+successful Duke basketball teams have collaborative team dynamics. These
+results can be applied to most team settingsâ\euro{}''uniform
+collaboration can lead to better results than teams dominated by one
+leader.
 }
 
 % End of CII addition
@@ -172,7 +187,22 @@ Second paragraph of abstract starts here.
   \begin{abstract}
     The preface pretty much says it all. \par
     
-    Second paragraph of abstract starts here.
+    Basketball has traditionally been viewed as a team sport, requiring the
+    collaboration of the entire team to successfully bring a ball to the
+    basket. The scope of this work attempts to model basketball possessions
+    for each game to explain team characteristics that can lead to
+    successful plays. Duke Basketball data from the 2014-2016 seasons was
+    converted into passing networks, with each node representing a unique
+    player and each edge containing information about a pass. These passing
+    networks not only represent the temporal qualities of basketball, but
+    also capture how interactions among players can lead to positive
+    outcomes during a game. Network characteristics, such as measures of
+    centrality, cohesiveness and latent position of the players, were
+    considered as predictors for play outcomes. This approach suggests that
+    successful Duke basketball teams have collaborative team dynamics. These
+    results can be applied to most team settingsâ\euro{}''uniform
+    collaboration can lead to better results than teams dominated by one
+    leader.
   \end{abstract}
   \begin{dedication}
     You can have a dedication here if you wish.
@@ -329,16 +359,64 @@ cannot be shared.
 
 The dataset was presented in 3 different XML files:
 
-Boxscore: overall player statistics (assists, points, rebounds) for the
-game\\
-Play by Play: moment summary at time x (dribble, foul, pass) for the
-game Sequence Optical: locational summary of each player for the game
+Boxscore Data: This dataset shows the overall player statistics
+(assists, points, rebounds) for each game.The Boxscore dataset was used
+as a reference for player performance when modeling the posterior means
+of the latent eigenvalue model.
 
+Play by Play: This dataset provides a moment summary (dribble, foul,
+pass) at time t for each game. The Play by Play dataset was used to
+divide the raw data into possessions, which was then converted into
+individual passing networks.
+
+Sequence Optical: This dataset provides the locational summary of each
+player for each game. The Sequence Optical dataset was used to map the
+passing order for each possession.
+
+\chapter{Data Cleaning}\label{data-cleaning}
+
+Initially provided as XML files, the datasets were converted into csv
+files and then merged to create a final dataset with 132,000
+observations and 98 features. As this project primarily focuses on
+passing, the data was converted into network data for each game. Each
+game consists of an array of matrices that represent the passing count
+between players for each possession.
+
+Below is an example of a 10x10 matrix for a possession.
+\begin{tabular}{l|r|r|r|r|r|r|r|r|r|r}
+\hline
+  & 100023 & 100283 & 839023 & 456782 & 222789 & 134783 & 111124 & 098783 & 352671 & 213416\\
+\hline
+100023 & 0 & 1 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+100283 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+839023 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+456782 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+222789 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+134783 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+111124 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+098783 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+352671 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+213416 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+\end{tabular}
 \section{Changes in Shot Clock Time}\label{changes-in-shot-clock-time}
 
 As college basketball is a consistently changing sport, the NCAA changed
 the play rules for the 2013-2014 college basketball season. Instead of a
-35 second shot clock, the NCAA established a 30 second shot clock.
+35 second shot clock, the NCAA established a 30 second shot clock. Since
+this work does not have a temporal component, the rule change does not
+affect the results of model building drastically. However, the extra
+five seconds may have allowed players to pass the ball more frequently,
+which would affect the passing matrices.
 
 \chapter{Model Replication}\label{model-replication}
 
@@ -502,13 +580,13 @@ similar). From Quinn Cook's Shot Charts, this intuition is true; it is
 clear that he prefers shooting from the left side on both
 sides--indicating that there does not exist an obvious bias in his shot
 location based on exterior factors. However, when looking at a player
-like Justise Winslow, his shot attempts are more prevalent on Duke's
-side of the bench, and less present on its complementary side. Perhaps,
-Justise is showboating for his teammates or Coach K, and plays off of
-the exterior factors in a game. Further analysis will be conducted in
-later iterations of this paper to better understand this bias.
+842298, his shot attempts are more prevalent on Duke's side of the
+bench, and less present on its complementary side. Perhaps, Justise is
+showboating for his teammates or Coach K, and plays off of the exterior
+factors in a game. Further analysis will be conducted in later
+iterations of this paper to better understand this bias.
 
-\includegraphics{img/shotchart_justisewinslow.png}
+\includegraphics{img/shotdistribution.png}
 
 \chapter{Passing Networks}\label{passing-networks}
 
@@ -610,7 +688,7 @@ features were important to predicting a made shot. Predictors included
 variables like number of triangles, passing reciprocity, betweenness
 centrality,.. Below is the formula:
 
-\[y_{made} \sim \beta_{tri}x_{tri} + \beta_{recip}x_{recip} + ... + \epsilon_{i}\]
+\[y_{made} \sim \beta_{tri}x_{tri} + \beta_{recip}x_{recip} + \beta_{betweenness}x_{betweenness}... + \epsilon_{i}\]
 
 A multinomial model was used to explain the data more robustly by
 binning the outcome of possessions more broadly. Three categories were
@@ -628,16 +706,16 @@ positive outcomes.
 \section{AMEN Analysis}\label{amen-analysis}
 
 The AMEN package implements a latent eigenvalue model through a Monte
-Carlo Markov Chain. This model captures the game of basketball more
-robustly than a multinomial model because it doubly captures network and
-nodal attributes. The output of this model provides posterior means of
-the row and column effects, as well as higher order dependence
-covariates for each player. Overall game performance for each player can
-be used as a response against the output of the latent eigenvalue model
-in order to check if a player's network and nodal attributes are
-significant influencers; points per game for each player was used as a
-response for a Poisson regression that used the posterior mean of the
-latent eigenvalue model as its features.
+Carlo Markov Chain. Hoff explains in This model captures the game of
+basketball more robustly than a multinomial model because it doubly
+captures network and nodal attributes. The output of this model provides
+posterior means of the row and column effects, as well as higher order
+dependence covariates for each player. Overall game performance for each
+player can be used as a response against the output of the latent
+eigenvalue model in order to check if a player's network and nodal
+attributes are significant influencers; points per game for each player
+was used as a response for a Poisson regression that used the posterior
+means of the latent eigenvalue model as its features.
 
 \section{Latent Eigenvalue Model \& Poisson
 Regression}\label{latent-eigenvalue-model-poisson-regression}
@@ -671,6 +749,34 @@ status (on court or on bench). While it does not solve the structural
 zero problem entirely, this feature accounts for the differences between
 active and nonactive players.
 
+\section{Model Fit}\label{model-fit}
+
+The model was fit at two stages: latent eigenvalue model and poisson
+regression.
+
+\subsection{AMEN Fit}\label{amen-fit}
+
+Checking the model fit of the AMEN output, the posterior predictive
+checks perform well for the column effects. A challenge with this model,
+as noted at the end of Fosdick's and Hoff's ``Testing and Modeling
+Dependencies Between a Network and Nodal Attributes,'' was determining
+the appropriate dimensionality for transforming the data onto a latent
+space. Initially, the data was fit with a dimensionality of 2. The data
+was fit again with a dimensionality of four, and there was not a
+significant improvement in the posterior predictive check fit.
+
+The output below shows the model fit of a game with a dimensionality of
+2. \includegraphics{img/amenoutput.png}
+
+The output below shows te model fit of a game with a dimensionality of
+4. \includegraphics{img/amenoutput4.png}
+
+\subsection{Poisson Regression Fit}\label{poisson-regression-fit}
+\begin{figure}
+\centering
+\includegraphics{img/amenoutputloss.png}
+\caption{}
+\end{figure}
 \section{Results}\label{results}
 
 The latent eigenvalue model with less dyadic features (only shared
@@ -682,6 +788,24 @@ significant influencers of a player's points per game, row effects had a
 larger coefficient estimate (). These results confirm the importance of
 passing and teamwork for successful plays.
 
+Exploratory analysis of the model output reveals that there are
+game-level differences in play style for certain players. Comparing the
+performance of two games with two different outcomes for the Duke
+2014-2015 team, there a noticeable differences in the sender and
+receiver effects. Player 126160, for instance, had higher receiver
+effects in a loss compared to a win. This result could imply that player
+126160 was not fulfilling his role on the team if his performance
+recorded by a successful game was his baseline. On the other hand, some
+players did not drastically change betweeen a a win and a loss. Players
+like Player 109415 who typically had low playing time and thus lower
+sender and receiver effects overall, intuitively had even lower sender
+and receiver effects during a loss. The loss of a team, although
+influenced by many characteristics, can be partially attributed to these
+differences in individual player performance. However, this model does
+not take into account significant statistics for the varying defense the
+Duke teams play.\\
+\includegraphics{img/sendreceiver.png}
+
 \chapter{Conclusion}\label{conclusion}
 
 Duke Men's Basketball has a vast and rich dataset that has much to be
@@ -690,7 +814,7 @@ teammates and defenders. This paper focuses on modeling player
 interactions via passing networks--network centrality and betweenness
 scores identify key players within a team. By evaluating passing
 networks, not only can a player's value within a team be deduced, but
-also how a player's value within a team has changed over time. Modelling
+also how a player's value within a team has changed over time. Modeling
 each posession in a game with network characteristics as features can be
 directionally useful. A more robust approach utilizes Peter Hoff's AMEN
 package, which models both nodal and network characteristics. The
@@ -700,11 +824,14 @@ successful plays.
 
 \section{Future Steps}\label{future-steps}
 
-Future steps include continuing to explore the biases in shot location,
-to replicate Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk
-Goldsberry's paper,``A Multiresolution Stochastic Process Model for
-Predicting Basketball Possession Outcomes,'' and to develop a more
-simple model that can capture the results of the replicated paper.
+The scope of this work captures possessions of a game on an individual
+level. However, using the output of the latent eigenvalue model to
+predict nodal attributes is not sufficient to capture the game fully.
+Currently, an implementation and adaptation of a model influenced by
+Luke Bornn's ``A Multiresolution Stochastic Process Model for Predicting
+Basketball'' aims to capture the game of basketball more robustly.
+Future work will use this advanced model to create metrics for assessing
+a player's production value on a team level.
 
 \backmatter
 

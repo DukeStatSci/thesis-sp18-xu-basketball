@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="7-passing-networks.html">
-<link rel="next" href="9-conclusion.html">
+<link rel="prev" href="3-dataset.html">
+<link rel="next" href="5-model-replication.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -124,58 +124,162 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="network-modeling" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> Network Modeling</h1>
-<div id="posession-analysis" class="section level2">
-<h2><span class="header-section-number">8.1</span> Posession Analysis</h2>
-<p>Each possession in basketball typically ends in a made or missed shot, turnover, offensive or defensive rebound, or foul. Each possession has network characteristics unique to the play–number of triangles, passing reciprocity, betweenness centrality, etc. Using possession-level network characteristics to predict the outcome of a play can shed light on the utility value of certain team characteristics. If high centrality is a significant predictor of successful shots, then having a superstar player is the better playing style for basketball.</p>
-</div>
-<div id="multinomial-model" class="section level2">
-<h2><span class="header-section-number">8.2</span> Multinomial Model</h2>
-<p>A binomial logistic regression was initially fit to determine what features were important to predicting a made shot. Predictors included variables like number of triangles, passing reciprocity, betweenness centrality,.. Below is the formula:</p>
-<p><span class="math display">\[y_{made} \sim \beta_{tri}x_{tri} + \beta_{recip}x_{recip} + \beta_{betweenness}x_{betweenness}... + \epsilon_{i}\]</span></p>
-<p>A multinomial model was used to explain the data more robustly by binning the outcome of possessions more broadly. Three categories were created: good outcomes (made shot, offensive rebound), bad outcomes (missed shot, turnover), and neutral outcomes (inbound ball).</p>
-</div>
-<div id="results" class="section level2">
-<h2><span class="header-section-number">8.3</span> Results:</h2>
-<p>Network characteristics, although informative in summarizing possessions, were not significant predictors of the outcome of a basketball possession. Higher reciprocity and triangle dependence, indicators of collaborative teamwork, had a direct relationship with made shots. These results from the preliminary model are largely directional, reaffirming the notion that network characteristics are not informative enough to capture the game of basketball.</p>
-</div>
-<div id="amen-analysis" class="section level2">
-<h2><span class="header-section-number">8.4</span> AMEN Analysis</h2>
-<p>The AMEN package implements a latent eigenvalue model through a Monte Carlo Markov Chain. Hoff explains his preference for utilizing a latent eigenvalue model in “Modeling Homophily and Stochastic Equivalence in Symmetric Relational Data.” This model captures the game of basketball more robustly than a multinomial model because it doubly captures network and nodal attributes. The output of this model provides posterior means of the row and column effects, as well as higher order dependence covariates for each player. Overall game performance for each player can be used as a response against the output of the latent eigenvalue model in order to check if a player’s network and nodal attributes are significant influencers; points per game for each player was used as a response for a Poisson regression that used the posterior means of the latent eigenvalue model as its features.</p>
-</div>
-<div id="latent-eigenvalue-model-poisson-regression" class="section level2">
-<h2><span class="header-section-number">8.5</span> Latent Eigenvalue Model &amp; Poisson Regression</h2>
-<p><span class="math display">\[y_{ij} =  \beta_{i}x_{i} + r_{i} + s_{i} + u^{T}v + \epsilon_{i}\]</span> where <span class="math display">\[r_{i} = \beta_{i}x_{i} + a_{i}\]</span> and <span class="math display">\[s_{i} = \beta_{i}x_{i} + b_{i}\]</span></p>
-<p>Nodal Attributes: Points per game for each player Nodal Features: Was in previous player (0/1), currently in possession (0/1) Dyadic Features: Shared position, shared height, shared weight, shared class Network Attributes: Passing network matrix</p>
-</div>
-<div id="structural-zeros" class="section level2">
-<h2><span class="header-section-number">8.6</span> Structural Zeros</h2>
-<p>Currently, the AMEN package takes on a pxp matrix of players to model the passing relationship between players. Currently, the model uses data from the 2014-2015 season, so p = 10. These 10 players represent the five players on the court, and the five players on the bench. For the five players on the court, if there does not exist a pass between two players, then a zero populates the matrix to account for the nonevent. However, if a player is on the bench, he similarly cannot receive a pass, so all bench players will always have a zero populated in the 10x10 matrix. This creates a challenge in modeling the data because the zeros in the matrix represent two different events–players who had the possibility to receive the ball but did not and players who never had the chance to receive the ball.</p>
-<p>The model includes a binary column feature that signals a player’s status (on court or on bench). While it does not solve the structural zero problem entirely, this feature accounts for the differences between active and nonactive players.</p>
-</div>
-<div id="model-fit" class="section level2">
-<h2><span class="header-section-number">8.7</span> Model Fit</h2>
-<p>The model was fit at two stages: latent eigenvalue model and poisson regression.</p>
-<div id="amen-fit" class="section level3">
-<h3><span class="header-section-number">8.7.1</span> AMEN Fit</h3>
-<p>Checking the model fit of the AMEN output, the posterior predictive checks perform well for the column effects. A challenge with this model, as noted at the end of Fosdick’s and Hoff’s “Testing and Modeling Dependencies Between a Network and Nodal Attributes,” was determining the appropriate dimensionality for transforming the data onto a latent space. Initially, the data was fit with a dimensionality of 2. The data was fit again with a dimensionality of four, and there was not a significant improvement in the posterior predictive check fit.</p>
-<p>The output below shows the model fit of a game with a dimensionality of 2. <img src="img/amenoutput.png" /></p>
-<p>The output below shows the model fit of a game with a dimensionality of 4. <img src="img/amenoutput4.png" /></p>
-</div>
-<div id="poisson-regression-fit" class="section level3">
-<h3><span class="header-section-number">8.7.2</span> Poisson Regression Fit</h3>
-<div class="figure">
-<img src="img/amenoutputloss.png" />
-
-</div>
-</div>
-</div>
-<div id="results-1" class="section level2">
-<h2><span class="header-section-number">8.8</span> Results</h2>
-<p>The latent eigenvalue model with less dyadic features (only shared position) performed comparably to the full model based on the posterior predictive checks (Appendix A). The output of the latent eigenvalue model was used to predict a player’s points per game via a Poisson Regression. While both the row and column posterior means were significant influencers of a player’s points per game, row effects had a larger coefficient estimate (). These results confirm the importance of passing and teamwork for successful plays.</p>
-<p>Exploratory analysis of the model output reveals that there are game-level differences in play style for certain players. Comparing the performance of two games with two different outcomes for the Duke 2014-2015 team, there a noticeable differences in the sender and receiver effects. Player 126160, for instance, had higher receiver effects in a loss compared to a win. This result could imply that player 126160 was not fulfilling his role on the team if his performance recorded by a successful game was his baseline. On the other hand, some players did not drastically change betweeen a a win and a loss. Players like Player 109415 who typically had low playing time and thus lower sender and receiver effects overall, intuitively had even lower sender and receiver effects during a loss. The loss of a team, although influenced by many characteristics, can be partially attributed to these differences in individual player performance. However, this model does not take into account significant statistics for the varying defense the Duke teams play.<br />
-<img src="img/sendreceiver.png" /></p>
+<div id="data-cleaning" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Data Cleaning</h1>
+<p>Initially provided as XML files, the datasets were converted into csv files and then merged to create a final dataset with 132,000 observations and 98 features. As this project primarily focuses on passing, the data was converted into network data for each game. Each game consists of an array of matrices that represent the passing count between players for each possession.</p>
+<p>Below is an example of a 10x10 matrix for a possession.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">100023</th>
+<th align="right">100283</th>
+<th align="right">839023</th>
+<th align="right">456782</th>
+<th align="right">222789</th>
+<th align="right">134783</th>
+<th align="right">111124</th>
+<th align="right">098783</th>
+<th align="right">352671</th>
+<th align="right">213416</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>100023</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td>100283</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td>839023</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td>456782</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td>222789</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td>134783</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td>111124</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td>098783</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td>352671</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td>213416</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<div id="changes-in-shot-clock-time" class="section level2">
+<h2><span class="header-section-number">4.1</span> Changes in Shot Clock Time</h2>
+<p>As college basketball is a consistently changing sport, the NCAA changed the play rules for the 2013-2014 college basketball season. Instead of a 35 second shot clock, the NCAA established a 30 second shot clock. Since this work does not have a temporal component, the rule change does not affect the results of model building drastically. However, the extra five seconds may have allowed players to pass the ball more frequently, which would affect the passing matrices.</p>
 </div>
 </div>
             </section>
@@ -183,8 +287,8 @@
           </div>
         </div>
       </div>
-<a href="7-passing-networks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="9-conclusion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-dataset.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="5-model-replication.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
