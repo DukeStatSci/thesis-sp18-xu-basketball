@@ -163,7 +163,7 @@ $$y_{made} \sim \beta_{tri}x_{tri} + \beta_{recip}x_{recip} + \beta_{betweenness
 
 A multinomial model was used to explain the data more robustly by binning the outcome of possessions more broadly. Three categories were created: good outcomes (made shot, offensive rebound), bad outcomes (missed shot, turnover), and neutral outcomes (inbound ball). 
 
-##Results: 
+##Results
 Network characteristics, although informative in summarizing possessions, were not significant predictors of the outcome of a basketball possession. Higher reciprocity and triangle dependence, indicators of collaborative teamwork, had a direct relationship with made shots. These results from the preliminary model are largely directional, reaffirming the notion that network characteristics are not informative enough to capture the game of basketball.     
 
 
@@ -197,8 +197,7 @@ The output below shows the model fit of a game with a dimensionality of 4.
 ![](img/amenoutput4.png)
 
 ###Poisson Regression Fit
-
-![](img/amenoutputloss.png)
+The fit of the poisson regression 
 
 ##Results
 The latent eigenvalue model with less dyadic features (only shared position) performed comparably to the full model based on the posterior predictive checks (Appendix A). The output of the latent eigenvalue model was used to predict a player's points per game via a Poisson Regression. While both the row and column posterior means were significant influencers of a player's points per game, row effects had a larger coefficient estimate (). These results confirm the importance of passing and teamwork for successful plays.
