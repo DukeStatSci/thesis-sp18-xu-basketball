@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="3-dataset.html">
+<link rel="prev" href="8-conclusion.html">
+<link rel="next" href="references.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -126,24 +126,108 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rmd-basics" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Literature Review</h1>
-<p>Passing forms the backbone of all team contact sports. To advance a ball to the goal successfully, players must work together to dribble/kick/throw the ball to its destination. Each pass to another player can be considered a connection. These connections can be grouped together to form a network of passes. Previous works have captured these passing networks in soccer and basketball both statically and dynamically–this literature review will explore the different methods used to understand the value of a player and team, and the best practices for modeling network data.</p>
-<p>“Flow Motifs in Soccer: What can passing behavior tell us?” by Joris Bekkers and Shaunak Dabadghao was released in the 2017 MIT Sloan Sports Analytics Conference, and focused on the static passing networks of the last 4 seasons of 6 big European leagues with 8219 matches, 3532 unique players and 155 unique teams. Passing sequences were denoted as a sequence of all players involved five seconds before an attempted score. This paper created radar graphs that illustrated the most popular passing sequences by player, and compared radar graphs to identify similar players. Passing sequences within teams were also compared between teams by clustering the different passing styles of the different teams. Key players were determined by the frequency that they were included in the passing sequences.</p>
-<p>“Exploring Team Passing Networks and Player Movement Dynamics in Youth Association Football (Soccer)” by Bruno Goncalves, Diogo Coutinho, Sara Santos, Carlos Lago-Penas, Sergio Jimenez, and Jamie Sampaio compared the passing sequences of two games played by two groups that differ in age range, which showed that regardless of age, network centrality was distinctive in both groups, and affirmed the long-held belief that more passes lead to better game outcomes. Similar to the first paper, key players were the ones most frequently involved in the passing sequences. This paper created weighted graphs of the passing sequences, which better visualized the passing structure of the team, and made it easier to identify important players.</p>
-<p>“Basketball Teams as Strategic Networks” by Jennifer H. Fewell, Dieter Armbruster, John Ingraham, Alexander Petersen, and James S. Waters provided measurements to assess team entropy. First recording the complete 30 seconds of a possession as a passing sequence, they discovered that recording the last three nodes (players) before a shot attempt was a better way to record passing sequences to avoid noisy passing data. Although they were able to recognize various aspects of team dynamics through weighted graphs like the second paper, they did not find a consistent predictor of positive game outcomes. This paper also identified that in general, teams typically range between two playing styles: always passing to the best player or having no distinct patterns in passing. These patterns can be noted by distinct betweenness scores and uniform betweenness scores, respectively. Weighted graphs clearly illustrated the two different playing styles. Also, the paper found that the positions most involved with successful shots were: 1. PG 2. SG 3. SF 4. PF 5. CN.</p>
-<p>Joachim Gudmundsson and Michael Horton summarised a variety of methods that utilize object tracking data to analyze team and player performances in “Spatio-Temporal Analysis of Team Sports – A Survey.” Their research survey spanned modeling passing networks via graph theory to calculating rebound probability with spatial coordinates. In particular, work conducted by Daniel Cervone, Alex D’Amour, Luke Bornn, and Kirk Goldsberry attempted to capture the game wholelistically via a new measure called Expected Possession Value (EPV) in the paper “A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes.” This new metric uses three models–a Microtransition Model, Macrotransition Entrance Model, and a Macrotransition Exit Model–to capture the spatial biases of each player and the in-game effects of pressure, so that it can measure the likelihood of a successful play (made shot) given the previous sequence of events. To compare players against the league-average scores, they also calculated Expected Possession Value -Adjusted as an application for teams.</p>
-<p>Peter Hoff explains in “Bilinear Mixed Effects Models for Dyadic Data”&quot; the structure of the AMEN package by describing the different components of the model, which reinforces AMEN’s suitability to model network data. A Monte Carlo Markov algorithm, the model encompasses modelling linear, bilinear, and dyadic covariates with multivariate normal distributions. A dataset of international relations in Asia was used to demonstrate the robustness of this model in revealing the transitivity and clusterability of the observation.</p>
-<p>Bailey Fosdick and Peter Hoff use AddHealth data in “Testing and Modeling Dependencies Between a Network and Nodal Attributes” to introduce a joint model that accounts for network factors and attributes. The AddHealth dataset captures samesex friendship between high school students, where students were asked to rank their top five friends. Applying the model to this dataset via the AMEN package, network features include rank information between students and nodal attributes like exercise frequency of each student. Hoff and Fosdick compare the performance of their joint model against a model that only captures the effect of nodal attributes and show that the joint model has a lower mean squared error in predicting missing values over a 20-fold cross validation. While the paper mainly focuses on demonstrating the robustness of this model, there still exist challenges in determining the level of dimensionality.</p>
-<p>Peter Hoff in “Modeling Homophily and Stochastic Equivalence in Symmetric Relational Data” proposes the benefits of modelling data in a latent space. Models that transform datasets that contain network features into latent space can capture two characteristics: homophily and stochastic equivalence. Stochastic equivalence is when nodes can be grouped based on similar characteristics, and homophily is when nodes with similar characteristic nodes are more likely to have a relationship than with different characteristic nodes. Models that measure these relationships through latent eigenvalues perform better than models measured through latent distance or latent class. This result constructs the impetus for the AMEN package to utilize a latent eigenvalue model to capture network and attribute data.</p>
+<div id="appendix-a" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Appendix A</h1>
+<div id="model-replication" class="section level2">
+<h2><span class="header-section-number">9.1</span> Model Replication</h2>
+<p>The initial approach to understand how to best capture passing networks sought to replicate Daniel Cervone, Alex, D’Amour, Luke Bornn, and Kirk Goldsberry’s paper,“A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes.” They attempt to capture the game wholelistically via a new measure called Expected Possession Value (EPV). This new metric uses three models–a Microtransition Model, Macrotransition Entrance Model, and a Macrotransition Exit Model–to capture the spatial biases of each player and the in-game effects of pressure, so that it can measure the likelihood of a successful play (made shot) given the previous sequence of events. To compare players against the league-average scores, they also calculated Expected Possession Value -Adjusted as an application for teams. Below is a brief overview of each model.</p>
+<p>This paper is particularly interesting because EPV utilizes the spatio-temporal elements of the game, so it models the NBA game dynamically. Given Duke Basketball data, the motivation is to replicate “A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes,” to better understand the Duke Men’s team, as well as to compare professional basketball to collegiate basketball individual and team playing styles. Below is a brief overview of each model used in the paper to calculate EPV.</p>
+<div id="microtransition-model" class="section level3">
+<h3><span class="header-section-number">9.1.1</span> Microtransition Model</h3>
+<p><span class="math inline">\(x^{l}(t+\epsilon) = x^{l}(t) + \alpha^{l}_{x}[x^{l}(t) - x^{l}(t-\epsilon)] + \eta^{l}_{x}(t)\)</span> where <span class="math inline">\(\eta^{l}_{x}(t) \sim N(\mu^{l}_{x}(z^{l}(t)), (\sigma^{l}_{x})^{2})\)</span></p>
+<p>The microtransition model models the defensive conditions of the game based on the <span class="math inline">\((x,y)\)</span> coordinates of a player and their acceleration effects (<span class="math inline">\(\alpha^{l}_{x}(t)\)</span>). It is also assumed that a player’s spatial location is normally distributed. Since players play differently, each microtransition model is specifically fitted to the player.</p>
+</div>
+<div id="macrotransition-entrance-model" class="section level3">
+<h3><span class="header-section-number">9.1.2</span> Macrotransition Entrance Model</h3>
+<p><span class="math inline">\(P(M(t)|F_{t}^{(Z)}\)</span> The macrotransition entrance model predicts whether the next move will be a pass (4 options), shot attempt, or turnover. The model is disjoint.</p>
+</div>
+<div id="macrotransition-exit-model" class="section level3">
+<h3><span class="header-section-number">9.1.3</span> Macrotransition Exit Model</h3>
+<p><span class="math inline">\(P(C_{\delta_{t}}|M(t), F_{t}^{(Z)})\)</span> Given the Macrotransition Entrance Model predicts a shot attempt, it indexes to a logistic regression model to calculate player <span class="math inline">\(l\)</span>’s successful shot probability. Given the Macrotransition Entrance Model predicts a pass,it indexes to a model that predicts where the pass will take place. Otherwise, a turnover is assumed.</p>
+<!--The macro model has two parts, depending on the the given transition states. The first part is a binomial .... the second a poisson... This model performs well, although the computation time prevents any real-time analyses of the game. --->
+</div>
+<div id="fall-backs-on-the-implementation-of-this-model" class="section level3">
+<h3><span class="header-section-number">9.1.4</span> Fall Backs on the Implementation of this Model</h3>
+<p>Currently, the implementation of the model has yet to be completed due to setbacks of incompatible R code. The implementation of this paper is currently still in progress.</p>
+</div>
+<div id="proposal" class="section level3">
+<h3><span class="header-section-number">9.1.5</span> Proposal</h3>
+<p>Regardless, we hypothesize that since both metrics are calculated via a semi-Markov process, EPV fails to capture the full nature of the possession because it only uses the last posession as a prior. The model would be more robust if it captured the entirety of the posession in its prior–however, the computational time of such an ordeal would prevent any real-time analyses. Thus, this paper proposes that a simpler model may perform more quickly and potentially just as robustly to allow for game-time analyses.</p>
+
+
+<!---#Conclusion
+Duke Men's Basketball has a vast and rich dataset that has much to be explored. Of particular interest is how a player interacts against his teammates and defenders. This paper focuses on modeling player interactions via passing networks--network centrality and betweenness scores identify key players within a team. By evaluating passing networks, not only can a player's value within a team be deduced, but also how a player's value within a team has changed over time.
+
+##Future Steps 
+Future steps include continuing to explore the biases in shot location, to replicate Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk Goldsberry's paper,"A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes," and to develop a more simple model that can capture the results of the replicated paper. 
+                                                                                                                        -sx-->
+
+<!---#Bibliography
+
+Bekkers, J., & Dabadghao, S. (2017). "Flow Motifs in Soccer: What can passing behavior tell us? Sloan 
+Sports Analytics Conference. Retrieved from http://www.sloansportsconference.com/wp-content/uploads/2017/02/1563.pdf
+
+Fewell, J., Ambruster, D., Ingraham, J., Petersen, A., & Waters, J. (2012). Basketball Teams as Strategic 
+
+Networks. PLOS. Retrieved from http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
+
+Goncalves, B., Coutinho, D., Santos, S., Lago-Penas, C., Jimenez, S., & Sampaio, J. (2017). “Exploring 
+Team Passing Networks and Player Movement Dynamics in Youth Association Football”. PLOS. Retrieved from https://doi.org/10.1371/journal.pone.0171156.
+--->
+
+<!---
+
+
+
+# (APPENDIX) Appendix {-} 
+
+<!--
+If you feel it necessary to include an appendix, it goes here.
+-->
+<!---
+# The First Appendix
+
+This first appendix includes all of the R chunks of code that were hidden throughout the document (using the `include = FALSE` chunk tag) to help with readibility and/or setup.
+
+**In the main Rmd file**
+
+
+```r
+# This chunk ensures that the thesisdowndss package is
+# installed and loaded. This thesisdowndss package includes
+# the template files for the thesis.
+if(!require(devtools))
+  install.packages("devtools", repos = "http://cran.rstudio.com")
+if(!require(thesisdowndss))
+  devtools::install_github("mine-cetinkaya-rundel/thesisdowndss")
+library(thesisdowndss)
+```
+
+**In Chapter \@ref(ref-labels):**
+
+
+
+# The Second Appendix, for Fun
+--->
+
+<!--
+The bib chunk below must go last in this document according to how R Markdown renders.  More info is at http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+-->
+
+<!-- 
+If you'd like to change the name of the bibliography to something else,
+delete "References" and replace it.
+-->
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="3-dataset.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="8-conclusion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

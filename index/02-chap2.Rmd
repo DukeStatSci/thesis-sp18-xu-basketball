@@ -55,33 +55,6 @@ kable(mat)
 ##Changes in Shot Clock Time
 As college basketball is a consistently changing sport, the NCAA changed the play rules for the 2013-2014 college basketball season. Instead of a 35 second shot clock, the NCAA established a 30 second shot clock. Since this work does not have a temporal component, the rule change does not affect the results of model building drastically. However, the extra five seconds may have allowed players to pass the ball more frequently, which would affect the passing matrices.   
 
-#Model Replication
-The initial approach to understand how to best capture passing networks sought to replicate Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk Goldsberry's paper,"A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes." They attempt to capture the game wholelistically via a new measure called Expected Possession Value (EPV). This new metric uses three models--a Microtransition Model, Macrotransition Entrance Model, and a Macrotransition Exit Model--to capture the spatial biases of each player and the in-game effects of pressure, so that it can measure the likelihood of a successful play (made shot) given the previous sequence of events. To compare players against the league-average scores, they also calculated Expected Possession Value -Adjusted as an application for teams. Below is a brief overview of each model. 
-
-This paper is particularly interesting because EPV utilizes the spatio-temporal elements of the game, so it models the NBA game dynamically. Given Duke Basketball data, the motivation is to replicate "A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes," to better understand the Duke Men's team, as well as to compare professional basketball to collegiate basketball individual and team playing styles. Below is a brief overview of each model used in the paper to calculate EPV. 
-
-##Microtransition Model
-$x^{l}(t+\epsilon) = x^{l}(t) + \alpha^{l}_{x}[x^{l}(t) - x^{l}(t-\epsilon)] + \eta^{l}_{x}(t)$ where $\eta^{l}_{x}(t) \sim N(\mu^{l}_{x}(z^{l}(t)), (\sigma^{l}_{x})^{2})$
-
-The microtransition model models the defensive conditions of the game based on the $(x,y)$ coordinates of a player and their acceleration effects ($\alpha^{l}_{x}(t)$). It is also assumed that a player's spatial location is normally distributed. Since players play differently, each microtransition model is specifically fitted to the player.  
-
-##Macrotransition Entrance Model
-$P(M(t)|F_{t}^{(Z)}$
-The macrotransition entrance model predicts whether the next move will be a pass (4 options), shot attempt, or turnover. The model is disjoint.
-
-##Macrotransition Exit Model
-$P(C_{\delta_{t}}|M(t), F_{t}^{(Z)})$
-Given the Macrotransition Entrance Model predicts a shot attempt, it indexes to a logistic regression model to calculate player $l$'s successful shot probability. Given the Macrotransition Entrance Model predicts a pass,it indexes to a model that predicts where the pass will take place. Otherwise, a turnover is assumed. 
-
-
-<!--The macro model has two parts, depending on the the given transition states. The first part is a binomial .... the second a poisson... This model performs well, although the computation time prevents any real-time analyses of the game. --->
-##Fall Backs on the Implementation of this Model
-Currently, the implementation of the model has yet to be completed due to setbacks of incompatible R code. The implementation of this paper is currently still in progress.
-
-##Proposal
-Regardless, we hypothesize that since both metrics are calculated via a semi-Markov process, EPV fails to capture the full nature of the possession because it only uses the last posession as a prior. The model would be more robust if it captured the entirety of the posession in its prior--however, the computational time of such an ordeal would prevent any real-time analyses. Thus, this paper proposes that a simpler model may perform more quickly and potentially just as robustly to allow for game-time analyses.
-
-
 #Exploratory Data Analysis
 Initial analysis of the data focused on understanding the many features available in the Duke Men's Basketball dataset. This exploratory data analysis explores shot attempt patterns through the years, as well as potential biases with shot location. 
 
@@ -188,7 +161,7 @@ The model includes a binary column feature that signals a player's status (on co
 The model was fit at two stages: latent eigenvalue model and poisson regression. 
 
 ###AMEN Fit
-Checking the model fit of the AMEN output, the posterior predictive checks perform well for the column effects. A challenge with this model, as noted at the end of Fosdick's and Hoff's "Testing and Modeling Dependencies Between a Network and Nodal Attributes," was determining the appropriate dimensionality for transforming the data onto a latent space. Initially, the data was fit with a dimensionality of 2. The data was fit again with a dimensionality of four, and there was not a significant improvement in the posterior predictive check fit.  
+Checking the model fit of the AMEN output, the posterior predictive checks perform well for the column effects. A challenge with this model, as noted at the end of Fosdick's and Hoff's "Testing and Modeling Dependencies Between a Network and Nodal Attributes," was determining the appropriate dimensionality for transforming the data onto a latent space. Initially, the data was fit with a dimensionality of 2. However, as there are always five players on the court, higher dimensionality would be more appropriate for this model. The data was fit again with a dimensionality of four, and there was not a significant improvement in the fit of the posterior predictive checks. This suggests that a dimensionality of 2 is enough to capture the data.  
 
 The output below shows the model fit of a game with a dimensionality of 2.
 ![](img/amenoutput.png)
@@ -196,13 +169,18 @@ The output below shows the model fit of a game with a dimensionality of 2.
 The output below shows the model fit of a game with a dimensionality of 4.
 ![](img/amenoutput4.png)
 
+
 ###Poisson Regression Fit
-The fit of the poisson regression 
+
+The output of the AMEN model was plugged into a Poisson regression, with the response as a player's points per that game. Assessing the fit of the Poisson model, it assumes hetereoscedascity, and fits the checks well. However, the p-value for the deviance goodness of fit test was 9.152 x $10^{-25}$, which indicates with strong evidence that the model fits the data poorly. Regardless, this model provides a directional indication that row and column effects (passing and receiving) are significant features in predicting the productivity of a player.
+
+Below is the summary output of the Poisson regression.
+![](img/poissonsummary2.png)
 
 ##Results
-The latent eigenvalue model with less dyadic features (only shared position) performed comparably to the full model based on the posterior predictive checks (Appendix A). The output of the latent eigenvalue model was used to predict a player's points per game via a Poisson Regression. While both the row and column posterior means were significant influencers of a player's points per game, row effects had a larger coefficient estimate (). These results confirm the importance of passing and teamwork for successful plays.
+The latent eigenvalue model with less dyadic features (only shared position) performed comparably to the full model based on the posterior predictive checks. The output of the latent eigenvalue model was used to predict a player's points per game via a Poisson Regression. While both the row and column posterior means were significant influencers of a player's points per game, row effects had a larger coefficient estimate. These results confirm the importance of passing and teamwork for successful plays.
 
-Exploratory analysis of the model output reveals that there are game-level differences in play style for certain players. Comparing the performance of two games with two different outcomes for the Duke 2014-2015 team, there a noticeable differences in the sender and receiver effects. Player 126160, for instance, had higher receiver effects in a loss compared to a win. This result could imply that player 126160 was not fulfilling his role on the team if his performance recorded by a successful game was his baseline. On the other hand, some players did not drastically change betweeen a a win and a loss. Players like Player 109415 who typically had low playing time and thus lower sender and receiver effects overall, intuitively had even lower sender and receiver effects during a loss. The loss of a team, although influenced by many characteristics, can be partially attributed to these differences in individual player performance. However, this model does not take into account significant statistics for the varying defense the Duke teams play.       
+Exploratory analysis of the model output reveals that there are game-level differences in play style for certain players. Comparing the performance of two games with two different outcomes for the Duke 2014-2015 team, there a noticeable differences in the sender and receiver effects. Player 126160, for instance, had higher receiver effects in a loss compared to a win. This result could imply that player 126160 was not fulfilling his role on the team if his performance recorded by a successful game was his baseline. On the other hand, some players did not drastically change betweeen a a win and a loss. Players like Player 109415 who typically had low playing time and thus lower sender and receiver effects overall, intuitively had even lower sender and receiver effects during a loss. The loss of a team, although influenced by many characteristics, can be partially attributed to these differences in individual player performance. However, this model does not take into account sufficient statistics for the varying defense the Duke teams play.  
 ![](img/sendreceiver.png)
 
 
@@ -210,5 +188,35 @@ Exploratory analysis of the model output reveals that there are game-level diffe
 Duke Men's Basketball has a vast and rich dataset that has much to be explored. Of particular interest is how a player interacts against his teammates and defenders. This paper focuses on modeling player interactions via passing networks--network centrality and betweenness scores identify key players within a team. By evaluating passing networks, not only can a player's value within a team be deduced, but also how a player's value within a team has changed over time. Modeling each posession in a game with network characteristics as features can be directionally useful. A more robust approach utilizes Peter Hoff's AMEN package, which models both nodal and network characteristics. The results through this approach similarly show the significance of passing and receiving the ball. Teamwork and high collaboration leads to successful plays.  
 
 ##Future Steps 
-The scope of this work captures possessions of a game on an individual level. However, using the output of the latent eigenvalue model to predict nodal attributes is not sufficient to capture the game fully. Currently, an implementation and adaptation of a model influenced by Luke Bornn’s “A Multiresolution Stochastic Process Model for Predicting Basketball” aims to capture the game of basketball more robustly. Future work will use this advanced model to create metrics for assessing a player’s production value on a team level.
+The scope of this work captures possessions of a game on an individual level. However, using the output of the latent eigenvalue model to predict nodal attributes is not sufficient to capture the game fully. Currently, an implementation and adaptation of a model influenced by Luke Bornn’s “A Multiresolution Stochastic Process Model for Predicting Basketball” aims to capture the game of basketball more robustly. Future work will use this advanced model to create metrics for assessing a player’s production value on a team level. A summary of the model replication can be found in Appendix A.
+
+#Appendix A
+
+##Model Replication
+The initial approach to understand how to best capture passing networks sought to replicate Daniel Cervone, Alex, D'Amour, Luke Bornn, and Kirk Goldsberry's paper,"A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes." They attempt to capture the game wholelistically via a new measure called Expected Possession Value (EPV). This new metric uses three models--a Microtransition Model, Macrotransition Entrance Model, and a Macrotransition Exit Model--to capture the spatial biases of each player and the in-game effects of pressure, so that it can measure the likelihood of a successful play (made shot) given the previous sequence of events. To compare players against the league-average scores, they also calculated Expected Possession Value -Adjusted as an application for teams. Below is a brief overview of each model. 
+
+This paper is particularly interesting because EPV utilizes the spatio-temporal elements of the game, so it models the NBA game dynamically. Given Duke Basketball data, the motivation is to replicate "A Multiresolution Stochastic Process Model for Predicting Basketball Possession Outcomes," to better understand the Duke Men's team, as well as to compare professional basketball to collegiate basketball individual and team playing styles. Below is a brief overview of each model used in the paper to calculate EPV. 
+
+###Microtransition Model
+$x^{l}(t+\epsilon) = x^{l}(t) + \alpha^{l}_{x}[x^{l}(t) - x^{l}(t-\epsilon)] + \eta^{l}_{x}(t)$ where $\eta^{l}_{x}(t) \sim N(\mu^{l}_{x}(z^{l}(t)), (\sigma^{l}_{x})^{2})$
+
+The microtransition model models the defensive conditions of the game based on the $(x,y)$ coordinates of a player and their acceleration effects ($\alpha^{l}_{x}(t)$). It is also assumed that a player's spatial location is normally distributed. Since players play differently, each microtransition model is specifically fitted to the player.  
+
+###Macrotransition Entrance Model
+$P(M(t)|F_{t}^{(Z)}$
+The macrotransition entrance model predicts whether the next move will be a pass (4 options), shot attempt, or turnover. The model is disjoint.
+
+###Macrotransition Exit Model
+$P(C_{\delta_{t}}|M(t), F_{t}^{(Z)})$
+Given the Macrotransition Entrance Model predicts a shot attempt, it indexes to a logistic regression model to calculate player $l$'s successful shot probability. Given the Macrotransition Entrance Model predicts a pass,it indexes to a model that predicts where the pass will take place. Otherwise, a turnover is assumed. 
+
+
+<!--The macro model has two parts, depending on the the given transition states. The first part is a binomial .... the second a poisson... This model performs well, although the computation time prevents any real-time analyses of the game. --->
+###Fall Backs on the Implementation of this Model
+Currently, the implementation of the model has yet to be completed due to setbacks of incompatible R code. The implementation of this paper is currently still in progress.
+
+###Proposal
+Regardless, we hypothesize that since both metrics are calculated via a semi-Markov process, EPV fails to capture the full nature of the possession because it only uses the last posession as a prior. The model would be more robust if it captured the entirety of the posession in its prior--however, the computational time of such an ordeal would prevent any real-time analyses. Thus, this paper proposes that a simpler model may perform more quickly and potentially just as robustly to allow for game-time analyses.
+
+
  
