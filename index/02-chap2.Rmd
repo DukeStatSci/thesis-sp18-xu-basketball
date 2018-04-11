@@ -38,17 +38,18 @@ This dataset provides the locational summary of each player for each game. The S
 
 Initially provided as XML files, the datasets were converted into csv files and then merged to create a final dataset with 132,000 observations and 98 features. As this project primarily focuses on passing, the data was converted into network data for each game. Each game consists of an array of matrices that represent the passing count between players for each possession.  
 
-Below is an example of a 10x10 matrix for a possession.
+Below is an example of a 10x10 matrix for a possession. The rows indicate the passer, and the column indicates the receiver.
 
 ```{r echo = F}
 library(knitr)
+library(kableExtra)
 mat <- matrix(0, 10,10)
 mat[1,4] <- 3
 mat[3,2] <- 1
 mat[1,2] <- 1
 colnames(mat) <- c("100023", "100283","839023","456782","222789","134783","111124","098783","352671","213416")
 rownames(mat) <- c("100023", "100283","839023","456782","222789","134783","111124","098783","352671","213416")
-kable(mat)
+kable(mat) %>% kable_styling(bootstrap_options = "striped", full_width = F)
 ```
 
 
@@ -62,25 +63,25 @@ Initial analysis of the data focused on understanding the many features availabl
 
 As one of the best basketball programs in the nation, Duke University Men's Basketball draws in a number of highly desirable and NBA-ready recruits each year. For this, most players stay for only a year before signing and playing for the National Basketball Association. A popular trend for many skilled basketball players, this transition to professional basketball has been coined by players as being "one-and-done." Duke had two players (Rodney Hood, Jabari Parker) drafted in the 2014 draft, three players (Jahlil Okafor, Justise Winslow, and Tyus Jones) drafted in the 2015 draft, and one player (Brandon Ingram) drafted in the 2016 draft. With so many players playing the minimum in college, this paper concentrates on the analysis of players who played more than one season with the Duke Men's Basketball team, and had significant minutes with their time at Duke. With these requirements, it is difficult to find the perfect player for analysis because players like Marshall Plumlee, only had significant playing time his senior year because it took time to fully develop him as a competitive player.
 
-Quinn Cook, on the other hand, serves as an interesting example because he had consistent minutes for the 2013-2015 seasons. Quinn Cook's shot attempts were thus divided into each year to understand how his shooting style has changed during his time at Duke.
+Player 103929, on the other hand, serves as an interesting example because he had consistent minutes for the 2013-2015 seasons. Player 103929's shot attempts were thus divided into each year to understand how his shooting style has changed during his time at Duke.
 
 ![](img/shotchart_quinncook2013.png)
 
-Looking at the Quinn Cook's shot attempts for his junior season, he was fairly even with his shooting, missing most of his 3 point shots, and hitting most of his 2 point shots in the paint. It appears as though he prefers to shoot from the right wing slightly more than he shoots from the left wing.
+Looking at the Player 103929's shot attempts for his junior season, he was fairly even with his shooting, missing most of his 3 point shots, and hitting most of his 2 point shots in the paint. It appears as though he prefers to shoot from the right wing slightly more than he shoots from the left wing.
 
 ![](img/shotchart_quinncook2014.png)
 
-In 2014, however, it can be noted that Quinn Cook has transitioned to shots that are closer to the basket and minimized the amount of 3 point shot attempts. He brought his shot attempts closer inwards, which aligns with the trend that he is better at shooting when he is closer to the basket. Compared to 2013, he attacks more along the nail, which could be attributed to Quinn Cook's growing strength as an off-the-jump shooter. 
+In 2014, however, it can be noted that Player 103929 has transitioned to shots that are closer to the basket and minimized the amount of 3 point shot attempts. He brought his shot attempts closer inwards, which aligns with the trend that he is better at shooting when he is closer to the basket. Compared to 2013, he attacks more along the nail, which could be attributed to Player 103929's growing strength as an off the dribble jump shooter. 
 
 ![](img/shotchart_quinncook2015.png)
 
-In the 2015 season, Quinn Cook moves further out from the basketball, attempting more 3s. His preference for shooting in the right wing is more pronounced. A new trend apparent from the graph, however, shows that Quinn Cook shoots more corner 3s than the previous two years. While his shot attempts in the paint have slightly changed from 2013, Quinn Cook definitely has a unique playing style that has overall been consistent in that he avoids shooting in the extended elbows and short corners.   
+In the 2015 season, Player 103929 moves further out from the basket, attempting more 3s. His preference for shooting in the right wing is more pronounced. A new trend apparent from the graph, however, shows that Player 103929 shoots more corner 3s than the previous two years. While his shot attempts in the paint have slightly changed from 2013, Player 103929 definitely has a unique playing style that has overall been consistent in that he avoids shooting in the extended elbows and short corners.   
 
 ##Biases in Shot Location
 
 While looking at the shot chart of each player shows their shooting preferences, putting their shot chart in the context of Cameron is another important aspect to note when analyzing a player's shot preferences. Cameron Indoor Stadium's student section, known as the Cameron Crazies, has been ranked as one of the best student sections in the country by Bleacher Report, For The Win, and FOX Sports (to name a few). Furthermore, during the first half, a team's offense is on the opponent's side and a team's defense is on their home side. Thus, by acknowledging where a player shoots in context to the location of the fans and Coach K may reveal some biases to their shot location. Are players showboating for the Cameron Crazies or are they showboating for Coach K? To assess this trend, multiple Duke players were screened to note any possible trends in shooting habits.
 
-Intuitively, a player's shot chart distributon should be an even reflection of the other half of the court (ie. if half court was inflected onto the other half court, the shot distributions should be similar). From Quinn Cook's Shot Charts, this intuition is true; it is clear that he prefers shooting from the left side on both sides--indicating that there does not exist an obvious bias in his shot location based on exterior factors. However, when looking at a player 842298, his shot attempts are more prevalent on Duke's side of the bench, and less present on its complementary side. Perhaps, Justise is showboating for his teammates or Coach K, and plays off of the exterior factors in a game. Further analysis will be conducted in later iterations of this paper to better understand this bias.
+Intuitively, a player's shot chart distributon should be an even reflection of the other half of the court (ie. if half court was inflected onto the other half court, the shot distributions should be similar). From Player 103929's Shot Charts, this intuition is true; it is clear that he prefers shooting from the left side on both sides--indicating that there does not exist an obvious bias in his shot location based on exterior factors. However, when looking at a Player 842298, his shot attempts are more prevalent on Duke's side of the bench, and less present on its complementary side. Perhaps, Player 842298 is showboating for his teammates or Coach K, and plays off of the exterior factors in a game. Further analysis will be conducted in later iterations of this paper to better understand this bias.
 
 ![](img/shotdistribution.png)
 <!---<div style="width:300px; height=200px">
@@ -89,7 +90,7 @@ Intuitively, a player's shot chart distributon should be an even reflection of t
 
 #Passing Networks
 
-The main motivation behind this project is to understand the passing structure of Duke players in a game to create a better metric to evaluate players in the game of basketball. For this, each game was decomposed into individual possessions. Players who are in possession of the ball during each of the possessions are identified as vertices, and their passes to other players are edges in a pass network. Each vertex contains attributes about the player (ie. fouls in the game), and each edge contains attributes about the pass (ie. distance passed).
+The main motivation behind this project is to understand the passing structure of Duke players in a game to create a better metric to evaluate players in the game of basketball. For this, each game was decomposed into individual possessions. Players who are in possession of the ball during each of the possessions are identified as vertices, and their passes to other players are edges in a pass network. Each vertex contains attributes about the player (e.g. fouls in the game), and each edge contains attributes about the pass (ie. distance passed).
 
 ##A Breakdown of a Passing Network
 
@@ -132,7 +133,7 @@ Each possession in basketball typically ends in a made or missed shot, turnover,
 ##Multinomial Model
 A binomial logistic regression was initially fit to determine what features were important to predicting a made shot. Predictors included variables like number of triangles, passing reciprocity, betweenness centrality,.. Below is the formula:
 
-$$y_{made} \sim \beta_{tri}x_{tri} + \beta_{recip}x_{recip} + \beta_{betweenness}x_{betweenness}... + \epsilon_{i}$$
+$$y_{made,i} \sim \beta_{tri}x_{tri,i} + \beta_{recip}x_{recip,i} + \beta_{betweenness}x_{betweenness,i}... + \epsilon_{i}$$ for posession $$i$$
 
 A multinomial model was used to explain the data more robustly by binning the outcome of possessions more broadly. Three categories were created: good outcomes (made shot, offensive rebound), bad outcomes (missed shot, turnover), and neutral outcomes (inbound ball). 
 
@@ -148,8 +149,11 @@ The AMEN package implements a latent eigenvalue model through a Monte Carlo Mark
 $$y_{ij} =  \beta_{i}x_{i} + r_{i} + s_{i} + u^{T}v + \epsilon_{i}$$ where $$r_{i} = \beta_{i}x_{i} + a_{i}$$ and $$s_{i} = \beta_{i}x_{i} + b_{i}$$
 
 Nodal Attributes: Points per game for each player
+
 Nodal Features: Was in previous player (0/1), currently in possession (0/1)
+
 Dyadic Features: Shared position, shared height, shared weight, shared class
+
 Network Attributes: Passing network matrix
 
 ##Structural Zeros
@@ -172,7 +176,7 @@ The output below shows the model fit of a game with a dimensionality of 4.
 
 ###Poisson Regression Fit
 
-The output of the AMEN model was plugged into a Poisson regression, with the response as a player's points per that game. Assessing the fit of the Poisson model, it assumes hetereoscedascity, and fits the checks well. However, the p-value for the deviance goodness of fit test was 9.152 x $10^{-25}$, which indicates with strong evidence that the model fits the data poorly. Regardless, this model provides a directional indication that row and column effects (passing and receiving) are significant features in predicting the productivity of a player.
+The output of the AMEN model was plugged into a Poisson regression, with the response as a player's points per that game. Assessing the fit of the Poisson model, it assumes hetereoscedascity, and fits the checks well. However, the p-value for the deviance goodness of fit test was $$9.152$$ x $10^{-25}$, which indicates with strong evidence that the model fits the data poorly. Regardless, this model provides a directional indication that row and column effects (passing and receiving) are significant features in predicting the productivity of a player.
 
 Below is the summary output of the Poisson regression.
 ![](img/poissonsummary2.png)
