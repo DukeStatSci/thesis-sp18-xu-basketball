@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.19)  6 APR 2018 15:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.19)  10 APR 2018 21:45
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1130,17 +1130,17 @@ Non-PDF special ignored!
 ] [3] [4
 
 
-] (thesis.toc [5])
+] (thesis.toc)
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
-[6] (thesis.lot)
+[5] [6
+
+] (thesis.lot)
 \tf@lot=\write6
 \openout6 = `thesis.lot'.
 
-[7
-
-] [8
+[7] [8
 
 ] (thesis.lof)
 \tf@lof=\write7
@@ -1202,230 +1202,16 @@ Chapter 3.
 
 ]
 Chapter 4.
-
-Overfull \hbox (377.5849pt too wide) in paragraph at lines 383--409
-[]\T1/lmr/m/n/12 (-20) Below is an ex-am-ple of a 10x10 ma-trix for a pos-ses-s
-ion. [] 
- []
-
-[9] [10
-
-]
-Chapter 5.
-<img/shotchart_quinncook2013.png, id=313, 654.19406pt x 422.32782pt>
-File: img/shotchart_quinncook2013.png Graphic file (type png)
-<use img/shotchart_quinncook2013.png>
-Package pdftex.def Info: img/shotchart_quinncook2013.png used on input line 453
-.
-(pdftex.def)             Requested size: 654.19246pt x 422.32678pt.
-
-Overfull \hbox (220.57246pt too wide) in paragraph at lines 453--454
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[11] <img/shotchart_quinncook2014.png, id=318, 654.19406pt x 422.32782pt>
-File: img/shotchart_quinncook2014.png Graphic file (type png)
-<use img/shotchart_quinncook2014.png>
-Package pdftex.def Info: img/shotchart_quinncook2014.png used on input line 463
-.
-(pdftex.def)             Requested size: 654.19246pt x 422.32678pt.
-
-Overfull \hbox (220.57246pt too wide) in paragraph at lines 463--464
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[12 <./img/shotchart_quinncook2013.png (PNG copy)>] <img/shotchart_quinncook201
-5.png, id=323, 654.19406pt x 422.32782pt>
-File: img/shotchart_quinncook2015.png Graphic file (type png)
-<use img/shotchart_quinncook2015.png>
-Package pdftex.def Info: img/shotchart_quinncook2015.png used on input line 474
-.
-(pdftex.def)             Requested size: 654.19246pt x 422.32678pt.
-
-Overfull \hbox (220.57246pt too wide) in paragraph at lines 474--475
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[13 <./img/shotchart_quinncook2014.png (PNG copy)>] [14 <./img/shotchart_quinnc
-ook2015.png (PNG copy)>] <img/shotdistribution.png, id=333, 484.81125pt x 398.9
-9063pt>
-File: img/shotdistribution.png Graphic file (type png)
-<use img/shotdistribution.png>
-Package pdftex.def Info: img/shotdistribution.png used on input line 515.
-(pdftex.def)             Requested size: 484.81006pt x 398.98965pt.
-
-Overfull \hbox (68.81488pt too wide) in paragraph at lines 515--516
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[15] [16 <./img/shotdistribution.png>]
-Chapter 6.
-<img/gamenetwork_ex.png, id=343, 654.19406pt x 422.32782pt>
-File: img/gamenetwork_ex.png Graphic file (type png)
-<use img/gamenetwork_ex.png>
-Package pdftex.def Info: img/gamenetwork_ex.png used on input line 537.
-(pdftex.def)             Requested size: 654.19246pt x 422.32678pt.
-
-Overfull \hbox (220.57246pt too wide) in paragraph at lines 537--538
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[17
-
-] <img/possessionnetwork_ex.png, id=348, 654.19406pt x 399.74344pt>
-File: img/possessionnetwork_ex.png Graphic file (type png)
-<use img/possessionnetwork_ex.png>
-Package pdftex.def Info: img/possessionnetwork_ex.png used on input line 551.
-(pdftex.def)             Requested size: 654.19246pt x 399.74245pt.
-
-Overfull \hbox (220.57246pt too wide) in paragraph at lines 551--552
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[18 <./img/gamenetwork_ex.png>] <img/passnetwork_ex.png, id=355, 654.19406pt x 
-399.74344pt>
-File: img/passnetwork_ex.png Graphic file (type png)
-<use img/passnetwork_ex.png>
-Package pdftex.def Info: img/passnetwork_ex.png used on input line 564.
-(pdftex.def)             Requested size: 654.19246pt x 399.74245pt.
-
-Overfull \hbox (220.57246pt too wide) in paragraph at lines 564--565
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[19 <./img/possessionnetwork_ex.png>]
-Overfull \hbox (27.12927pt too wide) in paragraph at lines 576--596
-[]
- []
-
-[20 <./img/passnetwork_ex.png>] [21] [22
-
-]
-Chapter 7.
-[23] [24] <img/amenoutput.png, id=387, 484.81125pt x 398.99063pt>
-File: img/amenoutput.png Graphic file (type png)
-<use img/amenoutput.png>
-Package pdftex.def Info: img/amenoutput.png used on input line 702.
-(pdftex.def)             Requested size: 484.81006pt x 398.98965pt.
-
-Overfull \hbox (51.19006pt too wide) in paragraph at lines 701--703
-[] 
- []
-
-<img/amenoutput4.png, id=388, 484.81125pt x 399.74344pt>
-File: img/amenoutput4.png Graphic file (type png)
-<use img/amenoutput4.png>
-Package pdftex.def Info: img/amenoutput4.png used on input line 705.
-(pdftex.def)             Requested size: 484.81006pt x 399.74245pt.
-
-Overfull \hbox (51.19006pt too wide) in paragraph at lines 704--706
-[] 
- []
-
-[25 <./img/amenoutput.png>] <img/poissonsummary2.png, id=395, 485.56406pt x 399
-.74344pt>
-File: img/poissonsummary2.png Graphic file (type png)
-<use img/poissonsummary2.png>
-Package pdftex.def Info: img/poissonsummary2.png used on input line 720.
-(pdftex.def)             Requested size: 485.56287pt x 399.74245pt.
-
-Overfull \hbox (345.10226pt too wide) in paragraph at lines 719--721
-[]\T1/lmr/m/n/12 (-20) Below is the sum-mary out-put of the Pois-son re-gres-si
-on. [] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[26 <./img/amenoutput4.png>] <img/sendreceiver.png, id=403, 484.81125pt x 398.9
-9063pt>
-File: img/sendreceiver.png Graphic file (type png)
-<use img/sendreceiver.png>
-Package pdftex.def Info: img/sendreceiver.png used on input line 749.
-(pdftex.def)             Requested size: 484.81006pt x 398.98965pt.
-
-Overfull \hbox (51.19006pt too wide) in paragraph at lines 733--750
-[] 
- []
-
-[27 <./img/poissonsummary2.png>] [28 <./img/sendreceiver.png (PNG copy)>]
-Chapter 8.
-[29
-
-] [30
-
-]
-Chapter 9.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[31] [32]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 862.
-
-("C:\Users\Sonia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 917.
-[33
-
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 917.
-(thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 917.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 917.
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 1D3E4337BCCEC97235F0BCDAEC95CAEE;2391.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 917.
- ) 
+! Undefined control sequence.
+l.386 \centering\rowcolors
+                          {2}{gray!6}{white} 
 Here is how much of TeX's memory you used:
- 11170 strings out of 493323
- 172670 string characters out of 3130015
- 292230 words of memory out of 3000000
- 14277 multiletter control sequences out of 15000+200000
- 53616 words of font info for 96 fonts, out of 3000000 for 9000
+ 10896 strings out of 493323
+ 168012 string characters out of 3130015
+ 286668 words of memory out of 3000000
+ 14119 multiletter control sequences out of 15000+200000
+ 32652 words of font info for 75 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,12n,45p,254b,391s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
-c}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
-t.enc}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-r
-m.enc}{C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
-athsy.enc}<C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-lm/lmbx12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/lm/lmmi12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/lm/lmmi6.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmmi8.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/lm/lmr12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/lm/lmr8.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/lm/lmri12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/lm/lmro12.pfb><C:/Users/Sonia/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Sonia/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Sonia/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (51 pages, 604585 bytes).
-PDF statistics:
- 516 PDF objects out of 1000 (max. 8388607)
- 100 named destinations out of 1000 (max. 500000)
- 10576 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 39i,11n,45p,254b,391s stack positions out of 5000i,500n,10000p,200000b,50000s
 
+!  ==> Fatal error occurred, no output PDF file produced!

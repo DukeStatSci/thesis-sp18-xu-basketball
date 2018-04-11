@@ -382,15 +382,14 @@ between players for each possession.
 
 Below is an example of a 10x10 matrix for a possession. The rows
 indicate the passer, and the column indicates the receiver.
-\begin{verbatim}
-Warning: package 'kableExtra' was built under R version 3.4.4
-\end{verbatim}
 \begin{table}[H]
-\centering
+\centering\rowcolors{2}{gray!6}{white}
 \begin{tabular}{l|r|r|r|r|r|r|r|r|r|r}
+\hiderowcolors
 \hline
   & 100023 & 100283 & 839023 & 456782 & 222789 & 134783 & 111124 & 098783 & 352671 & 213416\\
 \hline
+\showrowcolors
 100023 & 0 & 1 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0\\
 \hline
 100283 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
@@ -412,6 +411,7 @@ Warning: package 'kableExtra' was built under R version 3.4.4
 213416 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
 \hline
 \end{tabular}
+\rowcolors{2}{white}{white}
 \end{table}
 \section{Changes in Shot Clock Time}\label{changes-in-shot-clock-time}
 
