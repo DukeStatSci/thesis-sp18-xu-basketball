@@ -49,7 +49,7 @@ mat[3,2] <- 1
 mat[1,2] <- 1
 colnames(mat) <- c("100023", "100283","839023","456782","222789","134783","111124","098783","352671","213416")
 rownames(mat) <- c("100023", "100283","839023","456782","222789","134783","111124","098783","352671","213416")
-kable(mat) %>% kable_styling(latex_options = c("striped","scale down"))
+kable(mat) %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
 
@@ -133,7 +133,7 @@ Each possession in basketball typically ends in a made or missed shot, turnover,
 ##Multinomial Model
 A binomial logistic regression was initially fit to determine what features were important to predicting a made shot. Predictors included variables like number of triangles, passing reciprocity, betweenness centrality,.. Below is the formula:
 
-$$y_{made,i} \sim \beta_{tri}x_{tri,i} + \beta_{recip}x_{recip,i} + \beta_{betweenness}x_{betweenness,i}... + \epsilon_{i}$$ for posession $$i$$
+$$y_{made,i} \sim \beta_{tri}x_{tri,i} + \beta_{recip}x_{recip,i} + \beta_{betweenness}x_{betweenness,i} + ... + \epsilon_{i}$$ for posession $$i$$
 
 A multinomial model was used to explain the data more robustly by binning the outcome of possessions more broadly. Three categories were created: good outcomes (made shot, offensive rebound), bad outcomes (missed shot, turnover), and neutral outcomes (inbound ball). 
 
@@ -179,6 +179,7 @@ The output below shows the model fit of a game with a dimensionality of 4.
 The output of the AMEN model was plugged into a Poisson regression, with the response as a player's points per that game. Assessing the fit of the Poisson model, it assumes hetereoscedascity, and fits the checks well. However, the p-value for the deviance goodness of fit test was $$9.152$$ x $10^{-25}$, which indicates with strong evidence that the model fits the data poorly. Regardless, this model provides a directional indication that row and column effects (passing and receiving) are significant features in predicting the productivity of a player.
 
 Below is the summary output of the Poisson regression.
+
 ![](img/poissonsummary2.png)
 
 ##Results

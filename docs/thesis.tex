@@ -382,9 +382,6 @@ between players for each possession.
 
 Below is an example of a 10x10 matrix for a possession. The rows
 indicate the passer, and the column indicates the receiver.
-\begin{verbatim}
-Warning: package 'kableExtra' was built under R version 3.4.4
-\end{verbatim}
 \begin{table}[H]
 \centering
 \begin{tabular}{l|r|r|r|r|r|r|r|r|r|r}
@@ -622,7 +619,7 @@ features were important to predicting a made shot. Predictors included
 variables like number of triangles, passing reciprocity, betweenness
 centrality,.. Below is the formula:
 
-\[y_{made,i} \sim \beta_{tri}x_{tri,i} + \beta_{recip}x_{recip,i} + \beta_{betweenness}x_{betweenness,i}... + \epsilon_{i}\]
+\[y_{made,i} \sim \beta_{tri}x_{tri,i} + \beta_{recip}x_{recip,i} + \beta_{betweenness}x_{betweenness,i} + ... + \epsilon_{i}\]
 for posession \[i\]
 
 A multinomial model was used to explain the data more robustly by
@@ -731,8 +728,11 @@ receiving) are significant features in predicting the productivity of a
 player.
 
 Below is the summary output of the Poisson regression.
+\begin{figure}
+\centering
 \includegraphics{img/poissonsummary2.png}
-
+\caption{}
+\end{figure}
 \section{Results}\label{results-1}
 
 The latent eigenvalue model with less dyadic features (only shared

@@ -135,7 +135,7 @@
 <div id="multinomial-model" class="section level2">
 <h2><span class="header-section-number">7.2</span> Multinomial Model</h2>
 <p>A binomial logistic regression was initially fit to determine what features were important to predicting a made shot. Predictors included variables like number of triangles, passing reciprocity, betweenness centrality,.. Below is the formula:</p>
-<p><span class="math display">\[y_{made,i} \sim \beta_{tri}x_{tri,i} + \beta_{recip}x_{recip,i} + \beta_{betweenness}x_{betweenness,i}... + \epsilon_{i}\]</span> for posession <span class="math display">\[i\]</span></p>
+<p><span class="math display">\[y_{made,i} \sim \beta_{tri}x_{tri,i} + \beta_{recip}x_{recip,i} + \beta_{betweenness}x_{betweenness,i} + ... + \epsilon_{i}\]</span> for posession <span class="math display">\[i\]</span></p>
 <p>A multinomial model was used to explain the data more robustly by binning the outcome of possessions more broadly. Three categories were created: good outcomes (made shot, offensive rebound), bad outcomes (missed shot, turnover), and neutral outcomes (inbound ball).</p>
 </div>
 <div id="results" class="section level2">
@@ -171,7 +171,11 @@
 <div id="poisson-regression-fit" class="section level3">
 <h3><span class="header-section-number">7.7.2</span> Poisson Regression Fit</h3>
 <p>The output of the AMEN model was plugged into a Poisson regression, with the response as a player’s points per that game. Assessing the fit of the Poisson model, it assumes hetereoscedascity, and fits the checks well. However, the p-value for the deviance goodness of fit test was <span class="math display">\[9.152\]</span> x <span class="math inline">\(10^{-25}\)</span>, which indicates with strong evidence that the model fits the data poorly. Regardless, this model provides a directional indication that row and column effects (passing and receiving) are significant features in predicting the productivity of a player.</p>
-<p>Below is the summary output of the Poisson regression. <img src="img/poissonsummary2.png" /></p>
+<p>Below is the summary output of the Poisson regression.</p>
+<div class="figure">
+<img src="img/poissonsummary2.png" />
+
+</div>
 </div>
 </div>
 <div id="results-1" class="section level2">
