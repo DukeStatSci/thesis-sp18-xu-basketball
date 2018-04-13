@@ -85,14 +85,13 @@
 <li class="chapter" data-level="7.1" data-path="7-network-modeling.html"><a href="7-network-modeling.html#posession-analysis"><i class="fa fa-check"></i><b>7.1</b> Posession Analysis</a></li>
 <li class="chapter" data-level="7.2" data-path="7-network-modeling.html"><a href="7-network-modeling.html#multinomial-model"><i class="fa fa-check"></i><b>7.2</b> Multinomial Model</a></li>
 <li class="chapter" data-level="7.3" data-path="7-network-modeling.html"><a href="7-network-modeling.html#results"><i class="fa fa-check"></i><b>7.3</b> Results</a></li>
-<li class="chapter" data-level="7.4" data-path="7-network-modeling.html"><a href="7-network-modeling.html#amen-analysis"><i class="fa fa-check"></i><b>7.4</b> AMEN Analysis</a></li>
-<li class="chapter" data-level="7.5" data-path="7-network-modeling.html"><a href="7-network-modeling.html#latent-eigenvalue-model-poisson-regression"><i class="fa fa-check"></i><b>7.5</b> Latent Eigenvalue Model &amp; Poisson Regression</a></li>
-<li class="chapter" data-level="7.6" data-path="7-network-modeling.html"><a href="7-network-modeling.html#structural-zeros"><i class="fa fa-check"></i><b>7.6</b> Structural Zeros</a></li>
-<li class="chapter" data-level="7.7" data-path="7-network-modeling.html"><a href="7-network-modeling.html#model-fit"><i class="fa fa-check"></i><b>7.7</b> Model Fit</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="7-network-modeling.html"><a href="7-network-modeling.html#amen-fit"><i class="fa fa-check"></i><b>7.7.1</b> AMEN Fit</a></li>
-<li class="chapter" data-level="7.7.2" data-path="7-network-modeling.html"><a href="7-network-modeling.html#poisson-regression-fit"><i class="fa fa-check"></i><b>7.7.2</b> Poisson Regression Fit</a></li>
+<li class="chapter" data-level="7.4" data-path="7-network-modeling.html"><a href="7-network-modeling.html#additive-and-multiplicative-effects-network-amen-analysis"><i class="fa fa-check"></i><b>7.4</b> Additive and Multiplicative Effects Network (AMEN) Analysis</a></li>
+<li class="chapter" data-level="7.5" data-path="7-network-modeling.html"><a href="7-network-modeling.html#structural-zeros"><i class="fa fa-check"></i><b>7.5</b> Structural Zeros</a></li>
+<li class="chapter" data-level="7.6" data-path="7-network-modeling.html"><a href="7-network-modeling.html#model-fit"><i class="fa fa-check"></i><b>7.6</b> Model Fit</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="7-network-modeling.html"><a href="7-network-modeling.html#amen-fit"><i class="fa fa-check"></i><b>7.6.1</b> AMEN Fit</a></li>
+<li class="chapter" data-level="7.6.2" data-path="7-network-modeling.html"><a href="7-network-modeling.html#poisson-regression-fit"><i class="fa fa-check"></i><b>7.6.2</b> Poisson Regression Fit</a></li>
 </ul></li>
-<li class="chapter" data-level="7.8" data-path="7-network-modeling.html"><a href="7-network-modeling.html#results-1"><i class="fa fa-check"></i><b>7.8</b> Results</a></li>
+<li class="chapter" data-level="7.7" data-path="7-network-modeling.html"><a href="7-network-modeling.html#results-1"><i class="fa fa-check"></i><b>7.7</b> Results</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="8-conclusion.html"><a href="8-conclusion.html"><i class="fa fa-check"></i><b>8</b> Conclusion</a><ul>
 <li class="chapter" data-level="8.1" data-path="8-conclusion.html"><a href="8-conclusion.html#future-steps"><i class="fa fa-check"></i><b>8.1</b> Future Steps</a></li>
@@ -135,53 +134,94 @@
 <div id="multinomial-model" class="section level2">
 <h2><span class="header-section-number">7.2</span> Multinomial Model</h2>
 <p>A multinomial logistic regression was initially fit to determine what features were important to predicting the outcome of a possession. Three categories were created for the outcome of a posession: good outcomes (made shot, offensive rebound), bad outcomes (missed shot, turnover), and neutral outcomes (inbound ball). Predictors included network characteristics like number of triangles, passing reciprocity, and betweenness centrality. Below is the formula:</p>
-<p><span class="math display">\[y_{outcome,i} \sim \beta_{tri}x_{tri,i} + \beta_{recip}x_{recip,i} + \beta_{betweenness}x_{betweenness,i} + \epsilon_{i}\]</span> for posession <span class="math display">\[i\]</span></p>
+<p><span class="math display">\[y_{outcome,i} \sim \beta_{tri}x_{tri,i} + \beta_{recip}x_{recip,i} + \beta_{betweenness}x_{betweenness,i} + \epsilon_{i}\]</span> for posession <span class="math inline">\(i\)</span></p>
 </div>
 <div id="results" class="section level2">
 <h2><span class="header-section-number">7.3</span> Results</h2>
-<p>Network characteristics, although informative in summarizing possessions, were not significant predictors of the outcome of a basketball possession. When predicting the full dataset with the model, it correctly predicted the true outcome of a possesion 40.9% of the time. Higher reciprocity and triangle dependence, indicators of collaborative teamwork, had a direct relationship with good outcomes. These results from the preliminary model are largely directional, reaffirming the notion that network characteristics are not informative enough to capture the game of basketball.</p>
+<p>Network characteristics, although informative in summarizing possessions, were not significant predictors of the outcome of a basketball possession. When predicting the full dataset with the model, it correctly predicted the true outcome of a possesion 40.9% of the time. Higher reciprocity and triangle dependence, indicators of collaborative teamwork, had a direct relationship with good outcomes. These results from the preliminary model are largely directional, affirming the notion that network characteristics are not informative enough to capture the game of basketball. While previous papers have used exploratory network analysis to explain playing dynamics or to model the success of a player (e.g. “Basketball Teams as Strategic Networks”), this model shows that there exists limited value in solely relying on network characteristics.</p>
 </div>
-<div id="amen-analysis" class="section level2">
-<h2><span class="header-section-number">7.4</span> AMEN Analysis</h2>
-<p>The AMEN package implements a latent eigenvalue model through a Monte Carlo Markov Chain. Hoff explains his preference for utilizing a latent eigenvalue model in “Modeling Homophily and Stochastic Equivalence in Symmetric Relational Data.” This model captures the game of basketball more robustly than a multinomial model because it doubly captures network and nodal attributes. The output of this model provides posterior means of the row and column effects, as well as higher order dependence covariates for each player. Overall game performance for each player can be used as a response against the output of the latent eigenvalue model in order to check if a player’s network and nodal attributes are significant influencers; points per game for each player was used as a response for a Poisson regression that used the posterior means of the latent eigenvalue model as its features.</p>
-</div>
-<div id="latent-eigenvalue-model-poisson-regression" class="section level2">
-<h2><span class="header-section-number">7.5</span> Latent Eigenvalue Model &amp; Poisson Regression</h2>
-<p><span class="math display">\[y_{ij} =  \beta_{i}x_{i} + r_{i} + s_{i} + u^{T}v + \epsilon_{i}\]</span> where <span class="math display">\[r_{i} = \beta_{i}x_{i} + a_{i}\]</span> and <span class="math display">\[s_{i} = \beta_{i}x_{i} + b_{i}\]</span></p>
-<p>Nodal Attributes: Points per game for each player</p>
-<p>Nodal Features: Was in previous player (0/1), currently in possession (0/1)</p>
-<p>Dyadic Features: Shared position, shared height, shared weight, shared class</p>
-<p>Network Attributes: Passing network matrix</p>
+<div id="additive-and-multiplicative-effects-network-amen-analysis" class="section level2">
+<h2><span class="header-section-number">7.4</span> Additive and Multiplicative Effects Network (AMEN) Analysis</h2>
+<p>The need to capture the game of basketball more robustly led to the final model, an additive and multiplicative effects network (AMEN) model. The AMEN package implements a latent eigenvalue model through a Monte Carlo Markov Chain. Hoff explains his preference for utilizing a latent eigenvalue model in “Modeling Homophily and Stochastic Equivalence in Symmetric Relational Data.” This model captures the game of basketball more robustly than a multinomial model because it doubly captures network and nodal attributes. The output of this model provides posterior means of the row, column, multiplicative row, and multiplicative column effects for each player. Overall game performance for each player can be used as a response against the output of the latent eigenvalue model in order to check if a player’s network and nodal attributes are significant influencers; points per game for each player was used as a response for a Poisson regression that used the posterior means of the latent eigenvalue model as its features.</p>
+<p><span class="math display">\[y_{ij} =  \beta_{d}x_{d} + r_{i} + s_{j} + u_{i}^{T}v_{j} + \epsilon_{i}\]</span> where <span class="math display">\[r_{i} = \beta_{i}x_{i} + a_{i}\]</span> and <span class="math display">\[s_{j} = \beta_{j}x_{j} + b_{j}\]</span> The model captures the network structure of each pass possession by transforming the passing networks into adjacency matrices. Row and column nodal covariates are px1xn vectors indicating the contribution of each player p for each possession n. The dyadic features are pxpxnxi arrays that capture the shared features between players.</p>
+<p>Nodal Attributes (Response in the Poisson Regression): Points per game for each player</p>
+<p>Nodal Features (<span class="math inline">\(\beta_{i}x_{i}, \beta_{j}x_{j}\)</span>): Was in previous player (0/1), currently in possession (0/1)</p>
+<p>Dyadic Features (<span class="math inline">\(\beta_{d}x_{d}\)</span>): Shared position, shared height, shared weight, shared class</p>
+<p>Network Attributes (<span class="math inline">\(y_{ij}\)</span>): Passing network matrix</p>
 </div>
 <div id="structural-zeros" class="section level2">
-<h2><span class="header-section-number">7.6</span> Structural Zeros</h2>
+<h2><span class="header-section-number">7.5</span> Structural Zeros</h2>
 <p>Currently, the AMEN package takes on a pxp matrix of players to model the passing relationship between players. Currently, the model uses data from the 2014-2015 season, so p = 10. These 10 players represent the five players on the court, and the five players on the bench. For the five players on the court, if there does not exist a pass between two players, then a zero populates the matrix to account for the nonevent. However, if a player is on the bench, he similarly cannot receive a pass, so all bench players will always have a zero populated in the 10x10 matrix. This creates a challenge in modeling the data because the zeros in the matrix represent two different events–players who had the possibility to receive the ball but did not and players who never had the chance to receive the ball.</p>
 <p>The model includes a binary column feature that signals a player’s status (on court or on bench). While it does not solve the structural zero problem entirely, this feature accounts for the differences between active and nonactive players.</p>
 </div>
 <div id="model-fit" class="section level2">
-<h2><span class="header-section-number">7.7</span> Model Fit</h2>
+<h2><span class="header-section-number">7.6</span> Model Fit</h2>
 <p>The model was fit at two stages: latent eigenvalue model and poisson regression.</p>
 <div id="amen-fit" class="section level3">
-<h3><span class="header-section-number">7.7.1</span> AMEN Fit</h3>
-<p>Checking the model fit of the AMEN output, the posterior predictive checks perform well for the column effects. A challenge with this model, as noted at the end of Fosdick’s and Hoff’s “Testing and Modeling Dependencies Between a Network and Nodal Attributes,” was determining the appropriate dimensionality for transforming the data onto a latent space. Initially, the data was fit with a dimensionality of 2. However, as there are always five players on the court, higher dimensionality would be more appropriate for this model. The data was fit again with a dimensionality of four, and there was not a significant improvement in the fit of the posterior predictive checks. This suggests that a dimensionality of 2 is enough to capture the data.</p>
+<h3><span class="header-section-number">7.6.1</span> AMEN Fit</h3>
+<p>Checking the model fit of the AMEN output, the posterior predictive checks perform well for the column effects. A challenge with this model, as noted at the end of Fosdick’s and Hoff’s “Testing and Modeling Dependencies Between a Network and Nodal Attributes,” was determining the appropriate dimensionality for transforming the row and column effects onto a latent space. Initially, the data was fit with a dimensionality of 2. However, as there are always five players on the court, higher dimensionality would be more appropriate for this model. The data was fit again with a dimensionality of four, and there was not a significant improvement in the fit of the posterior predictive checks. This suggests that a dimensionality of 2 is enough to capture the data.</p>
 <p>The output below shows the model fit of a game with a dimensionality of 2. <img src="img/amenoutput.png" /></p>
 <p>The output below shows the model fit of a game with a dimensionality of 4. <img src="img/amenoutput4.png" /></p>
 </div>
 <div id="poisson-regression-fit" class="section level3">
-<h3><span class="header-section-number">7.7.2</span> Poisson Regression Fit</h3>
-<p>The output of the AMEN model was plugged into a Poisson regression, with the response as a player’s points per that game. Assessing the fit of the Poisson model, it assumes hetereoscedascity, and fits the checks well. However, the p-value for the deviance goodness of fit test was <span class="math display">\[9.152\]</span> x <span class="math inline">\(10^{-25}\)</span>, which indicates with strong evidence that the model fits the data poorly. Regardless, this model provides a directional indication that row and column effects (passing and receiving) are significant features in predicting the productivity of a player.</p>
-<p>Below is the summary output of the Poisson regression.</p>
+<h3><span class="header-section-number">7.6.2</span> Poisson Regression Fit</h3>
+<p>The output of the AMEN model was plugged into a Poisson regression, with the response as a player’s points per that game. Assessing the fit of the Poisson model, it assumes hetereoscedascity, and fits the checks well. However, the p-value for the deviance goodness of fit test was <span class="math inline">\(9.152 * 10^{-25}\)</span>, which indicates with strong evidence that the model fits the data poorly. Assessing the fit of the model with regards to predicting the true points per game, the poisson model had a mean squared error of 73.08. The mean difference between the predicted points per game and true points per game was 5.52–approximately two to three possessions in the context of basketball. Regardless, this model provides a directional indication that row and column effects (passing and receiving) are significant features in predicting the productivity of a player, as denoted by the summary of the model.</p>
+<p>Below is the summary output of the Poisson regression’s fit and coefficient estimates for each <span class="math inline">\(\beta\)</span>.</p>
 <div class="figure">
 <img src="img/poissonsummary2.png" />
 
 </div>
+<pre><code>
+Call:
+glm(formula = points ~ ., family = &quot;poisson&quot;, data = data.frame(pred.dat[, 
+    -c(1, 3)]))
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-5.9340  -1.9315  -0.3091   1.1841   3.6648  
+
+Coefficients:
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)   2.0536     0.2068   9.929  &lt; 2e-16 ***
+apm          -2.5614     1.3698  -1.870 0.061490 .  
+bpm           0.3579     0.1108   3.229 0.001242 ** 
+u1           -5.5429     6.0272  -0.920 0.357761    
+u2            5.1948     1.3746   3.779 0.000157 ***
+v1            0.8560     0.8369   1.023 0.306395    
+v2           -0.2401     0.5166  -0.465 0.642043    
+uvpm1         0.3843     3.7931   0.101 0.919292    
+uvpm2         6.9119     7.2313   0.956 0.339157    
+uvpm3         3.3323     2.8435   1.172 0.241244    
+uvpm4        -8.4270    11.7979  -0.714 0.475055    
+uvpm5         7.5922     7.5001   1.012 0.311403    
+uvpm6        11.1989     5.8842   1.903 0.057012 .  
+uvpm7        -1.5104     3.2222  -0.469 0.639261    
+uvpm8        11.6098     6.2778   1.849 0.064409 .  
+uvpm9        -3.6840    10.0160  -0.368 0.713017    
+uvpm10        5.0079     4.3871   1.141 0.253662    
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 282.5  on 39  degrees of freedom
+Residual deviance: 171.9  on 23  degrees of freedom
+AIC: 327.64
+
+Number of Fisher Scoring iterations: 7</code></pre>
+<p>According to the coefficient estimates, a higher posterior mean for the additive row effect (apm-passing) leads to lower points per game. On the other hand, a higher posterior mean for the additive column effect (bpm-receiving) leads to more points per game. The second dimension of the posterior mean for multiplicative row effects (u2) leads to more points per game. This model summary reaffirms the significance of passing to the success of a team.</p>
 </div>
 </div>
 <div id="results-1" class="section level2">
-<h2><span class="header-section-number">7.8</span> Results</h2>
+<h2><span class="header-section-number">7.7</span> Results</h2>
 <p>The latent eigenvalue model with less dyadic features (only shared position) performed comparably to the full model based on the posterior predictive checks. The output of the latent eigenvalue model was used to predict a player’s points per game via a Poisson Regression. While both the row and column posterior means were significant influencers of a player’s points per game, row effects had a larger coefficient estimate. These results confirm the importance of passing and teamwork for successful plays.</p>
-<p>Exploratory analysis of the model output reveals that there are game-level differences in play style for certain players. Comparing the performance of two games with two different outcomes for the Duke 2014-2015 team, there a noticeable differences in the sender and receiver effects. Player 126160, for instance, had higher receiver effects in a loss compared to a win. This result could imply that player 126160 was not fulfilling his role on the team if his performance recorded by a successful game was his baseline. On the other hand, some players did not drastically change betweeen a a win and a loss. Players like Player 109415 who typically had low playing time and thus lower sender and receiver effects overall, intuitively had even lower sender and receiver effects during a loss. The loss of a team, although influenced by many characteristics, can be partially attributed to these differences in individual player performance. However, this model does not take into account sufficient statistics for the varying defense the Duke teams play.<br />
-<img src="img/sendreceiver.png" /></p>
+<p>Exploratory analysis of the model output reveals that there are game-level differences in play style for certain players. Comparing the performance of two games with two different outcomes for the Duke 2014-2015 team, there a noticeable differences in the sender and receiver effects. Player 126160, for instance, had higher receiver effects in a loss compared to a win. This result could imply that player 126160 was not fulfilling his role on the team if his performance recorded by a successful game was his baseline. On the other hand, some players did not drastically change betweeen a a win and a loss. Players like Player 109415 who typically had low playing time and thus lower sender and receiver effects overall, intuitively had even lower sender and receiver effects during a loss. The loss of a team, although influenced by many characteristics, can be partially attributed to these differences in individual player performance. Regardless, almost every player had a higher sender (passing) effect in a win compared to a loss, indicating the importance of passing. However, this model does not take into account sufficient statistics for the varying defense that play against Duke. A future indicator to control for the quality of Duke’s opposing teams would be one way to solve this challenge.<br />
+<img src="img/sendreceiver.png" /> Looking at the posterior means for the multiplicative row (blue) and column (red) effects for a loss, players who are in the same quadrant and differing colors are more likely to interact. Players that lie on the origin are expected to be the point guard because of their neutrality in passing and receiving the ball from other players. However, the two players who lie on the origin were not the point guards for Duke. Player 126162 (in the red) is a post player, and Player 126159 is a guard. More players lie in the lower right quadrant for a loss compared to a win, especially for the receivers (red).</p>
+<div class="figure">
+<img src="img/uvplotloss.png" />
+
+</div>
+<p>Looking at the plot of the posterior means of the multiplicative row (blue) and column (red) effects for a win, the players are more evenly distributed. Again, the players closest to the origin were not the point guards for Duke. The players with the most playing time were significantly closer to the origin than the players on the edge of the plot. <img src="img/uvplotwin.png" /></p>
 </div>
 </div>
             </section>
