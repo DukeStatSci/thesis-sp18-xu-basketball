@@ -1,5 +1,3 @@
-The preface pretty much says it all.  \par
-
 Basketball has traditionally been viewed as a team sport, requiring the collaboration of the entire team to successfully bring a ball to the basket. The scope of this work attempts to model basketball possessions for each game to explain team characteristics that can lead to successful plays. Duke Basketball data from the 2014-2016 seasons was converted into passing networks, with each node representing a unique player and each edge containing information about a pass. These passing networks not only represent the temporal qualities of basketball, but also capture how interactions among players can lead to positive outcomes during a game. Network characteristics, such as measures of centrality, cohesiveness and latent position of the players, were considered as predictors for play outcomes. This approach suggests that successful Duke basketball teams have collaborative team dynamics. These results can be applied to most team settings--uniform collaboration can lead to better results than teams dominated by one leader. 
 
 

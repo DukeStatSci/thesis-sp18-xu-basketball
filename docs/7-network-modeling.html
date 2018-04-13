@@ -134,13 +134,12 @@
 </div>
 <div id="multinomial-model" class="section level2">
 <h2><span class="header-section-number">7.2</span> Multinomial Model</h2>
-<p>A binomial logistic regression was initially fit to determine what features were important to predicting a made shot. Predictors included variables like number of triangles, passing reciprocity, betweenness centrality,.. Below is the formula:</p>
-<p><span class="math display">\[y_{made,i} \sim \beta_{tri}x_{tri,i} + \beta_{recip}x_{recip,i} + \beta_{betweenness}x_{betweenness,i} + ... + \epsilon_{i}\]</span> for posession <span class="math display">\[i\]</span></p>
-<p>A multinomial model was used to explain the data more robustly by binning the outcome of possessions more broadly. Three categories were created: good outcomes (made shot, offensive rebound), bad outcomes (missed shot, turnover), and neutral outcomes (inbound ball).</p>
+<p>A multinomial logistic regression was initially fit to determine what features were important to predicting the outcome of a possession. Three categories were created for the outcome of a posession: good outcomes (made shot, offensive rebound), bad outcomes (missed shot, turnover), and neutral outcomes (inbound ball). Predictors included network characteristics like number of triangles, passing reciprocity, and betweenness centrality. Below is the formula:</p>
+<p><span class="math display">\[y_{outcome,i} \sim \beta_{tri}x_{tri,i} + \beta_{recip}x_{recip,i} + \beta_{betweenness}x_{betweenness,i} + \epsilon_{i}\]</span> for posession <span class="math display">\[i\]</span></p>
 </div>
 <div id="results" class="section level2">
 <h2><span class="header-section-number">7.3</span> Results</h2>
-<p>Network characteristics, although informative in summarizing possessions, were not significant predictors of the outcome of a basketball possession. Higher reciprocity and triangle dependence, indicators of collaborative teamwork, had a direct relationship with made shots. These results from the preliminary model are largely directional, reaffirming the notion that network characteristics are not informative enough to capture the game of basketball.</p>
+<p>Network characteristics, although informative in summarizing possessions, were not significant predictors of the outcome of a basketball possession. When predicting the full dataset with the model, it correctly predicted the true outcome of a possesion 40.9% of the time. Higher reciprocity and triangle dependence, indicators of collaborative teamwork, had a direct relationship with good outcomes. These results from the preliminary model are largely directional, reaffirming the notion that network characteristics are not informative enough to capture the game of basketball.</p>
 </div>
 <div id="amen-analysis" class="section level2">
 <h2><span class="header-section-number">7.4</span> AMEN Analysis</h2>

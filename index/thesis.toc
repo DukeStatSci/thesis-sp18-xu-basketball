@@ -16,20 +16,19 @@
 \contentsline {section}{\numberline {7.1}Posession Analysis}{23}{section.7.1}
 \contentsline {section}{\numberline {7.2}Multinomial Model}{23}{section.7.2}
 \contentsline {section}{\numberline {7.3}Results}{23}{section.7.3}
-\contentsline {section}{\numberline {7.4}AMEN Analysis}{24}{section.7.4}
-\contentsline {section}{\numberline {7.5}Latent Eigenvalue Model \& Poisson Regression}{24}{section.7.5}
-\contentsline {section}{\numberline {7.6}Structural Zeros}{24}{section.7.6}
-\contentsline {section}{\numberline {7.7}Model Fit}{25}{section.7.7}
-\contentsline {subsection}{\numberline {7.7.1}AMEN Fit}{25}{subsection.7.7.1}
-\contentsline {subsection}{\numberline {7.7.2}Poisson Regression Fit}{27}{subsection.7.7.2}
-\contentsline {section}{\numberline {7.8}Results}{28}{section.7.8}
-\contentsline {chapter}{Chapter 8: Conclusion}{31}{chapter.8}
-\contentsline {section}{\numberline {8.1}Future Steps}{31}{section.8.1}
-\contentsline {chapter}{Chapter 9: Appendix A}{33}{chapter.9}
-\contentsline {section}{\numberline {9.1}Model Replication}{33}{section.9.1}
-\contentsline {subsection}{\numberline {9.1.1}Microtransition Model}{33}{subsection.9.1.1}
-\contentsline {subsection}{\numberline {9.1.2}Macrotransition Entrance Model}{34}{subsection.9.1.2}
-\contentsline {subsection}{\numberline {9.1.3}Macrotransition Exit Model}{34}{subsection.9.1.3}
-\contentsline {subsection}{\numberline {9.1.4}Fall Backs on the Implementation of this Model}{34}{subsection.9.1.4}
-\contentsline {subsection}{\numberline {9.1.5}Proposal}{34}{subsection.9.1.5}
-\contentsline {chapter}{References}{35}{chapter*.16}
+\contentsline {section}{\numberline {7.4}Additive and Multiplicative Effects Network (AMEN) Analysis}{24}{section.7.4}
+\contentsline {section}{\numberline {7.5}Structural Zeros}{25}{section.7.5}
+\contentsline {section}{\numberline {7.6}Model Fit}{25}{section.7.6}
+\contentsline {subsection}{\numberline {7.6.1}AMEN Fit}{25}{subsection.7.6.1}
+\contentsline {subsection}{\numberline {7.6.2}Poisson Regression Fit}{27}{subsection.7.6.2}
+\contentsline {section}{\numberline {7.7}Results}{29}{section.7.7}
+\contentsline {chapter}{Chapter 8: Conclusion}{33}{chapter.8}
+\contentsline {section}{\numberline {8.1}Future Steps}{33}{section.8.1}
+\contentsline {chapter}{Chapter 9: Appendix A}{35}{chapter.9}
+\contentsline {section}{\numberline {9.1}Model Replication}{35}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.1}Microtransition Model}{35}{subsection.9.1.1}
+\contentsline {subsection}{\numberline {9.1.2}Macrotransition Entrance Model}{36}{subsection.9.1.2}
+\contentsline {subsection}{\numberline {9.1.3}Macrotransition Exit Model}{36}{subsection.9.1.3}
+\contentsline {subsection}{\numberline {9.1.4}Fall Backs on the Implementation of this Model}{36}{subsection.9.1.4}
+\contentsline {subsection}{\numberline {9.1.5}Proposal}{36}{subsection.9.1.5}
+\contentsline {chapter}{References}{37}{chapter*.18}

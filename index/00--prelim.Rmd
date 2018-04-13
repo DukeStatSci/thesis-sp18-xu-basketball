@@ -1,16 +1,9 @@
-# Preliminary Content {-}
-
 ## Acknowledgements {-}
 
 I want to thank my advisor, Dr. Alexander Volfovsky, for his patience, wisdom, and encouragement! I would also like to thank Dr. Katherine Heller and Fan Bu for their contributions to this project through our weekly meetings. Finally, I would like to thank Duke Men's Basketball for the dataset.
 
-## Preface {-}
-
-This is an example of a thesis setup to use the reed thesis document class
-(for LaTeX) and the R bookdown package, in general.
-
 ## Dedication {-}
 
-You can have a dedication here if you wish. 
+Dedicated to you
 
 `r if(!knitr:::is_latex_output()) '## Abstract {-}'`
